@@ -26,7 +26,7 @@ export default function RoomDetailAside({
 
 	return (
 		<aside
-			className={`hidden 2xl:block min-h-[500px] max-h-[700px] overflow-y-auto rounded-2xl border border-white/10 bg-[#12191d] p-4 md:p-5 transition-all duration-300 ${
+			className={`hidden 2xl:block h-full min-h-[780px] overflow-y-auto rounded-2xl border border-white/10 bg-[#12191d] p-4 md:p-5 transition-all duration-300 ${
 				visible ? 'opacity-100 translate-x-0 pointer-events-auto' : 'opacity-0 translate-x-4 pointer-events-none'
 			}`}
 		>
