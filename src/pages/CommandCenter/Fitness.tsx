@@ -20,7 +20,7 @@ export default function Fitness() {
 				}
 			/>
 			<CardBody>
-				<div className="flex flex-row gap-4 justify-between">
+				<div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-5 gap-4">
 					<div className="flex flex-col items-baseline gap-2">
 						<div className="!text-[18px] font-semibold text-white">{fitnessMock.now}</div>
 						<div className="!text-[12px] text-white/60">Now</div>

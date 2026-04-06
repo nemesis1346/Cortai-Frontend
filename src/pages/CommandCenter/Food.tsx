@@ -19,7 +19,7 @@ export default function Food() {
 				}
 			/>
 			<CardBody>
-				<div className="grid grid-cols-[1fr_auto_1fr] items-start gap-4">
+				<div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-start gap-4">
 					<div className="grid grid-cols-2 gap-y-2">
 						<div className="!text-[12px] text-white/40 col-span-2">BREAKFAST</div>
 						<div className="!text-[18px] font-semibold text-white">{foodMock.breakfast.served}</div>
@@ -27,8 +27,8 @@ export default function Food() {
 						<div className="!text-[12px] text-white/60">Served</div>
 						<div className="!text-[12px] text-white/60">Buffet Dwell</div>
 					</div>
-					<div className="w-px h-16 bg-white/10 justify-self-center" />
-					<div className="grid grid-cols-2 gap-y-2">
+					<div className="hidden md:block w-px h-16 bg-white/10 justify-self-center" />
+					<div className="grid grid-cols-3 gap-y-2">
 						<div className="!text-[12px] text-white/40 col-span-3">CAFE</div>
 						<div className="!text-[18px] font-semibold text-white">{foodMock.cafe.served}</div>
 						<div className="!text-[18px] font-semibold text-white">{foodMock.cafe.dineIn}</div>

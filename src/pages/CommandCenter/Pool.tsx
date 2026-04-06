@@ -19,7 +19,7 @@ export default function Pool() {
 				}
 			/>
 			<CardBody>
-				<div className="flex flex-row items-start gap-8">
+				<div className="flex flex-col xl:flex-row items-start gap-8">
 					<div className="flex flex-col gap-3 w-full">
 						<div className="!text-[12px] text-white/40 col-span-3">POOL</div>
                         <div className="flex flex-row gap-7 justify-between">
@@ -65,7 +65,7 @@ export default function Pool() {
                             </div>
                         </div>
 					</div>
-					<div className="w-px h-45 bg-white/10 justify-self-center" />
+					<div className="hidden xl:block w-px h-45 bg-white/10 justify-self-center" />
 					<div className="flex flex-col gap-y-3 w-full">
 						<div className="!text-[12px] text-white/40 col-span-3">SPA / HOT TUB</div>
 						<div className="flex flex-row gap-5 justify-between">

@@ -19,12 +19,12 @@ export default function Analysis() {
 				}
 				right={<img src="/icons/ellipsis.svg" alt="" className="w-5 h-5 opacity-90" />}
 			/>
-			<CardBody className="w-[90%]">
+			<CardBody className="w-full lg:w-[90%]">
 				<p className="!text-[14px] text-white/80 mb-6">
 					Today's occupancy is <span className="font-semibold">58%</span> with <span className="font-semibold">23 arrivals</span> expected.
 					<span className="font-semibold"> 118 guests</span> and <span className="font-semibold">22 staff</span> currently on site.
 				</p>
-				<div className="grid grid-cols-3 gap-4 relative pr-8">
+				<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 relative pr-0 xl:pr-8">
 					<div className='pr-5'>
 						<div className="font-semibold mb-2 text-[#00D4C0] text-[12px]">Weekend gap:</div>
 						<p className="text-white/60 text-[12px] mb-4">

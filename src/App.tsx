@@ -2,6 +2,7 @@ import Sidebar from './components/Sidebar'
 import { useState } from 'react'
 import Topbar from './components/Topbar'
 import CommandCenter from './pages/CommandCenter'
+import RoomMonitor from './pages/RoomMonitor'
 import { Routes, Route } from 'react-router-dom'
 import Card from './components/Card'
 import { ConfigProvider, theme } from 'antd'
@@ -27,7 +28,7 @@ export default function App() {
 						<Route path="/" element={<CommandCenter />} />
 						<Route path="/command" element={<CommandCenter />} />
 						<Route path="/guest" element={<Card title="Guest Services" className="min-h-[300px]" />} />
-						<Route path="/room" element={<Card title="Room Monitor" className="min-h-[300px]" />} />
+						<Route path="/room" element={<RoomMonitor />} />
 						<Route path="/food" element={<Card title="Food & Breakfast" className="min-h-[300px]" />} />
 						<Route path="/pool" element={<Card title="Pool & Spa" className="min-h-[300px]" />} />
 						<Route path="/fitness" element={<Card title="Fitness Center" className="min-h-[300px]" />} />

@@ -12,7 +12,7 @@ export default function ActionQueue() {
 		{ id: 7, title: 'Late Checkout Request', room: '602', source: 'Mr. Garcia', ago: '19m', status: 'Pending', color: 'bg-yellow-400/15 text-yellow-300' },
 	]
 	return (
-		<Card className="min-h-[450px]">
+		<Card className="min-h-[547px]">
 			<CardHeader
 				left={
 					<div className="flex items-center gap-2">
@@ -21,7 +21,7 @@ export default function ActionQueue() {
 					</div>
 				}
 				middle={
-					<div className="flex items-center gap-2 text-xs">
+					<div className="hidden md:flex items-center gap-2 text-xs">
 						<span className="px-3 py-1 rounded-[3px] bg-white/10 text-white/80">11 queue</span>
 						<span className="px-3 py-1 rounded-[3px] bg-white/10 text-white/80">6 guest(s)</span>
 						<span className="px-3 py-1 rounded-[3px] bg-red-500/20 text-red-300">4 alert(s)</span>
@@ -42,14 +42,15 @@ export default function ActionQueue() {
 				}
 			/>
 			<CardBody>
-				<div className="sticky top-0 z-[1] text-[11px] text-text-mute py-3 pl-5 grid grid-cols-[40%_70px_100px_100px_100px] gap-3 border-b border-border">
+				<div className="overflow-x-auto">
+				<div className="min-w-[620px] sticky top-0 z-[1] text-[11px] text-text-mute py-3 pl-5 grid grid-cols-[40%_70px_100px_100px_100px] gap-3 border-b border-border">
 					<div>ITEM / SOURCE</div>
 					<div>ROOM</div>
 					<div className="flex items-center gap-1"><Clock className="w-3 h-3" />TIME</div>
 					<div>STATUS</div>
 					<div className="text-right">ACTION</div>
 				</div>
-				<div className="divide-y divide-border">
+				<div className="min-w-[620px] divide-y divide-border">
 					{rows.map((r) => (
 						<div key={r.id} className="relative py-2 pl-5 grid grid-cols-[40%_70px_100px_100px_100px] gap-3 items-center">
 							<span
@@ -59,7 +60,7 @@ export default function ActionQueue() {
 									: r.status === 'Pending' ? 'bg-yellow-400'
 									: 'bg-white/40'
 								}`} 
-							/>
+							/> 
 							<div>
 								<div className="text-[14px] text-white/90">{r.title}</div>
 								<div className="flex items-center gap-3 text-xs text-text-mute mt-1">
@@ -80,6 +81,7 @@ export default function ActionQueue() {
 							</div>
 						</div>
 					))}
+				</div>
 				</div>
 			</CardBody>
 		</Card>

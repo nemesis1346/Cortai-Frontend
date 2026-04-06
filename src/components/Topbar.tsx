@@ -1,18 +1,32 @@
 import { Search, Settings, Bell, BedDouble, AlertTriangle, Star, Plus, Sparkles } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
+import { useLocation } from "react-router-dom"
 
 export default function Topbar() {
 	const [now, setNow] = useState(new Date())
+	const { pathname } = useLocation()
 	useEffect(() => {
 		const id = setInterval(() => setNow(new Date()), 1000)
 		return () => clearInterval(id)
 	}, [])
 	const dateStr = new Intl.DateTimeFormat(undefined, { year: 'numeric', month: 'numeric', day: 'numeric' }).format(now)
 	const timeStr = new Intl.DateTimeFormat(undefined, { hour: 'numeric', minute: '2-digit', second: '2-digit' }).format(now)
+	const pageTitleMap: Record<string, string> = {
+		'/': 'Command Center',
+		'/command': 'Command Center',
+		'/guest': 'Guest Services',
+		'/room': 'Room Monitor',
+		'/food': 'Food & Breakfast',
+		'/pool': 'Pool & Spa',
+		'/fitness': 'Fitness Center',
+		'/meetings': 'Meetings & Events',
+		'/incidents': 'Incident Log',
+	}
+	const pageTitle = pageTitleMap[pathname] ?? 'Command Center'
 	return (
 		<header className="px-5 pt-5 h-14 flex items-center justify-between ">
 			<div className="flex items-center gap-3 relative">
-				<div className="text-xl font-semibold text-white tracking-[0.2px]">Command Center</div>
+				<div className="text-xl font-semibold text-white tracking-[0.2px]">{pageTitle}</div>
 				<div className="text-xs px-2.5 py-1 rounded-md border border-[#0e2e2a] bg-[#0b2a26] text-[#00d4c0] inline-flex items-center gap-1.5">
 					<Sparkles className="w-3.5 h-3.5" />
 					<span>AI Live / 30s upd</span>

@@ -20,8 +20,8 @@ export default function FrontDesk() {
 				}
 			/>
 			<CardBody>
-				<div className="flex flex-row gap-4 justify-between">
-					<div className="grid grid-cols-2 w-[50%]">
+				<div className="flex flex-col xl:flex-row gap-4 justify-between">
+					<div className="grid grid-cols-2 w-full xl:w-[50%] gap-y-3">
 						<div className="flex flex-col items-baseline gap-2">
 							<div className="!text-[18px] font-semibold text-white">{frontDeskMock.served}</div>
 							<div className="!text-[14px] text-white/40">Served</div>
@@ -40,10 +40,10 @@ export default function FrontDesk() {
 						</div>
 					</div>
 
-					<div className="w-[50%]">
+					<div className="w-full xl:w-[50%]">
 						<div className="divide-y divide-white/20 flex flex-col gap-1">
 							{frontDeskMock.items.map(i => (
-								<div key={i.id} className="flex flex-row items-center py-2 justify-between">
+								<div key={i.id} className="grid grid-cols-[80px_1fr_auto] items-center gap-2 py-2">
 									<div className={`${i.color === 'red' ? 'text-red-500' : i.color === 'amber' ? 'text-yellow-500' : 'text-white' } !text-[14px] font-semibold`}>
 										{i.wait}
 									</div>

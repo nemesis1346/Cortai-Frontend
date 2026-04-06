@@ -65,7 +65,7 @@ export default function Housekeeping() {
 					}
 				/>
 
-				<CardBody className="grid grid-cols-[auto_auto_1fr] items-center gap-7 justify-self-between py-3">
+				<CardBody className="grid grid-cols-1 xl:grid-cols-[auto_auto_1fr] items-center gap-5 xl:gap-7 justify-self-between py-3">
 					<div className="flex items-center gap-2">
 						<Progress
 							type="circle"
@@ -100,7 +100,7 @@ export default function Housekeeping() {
 						</div>
 					</div>
 
-					<div className="grid grid-cols-[auto_auto_repeat(4,auto)] items-center gap-5 justify-self-between">
+					<div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-[auto_auto_repeat(4,auto)] items-center gap-5 justify-self-between">
 						<div className="flex flex-col">
 							<div className="flex items-baseline gap-4">
 								<div className="!text-[18px] text-white">{housekeepingMock.avgCleanTimeMins}m</div>
@@ -139,7 +139,7 @@ export default function Housekeeping() {
 					onClick={() => setOpenModal(false)}
 				>
 					<div
-						className={`w-[600px] rounded-2xl border border-[#FFFFFF33] border-[6px] bg-[#151d22] px-6 overflow-hidden transition-all duration-300 ease-out ${modalEntered ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 -translate-y-4 scale-[0.98]'}`}
+						className={`w-[min(600px,calc(100vw-24px))] rounded-2xl border border-[#FFFFFF33] border-[6px] bg-[#151d22] px-3 sm:px-6 overflow-hidden transition-all duration-300 ease-out ${modalEntered ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 -translate-y-4 scale-[0.98]'}`}
 						onClick={(e) => e.stopPropagation()}
 					>
 						<div className="flex items-center justify-between py-3">
@@ -148,15 +148,15 @@ export default function Housekeeping() {
 								<X className="w-[32px] h-[32px]" />
 							</button>
 						</div>
-						<div className="py-3 grid grid-cols-[1fr_80px_100px_80px] !text-[10px] text-white/40 border-b border-white/10">
+						<div className="py-3 min-w-[520px] grid grid-cols-[1fr_80px_100px_80px] !text-[10px] text-white/40 border-b border-white/10">
 							<div>REQUEST / GUEST</div>
 							<div>ROOM</div>
 							<div>ROOMS</div>
 							<div className="text-right">ACTION</div>
 						</div>
-						<div className="max-h-[60vh] overflow-y-auto  divide-y divide-white/10 ">
+						<div className="max-h-[60vh] overflow-auto divide-y divide-white/10">
 							{staffRows.map((s) => (
-								<div key={s.id} className="py-3 grid grid-cols-[1fr_80px_100px_80px] items-center ">
+								<div key={s.id} className="py-3 min-w-[520px] grid grid-cols-[1fr_80px_100px_80px] items-center">
 									<div className="flex items-center gap-3">
 										<div className="relative w-[36px] h-[36px] rounded-full bg-white/20 flex items-center justify-center text-white/90 text-sm">
 											{s.name.split(' ').map(n => n[0]).join('').slice(0, 2)}

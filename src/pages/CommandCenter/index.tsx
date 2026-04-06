@@ -14,13 +14,13 @@ export default function CommandCenter() {
 	return (
 		<main className="p-5 flex flex-col gap-5 overflow-hidden overflow-y-auto">
 			<section className="w-full lg:basis-1/2 lg:flex-1">
-				<div className="flex gap-5">
+				<div className="flex flex-col lg:flex-row gap-5">
 					<Analysis />
 					<KpiPanel />
 				</div>
 			</section>
-			<section className="w-full lg:basis-1/2 lg:flex-1 flex flex-col lg:flex-row gap-5"> 
-				<div className="w-full lg:basis-1/2 lg:flex-1 grid gap-5">
+			<section className="w-full lg:basis-1/3 lg:flex-1 grid grid-cols-1 xl:grid-cols-2 gap-5"> 
+				<div className="w-full lg:basis-1/2 lg:flex-1 flex flex-col gap-5">
 					<ActionQueue />
 					<Housekeeping />
 				</div>
@@ -30,15 +30,15 @@ export default function CommandCenter() {
 					<Washroom />
 				</div>
 			</section>
-			<section className="w-full lg:basis-1/2 lg:flex-1 flex flex-row gap-3">
-				<div className="w-full lg:basis-1/2 lg:flex-1 flex flex-col gap-3">
+			<section className="w-full lg:basis-1/2 lg:flex-1 flex flex-col xl:flex-row gap-3">
+				<div className="w-full xl:basis-1/3 xl:flex-1 flex flex-col gap-3">
 					<Food />
 					<Fitness />
 				</div>
-				<div className="w-full lg:basis-1/2 lg:flex-1">
+				<div className="w-full xl:basis-1/3 xl:flex-1">
 					<Pool />
 				</div>
-				<div className="w-full lg:basis-1/2 lg:flex-1">
+				<div className="w-full xl:basis-1/3 xl:flex-1">
 					<Events />
 				</div>
 			</section>

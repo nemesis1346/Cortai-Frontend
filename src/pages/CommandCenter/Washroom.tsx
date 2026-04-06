@@ -20,10 +20,10 @@ export default function Washroom() {
 				}
 			/>
 			<CardBody>
-				<div className="grid grid-cols-3">
+				<div className="grid grid-cols-1 lg:grid-cols-3">
 					{washroomsMock.areas.map((a, idx) => (
-						<div key={a.id} className={`flex flex-row items-start ${idx < washroomsMock.areas.length - 1 ? 'border-r border-white/10 pr-6' : ''} ${idx > 0 ? 'pl-6' : ''}`}>
-							<div className="w-[50%] flex flex-col items-baseline gap-2">
+						<div key={a.id} className={`flex flex-col sm:flex-row items-start gap-3 ${idx < washroomsMock.areas.length - 1 ? 'lg:border-r lg:border-white/10 lg:pr-6 lg:border-white/10 border-white/10 pb-4 lg:pb-0' : ''} ${idx > 0 ? 'lg:pl-6' : ''}`}>
+							<div className="w-full sm:w-[50%] flex flex-col items-baseline gap-2">
 								<div className="!text-[18px] font-semibold text-white">{a.count}</div>
 								<div className="!text-[14px] text-white/70">{a.label}</div>
 								<div className="mt-1">
@@ -36,7 +36,7 @@ export default function Washroom() {
 									</span>
 								</div>
 							</div>
-							<div className="self-center">
+							<div className="self-start sm:self-center w-full sm:w-auto">
 								<div className="grid grid-cols-[40px_1fr] items-center gap-x-2">
 									<div className="!text-[12px] text-white/40">Last</div>
 									<div className="!text-[12px] text-white/70 text-right">{a.last}</div>

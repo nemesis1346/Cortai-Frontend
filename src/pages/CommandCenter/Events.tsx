@@ -29,12 +29,13 @@ export default function Events() {
 				}
 			/>
 			<CardBody>
-				<div className="grid grid-cols-[1fr_100px_100px] items-center pt-1 text-white/50 !text-[10px] border-border border-b">
+				<div className="overflow-x-auto">
+				<div className="min-w-[520px] grid grid-cols-[1fr_100px_100px] items-center pt-1 text-white/50 !text-[10px] border-border border-b">
 					<p>EVENT</p>
 					<p>TIME</p>
 					<p className="text-right">STATUS</p>
 				</div>
-				<div className="divide-y divide-white/10">
+				<div className="min-w-[520px] divide-y divide-white/10">
 					{eventsMock.items.map((e) => (
 						<div key={e.id} className="grid grid-cols-[1fr_100px_100px] items-center justify-between py-3">
 							<div>
@@ -45,6 +46,7 @@ export default function Events() {
 							<div className="text-right !text-[14px]"><StatusPill status={e.status} /></div>
 						</div>
 					))}
+				</div>
 				</div>
 			</CardBody>
 		</Card>
