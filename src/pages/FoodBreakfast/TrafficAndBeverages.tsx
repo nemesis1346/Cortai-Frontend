@@ -62,6 +62,7 @@ const trafficConfig = {
       grid: null, // 🔥 remove vertical lines (cleaner look)
     },
     y: {
+      
       labelFill: 'rgba(255,255,255,0.55)',
       lineStroke: 'rgba(255,255,255,0.12)',
       tickStroke: 'rgba(255,255,255,0.15)',

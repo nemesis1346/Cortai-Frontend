@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @theme {
 	--color-bg: #0f1518;
@@ -23,4 +26,15 @@
 	.card { @apply bg-card border border-border rounded-xl shadow-inner-card; }
 	.card-title { @apply text-sm font-semibold text-text; }
 	.badge { @apply text-xs px-2 py-0.5 rounded-md border border-border; }
+}
+
+@layer utilities {
+	.scrollbar-none {
+	  -ms-overflow-style: none; /* IE/Edge legacy */
+	  scrollbar-width: none;    /* Firefox */
+	}
+  
+	.scrollbar-none::-webkit-scrollbar {
+	  display: none;            /* Chrome, Safari, Opera */
+	}
 }

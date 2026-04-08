@@ -16,7 +16,6 @@ export default {
 			},
 			boxShadow: { innerCard: "inset 0 1px 0 rgba(255,255,255,0.03)" }
 		}
-	},
-	plugins: []
+	}
 }
 
