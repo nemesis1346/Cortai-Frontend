@@ -50,7 +50,7 @@ export default function Topbar() {
 					</div>
 				</div>
 			</div>
-			<div className="flex items-center gap-3 pr-5">
+			<div className="flex items-center gap-3 ">
 				<button className="w-8 h-8 rounded-full border border-border flex items-center justify-center text-white/80 hover:bg-card">
 					<Search className="w-4 h-4" />
 				</button>

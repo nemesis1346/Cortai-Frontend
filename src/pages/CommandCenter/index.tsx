@@ -12,7 +12,7 @@ import Events from './Events'
 
 export default function CommandCenter() {
 	return (
-		<main className="p-5 flex flex-col gap-5 overflow-hidden overflow-y-auto">
+		<main className="p-5 flex flex-col gap-5 overflow-hidden overflow-y-auto scrollbar-none">
 			<section className="w-full lg:basis-1/2 lg:flex-1">
 				<div className="flex flex-col lg:flex-row gap-5">
 					<Analysis />

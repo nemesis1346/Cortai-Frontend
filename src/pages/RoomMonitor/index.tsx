@@ -82,11 +82,11 @@ export default function RoomMonitor() {
 
 	return (
 		<div
-			className={`h-full grid grid-cols-1 gap-4 p-4 md:p-5 overflow-hidden transition-all duration-300 ${
+			className={`h-full grid grid-cols-1 gap-4 p-4 md:p-5  transition-all duration-300 ${
 				selectedRoom ? '2xl:grid-cols-[minmax(0,1fr)_440px]' : '2xl:grid-cols-[minmax(0,1fr)_0px]'
 			}`}
 		>
-			<main className={`flex flex-col gap-3 overflow-y-auto pr-1 transition-all duration-300 ${selectedRoom ? '2xl:scale-[0.995] 2xl:origin-left' : '2xl:scale-100'}`}>
+			<main className={`flex flex-col gap-3 overflow-y-auto scrollbar-none pr-1 transition-all duration-300 ${selectedRoom ? '2xl:scale-[0.995] 2xl:origin-left' : '2xl:scale-100'}`}>
 				<SummaryStrip items={summary} />
 				<LegendBar />
 				{floors.map((floor) => (
