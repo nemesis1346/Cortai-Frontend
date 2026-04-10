@@ -4,6 +4,7 @@ import Topbar from './components/Topbar'
 import CommandCenter from './pages/CommandCenter'
 import RoomMonitor from './pages/RoomMonitor'
 import FoodBreakfast from './pages/FoodBreakfast'
+import PoolSpa from './pages/PoolSpa'
 import { Routes, Route } from 'react-router-dom'
 import Card from './components/Card'
 import { ConfigProvider, theme } from 'antd'
@@ -31,7 +32,7 @@ export default function App() {
 						<Route path="/guest" element={<Card title="Guest Services" className="min-h-[300px]" />} />
 						<Route path="/room" element={<RoomMonitor />} />
 						<Route path="/food" element={<FoodBreakfast />} />
-						<Route path="/pool" element={<Card title="Pool & Spa" className="min-h-[300px]" />} />
+						<Route path="/pool" element={<PoolSpa />} />
 						<Route path="/fitness" element={<Card title="Fitness Center" className="min-h-[300px]" />} />
 						<Route path="/meetings" element={<Card title="Meetings & Events" className="min-h-[300px]" />} />
 						<Route path="/incidents" element={<Card title="Incident Log" className="min-h-[300px]" />} />
