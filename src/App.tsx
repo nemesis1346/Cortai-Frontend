@@ -1,14 +1,10 @@
 import Sidebar from './components/Sidebar'
 import { useState } from 'react'
 import Topbar from './components/Topbar'
-import CommandCenter from './pages/CommandCenter'
-import RoomMonitor from './pages/RoomMonitor'
-import FoodBreakfast from './pages/FoodBreakfast'
-import PoolSpa from './pages/PoolSpa'
-import Fitness from './pages/Fitness'
-import MeetingEvent from './pages/MeetingEvent'
-import { Routes, Route } from 'react-router-dom'
-import Card from './components/Card'
+import CommandCenter from './pages/Hotel/CommandCenter'
+import { Route, Routes } from 'react-router-dom'
+import { hotelRoutes } from './pages/Hotel'
+import { networkRoutes } from './pages/Network/routes'
 import { ConfigProvider, theme } from 'antd'
 
 export default function App() {
@@ -29,17 +25,19 @@ export default function App() {
 				<div className="flex min-h-0 flex-col overflow-hidden">
 					<Topbar />
 					<div className="flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden">
-					<Routes>
-						<Route path="/" element={<CommandCenter />} />
-						<Route path="/command" element={<CommandCenter />} />
-						<Route path="/guest" element={<Card title="Guest Services" className="min-h-[300px]" />} />
-						<Route path="/room" element={<RoomMonitor />} />
-						<Route path="/food" element={<FoodBreakfast />} />
-						<Route path="/pool" element={<PoolSpa />} />
-						<Route path="/fitness" element={<Fitness />} />
-						<Route path="/meetings" element={<MeetingEvent />} />
-						<Route path="/incidents" element={<Card title="Incident Log" className="min-h-[300px]" />} />
-					</Routes>
+						<Routes>
+							<Route path="/" element={<CommandCenter />} />
+							<Route path="/hotel">
+								{hotelRoutes.map(route => (
+									<Route key={route.path || 'hotel-index'} index={route.path === ''} path={route.path || undefined} element={route.element} />
+								))}
+							</Route>
+							<Route path="/network">
+								{networkRoutes.map(route => (
+									<Route key={route.path || 'network-index'} index={route.path === ''} path={route.path || undefined} element={route.element} />
+								))}
+							</Route>
+						</Routes>
 					</div>
 				</div>
 			</div>
