@@ -1,5 +1,8 @@
 @import "./theme/tokens.generated.css";
 @import "tailwindcss";
+@source "../index.html";
+@source "../src/**/*.{js,ts,jsx,tsx}";
+@source inline("text-[color:var(--primitive-accent-orange)]");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
