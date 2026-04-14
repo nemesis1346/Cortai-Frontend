@@ -26,7 +26,7 @@ const DotMenu = () => (
 	</div>
 )
 
-import { LayoutGrid, Sparkles, Hospital, Utensils, Waves, Dumbbell, CalendarDays, ShieldAlert, FilePlus2, Users2, Handbag, ShieldCheck, Settings, Building2 } from "lucide-react"
+import { LayoutGrid, Sparkles, Hospital, Utensils, Waves, Dumbbell, CalendarDays, ShieldAlert, FilePlus2, Users2, Globe, ShieldCheck, MonitorSmartphone, Settings, Building2, AppWindow, Gauge } from "lucide-react"
 
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -43,10 +43,10 @@ const hotelNavItems: NavItem[] = [
 ]
 
 const securityNavItems: NavItem[] = [
-	{ key: "security-dashboard", label: "Dashboard", icon: <LayoutGrid className="w-5 h-5" />, route: "/network/dashboard" },
-	{ key: "sd-wan", label: "SD-WAN", icon: <CalendarDays className="w-5 h-5" />, route: "/network/sd-wan" },
-	{ key: "applications", label: "Applications", icon: <Handbag className="w-5 h-5" />, route: "/network/applications" },
-	{ key: "devices", label: "Devices", icon: <ShieldCheck className="w-5 h-5" />, route: "/network/devices" },
+	{ key: "security-dashboard", label: "Dashboard", icon: <Gauge className="w-5 h-5" />, route: "/network/dashboard" },
+	{ key: "sd-wan", label: "SD-WAN", icon: <Globe className="w-5 h-5" />, route: "/network/sd-wan" },
+	{ key: "applications", label: "Applications", icon: <AppWindow className="w-5 h-5" />, route: "/network/applications" },
+	{ key: "devices", label: "Devices", icon: <MonitorSmartphone className="w-5 h-5" />, route: "/network/devices" },
 ]
 
 type SidebarProps = { collapsed?: boolean; onToggleCollapsed?: () => void }
@@ -123,7 +123,7 @@ export default function Sidebar({ collapsed = false, onToggleCollapsed }: Sideba
 						<Users2 className="w-5 h-5" />
 					</LeftRailIcon>
 					<LeftRailIcon>
-						<Handbag className="w-5 h-5" />
+						<Globe className="w-5 h-5" />
 					</LeftRailIcon>
 					<LeftRailIcon active={isSecurity && sectionPanelOpen} onClick={handleSecurityRailClick}>
 						<ShieldCheck className="w-5 h-5" />
