@@ -6,14 +6,14 @@ function EnvGauge({ pointerBottomPct }: { pointerBottomPct: number }) {
 		<div className="flex shrink-0 items-end gap-0.5">
 			<div className="relative h-12 w-2.5 shrink-0">
 				<div
-					className="absolute -right-1 w-0 h-0 border-y-[4px] border-y-transparent border-l-[6px] border-r-white"
+					className="absolute -right-1 w-0 h-0 border-y-[4px] border-y-transparent border-l-[6px] border-r-[color:var(--primitive-white-shadow-100)]"
 					style={{ bottom: `calc(${pointerBottomPct}% - 4px)` }}
 				/>
 			</div>
-			<div className="h-12 w-2 shrink-0 overflow-hidden rounded-sm border border-white/15">
+			<div className="h-12 w-2 shrink-0 overflow-hidden rounded-sm border border-[color:var(--primitive-white-shadow-20)]">
 				<div className="flex h-full flex-col">
-					<div className="flex-[2] bg-[#ea580c]/95" />
-					<div className="flex-[1] bg-[#16a34a]/95" />
+					<div className="flex-[2] bg-[color:var(--primitive-accent-orange)]" />
+					<div className="flex-[1] bg-[color:var(--primitive-semantic-success)]" />
 				</div>
 			</div>
 		</div>
@@ -35,36 +35,36 @@ type EnvironmentPanelProps = { className?: string }
 export default function EnvironmentPanel({ className }: EnvironmentPanelProps) {
 	const e = fitnessPageMock.environment
 	return (
-		<div className={`rounded-2xl border border-white/10 bg-[#FFFFFF08] p-4 ${className ?? ''}`}>
-			<div className="flex items-center gap-2 text-[18px] font-medium text-white">
-				<Thermometer className="h-5 w-5 text-[#00d4c0]" strokeWidth={1.75} />
+		<div className={`rounded-2xl border border-border bg-panel p-4 ${className ?? ''}`}>
+			<div className="flex items-center gap-2 text-[18px] font-medium text-text">
+				<Thermometer className="h-5 w-5 text-brand" strokeWidth={1.75} />
 				<span>Environment</span>
 			</div>
 			<div className="mt-5 flex flex-wrap items-end justify-between gap-x-2 gap-y-6 sm:gap-x-3">
 				<div className="flex min-w-[4.5rem] flex-col items-start gap-1.5 text-center sm:min-w-[5rem]">
-					<div className="text-[20px] font-bold leading-none text-white">{e.temp}</div>
-					<div className="text-[11px] text-white/45">Temp.</div>
+					<div className="text-[20px] font-bold leading-none text-text">{e.temp}</div>
+					<div className="text-[11px] text-text-dim">Temp.</div>
 				</div>
 				<div className="flex min-w-[4.5rem] flex-col items-start gap-1.5 text-center sm:min-w-[5rem]">
-					<div className="text-[20px] font-bold leading-none text-[#38bdf8]">{e.humidity}</div>
-					<div className="text-[11px] text-white/45">Humidity</div>
+					<div className="text-[20px] font-bold leading-none text-info">{e.humidity}</div>
+					<div className="text-[11px] text-text-dim">Humidity</div>
 				</div>
 				<div className="flex min-w-[4.5rem] flex-col items-start gap-1.5 text-center sm:min-w-[5rem]">
-					<div className="text-[20px] font-bold leading-none text-white">{e.airChangesPerHour}</div>
-					<div className="text-[11px] leading-tight text-white/45">Air Changes/hr</div>
+					<div className="text-[20px] font-bold leading-none text-text">{e.airChangesPerHour}</div>
+					<div className="text-[11px] leading-tight text-text-dim">Air Changes/hr</div>
 				</div>
 				<div className="flex min-w-0 items-end gap-2">
 					<EnvGauge pointerBottomPct={co2PointerPct(e.co2Ppm)} />
 					<div className="flex flex-col gap-1.5 pb-0.5">
-						<div className="text-[20px] font-bold leading-none text-[#fb923c]">{e.co2Ppm}ppm</div>
-						<div className="text-[11px] text-white/45">CO2 Level</div>
+						<div className="text-[20px] font-bold leading-none text-warn">{e.co2Ppm}ppm</div>
+						<div className="text-[11px] text-text-dim">CO2 Level</div>
 					</div>
 				</div>
 				<div className="flex min-w-0 items-end gap-2">
 					<EnvGauge pointerBottomPct={noisePointerPct(e.noiseDb)} />
 					<div className="flex flex-col gap-1.5 pb-0.5">
-						<div className="text-[20px] font-bold leading-none text-[#22c55e]">{e.noiseDb}dB</div>
-						<div className="text-[11px] text-white/45">Noise</div>
+						<div className="text-[20px] font-bold leading-none text-ok">{e.noiseDb}dB</div>
+						<div className="text-[11px] text-text-dim">Noise</div>
 					</div>
 				</div>
 			</div>

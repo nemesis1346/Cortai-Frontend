@@ -27,20 +27,20 @@ export default function TimeRangeToolbar({ defaultRange = '24h' }: TimeRangeTool
 						onClick={() => setActive(r.id)}
 						className={`rounded-md p-2 text-[14px] font-medium transition ${
 							active === r.id
-								? 'border border-[#00D4C0] !text-[#00D4C0]'
-								: 'border border-transparent text-white/50 hover:text-white/75'
+								? 'border border-brand text-text'
+								: 'border border-transparent text-text-dim hover:text-text'
 						}`}
 					>
 						{r.label}
 					</button>
 				))}
-				<button type="button" className="rounded-md p-1 text-white/45 hover:text-white/70" aria-label="More ranges">
+				<button type="button" className="rounded-md p-1 text-text-mute hover:text-text-dim" aria-label="More ranges">
 					<MoreHorizontal className="h-4 w-4" strokeWidth={1.75} />
 				</button>
 			</div>
 			<button
 				type="button"
-				className="w-full shrink-0 rounded-md border border-white/20 p-3 text-[14px] font-medium text-white/90 transition hover:border-white/35 hover:bg-white/[0.04] sm:w-auto"
+				className="w-full shrink-0 rounded-md border border-border p-3 text-[14px] font-medium text-text transition hover:border-[color:var(--primitive-white-shadow-30)] hover:bg-[color:var(--primitive-white-shadow-5)] sm:w-auto"
 			>
 				Export Report
 			</button>

@@ -3,11 +3,13 @@ import { Area } from '@ant-design/plots'
 import { useMemo } from 'react'
 import Card, { CardBody, CardHeader } from '../../../components/Card'
 import { fitnessPageMock } from '../../../data/mock'
+import { chart } from '../../../theme/fromExport'
+import { chartHex, primitive } from '../../../theme/tokens.generated'
 
 const CHART_HEIGHT = 300
 
 const gridLineStyle = {
-	stroke: 'rgba(255,255,255,0.1)',
+	stroke: chart.gridStroke,
 	lineDash: [2, 4],
 }
 
@@ -30,7 +32,7 @@ export default function TrafficPanel() {
 				tooltip: { marker: false },
 			},
 			style: {
-				fill: 'linear-gradient(180deg, rgba(0, 212, 192, 0.28) 0%, rgba(0, 0, 0, 0) 75%)',
+				fill: `linear-gradient(180deg, ${primitive.BrandShadow30} 0%, transparent 75%)`,
 			},
 			scale: {
 				x: { type: 'point' as const, padding: 0.08 },
@@ -42,9 +44,9 @@ export default function TrafficPanel() {
 			},
 			axis: {
 				x: {
-					labelFill: 'rgba(255,255,255,0.55)',
-					lineStroke: 'rgba(255,255,255,0.12)',
-					tickStroke: 'rgba(255,255,255,0.15)',
+					labelFill: primitive.WhiteShadow50,
+					lineStroke: primitive.WhiteShadow10,
+					tickStroke: primitive.WhiteShadow20,
 					grid: {
 						line: {
 							style: gridLineStyle,
@@ -52,9 +54,9 @@ export default function TrafficPanel() {
 					},
 				},
 				y: {
-					labelFill: 'rgba(255,255,255,0.55)',
-					lineStroke: 'rgba(255,255,255,0.12)',
-					tickStroke: 'rgba(255,255,255,0.15)',
+					labelFill: primitive.WhiteShadow50,
+					lineStroke: primitive.WhiteShadow10,
+					tickStroke: primitive.WhiteShadow20,
 					grid: {
 						line: {
 							style: gridLineStyle,
@@ -64,7 +66,7 @@ export default function TrafficPanel() {
 			},
 			line: {
 				style: {
-					stroke: '#00D4C0',
+					stroke: chartHex.brand,
 					lineWidth: 2,
 				},
 			},
@@ -72,8 +74,8 @@ export default function TrafficPanel() {
 				size: (d: { time: string }) => (d.time === peakTime ? 7 : 3),
 				shape: (d: { time: string }) => (d.time === peakTime ? 'diamond' : 'circle'),
 				style: (d: { time: string }) => ({
-					stroke: d.time === peakTime ? '#F84247' : '#00D4C0',
-					fill: d.time === peakTime ? '#F84247' : '#0b0f13',
+					stroke: d.time === peakTime ? chartHex.danger : chartHex.brand,
+					fill: d.time === peakTime ? chartHex.danger : chartHex.bg,
 					lineWidth: 1,
 				}),
 			},
@@ -81,32 +83,32 @@ export default function TrafficPanel() {
 		[peakTime],
 	)
 	return (
-		<Card className="flex w-full min-w-0 flex-col rounded-2xl border border-white/10 bg-[#FFFFFF08]">
+		<Card className="flex w-full min-w-0 flex-col rounded-2xl border border-border bg-panel">
 			<CardHeader
 				left={(
-					<div className="flex min-w-0 items-center gap-2 text-[18px] text-white">
-						<Clock className="h-4 w-4 shrink-0 text-[#00d4c0]" />
+					<div className="flex min-w-0 items-center gap-2 text-[18px] text-text">
+						<Clock className="h-4 w-4 shrink-0 text-brand" />
 						<span className="truncate">Guest Traffic Timeline</span>
 					</div>
 				)}
 				middle={(
-					<div className="flex max-w-[min(100%,22rem)] flex-wrap items-center justify-center gap-3 text-[12px] text-white/55 sm:gap-4">
+					<div className="flex max-w-[min(100%,22rem)] flex-wrap items-center justify-center gap-3 text-[12px] text-text-dim sm:gap-4">
 						<span className="inline-flex items-center gap-1.5">
-							<span className="inline-block h-2.5 w-2.5 rotate-45 bg-[#F84247]" />
+							<span className="inline-block h-2.5 w-2.5 rotate-45 bg-danger" />
 							Peak ({meta.peakGuests})
 						</span>
 						<span className="inline-flex items-center gap-1.5">
-							<span className="h-2.5 w-2.5 rounded-full bg-[#00D4C0]" />
+							<span className="h-2.5 w-2.5 rounded-full bg-brand" />
 							Guests ({meta.legendGuests})
 						</span>
 					</div>
 				)}
 				right={(
 					<div className="flex flex-wrap justify-end gap-2">
-						<span className="rounded-[3px] bg-white/[0.08] px-2 py-1 text-[11px] text-white/55">
+						<span className="rounded-[3px] bg-panel px-2 py-1 text-[11px] text-text-dim">
 							First guest {meta.firstGuest}
 						</span>
-						<span className="rounded-[3px] bg-white/[0.08] px-2 py-1 text-[11px] text-white/55">
+						<span className="rounded-[3px] bg-panel px-2 py-1 text-[11px] text-text-dim">
 							Peak {meta.peakGuests} @ {meta.peakAt}
 						</span>
 					</div>

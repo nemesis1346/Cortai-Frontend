@@ -12,7 +12,7 @@ const LeftRailIcon = ({ children, active, onClick }: { children: ReactElement; a
 		type="button"
 		onClick={onClick}
 		className={`w-10 h-10 rounded-lg flex items-center justify-center transition-colors
-			${active ? "border border-[#00D4C0E5] text-[#00D4C0E5]" : "text-white"}`}
+			${active ? "border border-brand/90 text-brand/90" : "text-text"}`}
 	>
 		{children}
 	</button>
@@ -88,7 +88,7 @@ export default function Sidebar({ collapsed = false, onToggleCollapsed }: Sideba
 					<img src="/icons/hotel.svg" alt="" className="w-7 h-7 opacity-90" />
 				</div>
 				<div className={`flex flex-col justify-center flex-1 transition-all duration-300 ${collapsed ? 'opacity-0 w-0 overflow-hidden px-0' : 'opacity-100 px-6'}`}>
-					<div className="text-[#00D4C0E5] text-lg font-semibold tracking-wide">CORTAI</div>
+					<div className="text-brand/90 text-lg font-semibold tracking-wide">CORTAI</div>
 					<div className="text-xs text-text-mute mt-0.5">Unified Hotel Platform</div>
 				</div>
 				<div className={`transition-all duration-300 ${collapsed ? 'opacity-0 w-0 overflow-hidden' : 'opacity-100 px-4'}`}>
@@ -96,7 +96,7 @@ export default function Sidebar({ collapsed = false, onToggleCollapsed }: Sideba
 						type="button"
 						onClick={onToggleCollapsed}
 						aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
-						className="w-9 h-9 rounded-lg border border-border flex items-center justify-center text-white hover:bg-card"
+						className="w-9 h-9 rounded-lg border border-border flex items-center justify-center text-text hover:bg-card"
 					>
 						<img src="/icons/sidebar-toggle.svg" alt="" className="w-4 h-4" />
 					</button>
@@ -109,7 +109,7 @@ export default function Sidebar({ collapsed = false, onToggleCollapsed }: Sideba
 			{/* Content */}
 			<section className="flex-1 flex" role="navigation" aria-label="Sidebar navigation">
 				{/* Left rail */}
-				<div className="w-[72px] bg-[#0b1013] flex flex-col items-center gap-3 pt-3">
+				<div className="w-[72px] bg-bg flex flex-col items-center gap-3 pt-3">
 					<LeftRailIcon active={isHotelOps && !isSecurity} onClick={handleHotelRailClick}>
 						<Building2 className="w-5 h-5" />
 					</LeftRailIcon>
@@ -141,7 +141,7 @@ export default function Sidebar({ collapsed = false, onToggleCollapsed }: Sideba
 				</div>
 
 				{/* Main body */}
-				<div className={`bg-[#0e1418] flex flex-col transition-all duration-300 ${collapsed || !sectionPanelOpen ? 'w-0 opacity-0 overflow-hidden pointer-events-none' : 'flex-1 opacity-100'}`}>
+				<div className={`bg-card flex flex-col transition-all duration-300 ${collapsed || !sectionPanelOpen ? 'w-0 opacity-0 overflow-hidden pointer-events-none' : 'flex-1 opacity-100'}`}>
 					<div className="px-6 py-5 text-[11px] tracking-wider text-text-mute">{isSecurity ? 'SECURITY & NETWORK' : 'HOTEL OPERATIONS'}</div>
 					<nav className="px-6 flex-1 overflow-auto">
 						<ul className="grid gap-2">
@@ -153,7 +153,7 @@ export default function Sidebar({ collapsed = false, onToggleCollapsed }: Sideba
 										onClick={() => { setActiveKey(n.key); navigate(n.route) }}
 										aria-selected={isActive}
 										className={`w-full flex items-center gap-3 p-2 rounded-lg transition-colors
-										${isActive ? "!text-[#00D4C0E5] border border-[#00D4C0E5]" : "text-text-dim hover:text-text hover:bg-card"}`}>
+										${isActive ? "!text-brand/90 border border-brand/90" : "text-text-dim hover:text-text hover:bg-card"}`}>
 										<span className="shrink-0">{n.icon}</span>
 										<span className="text-[14px]">{n.label}</span>
 									</button>

@@ -1,6 +1,7 @@
 import { Bar } from '@ant-design/plots'
 import { useMemo } from 'react'
 import { CardBody, CardHeader } from '../../../components/Card'
+import { chart, primitive } from '../../../theme/fromExport'
 import type { BandwidthRow } from './types'
 
 
@@ -47,13 +48,13 @@ export default function ApplicationBandwidthCard({ rows, totalBadge, axisMax = 8
 				legend: false,
 				axis: {
 					y: {
-						labelFill: 'rgba(255,255,255,0.42)',
-						lineStroke: 'rgba(255,255,255,0.06)',
-						tickStroke: 'rgba(255,255,255,0.2)',
+						labelFill: primitive.WhiteShadow40,
+						lineStroke: primitive.WhiteShadow5,
+						tickStroke: primitive.WhiteShadow20,
 						grid: {
 							line: {
 								style: {
-									stroke: 'rgba(255,255,255,0.1)',
+									stroke: chart.gridStroke,
 									lineDash: [2, 4],
 								},
 							},
@@ -61,14 +62,13 @@ export default function ApplicationBandwidthCard({ rows, totalBadge, axisMax = 8
 						tickCount: 5,
 					},
 					x: {
-						labelFill: 'rgba(255,255,255,0.78)',
-						lineStroke: 'transparent',
-						tickStroke: 'transparent',
+						labelFill: primitive.WhiteShadow80,
+						lineStroke: primitive.WhiteShadowTransparent,
+						tickStroke: primitive.WhiteShadowTransparent,
 						grid: null,
 						labelAutoHide: false,
 						labelAutoEllipsis: false,
 						labelFontSize: 12,
-						
 					},
 				},
 				style: {
@@ -87,7 +87,7 @@ export default function ApplicationBandwidthCard({ rows, totalBadge, axisMax = 8
 					position: 'right',
 					offset: 8,
 					style: {
-						fill: 'rgba(255,255,255,0.52)',
+						fill: primitive.WhiteShadow50,
 						fontSize: 10,
 					},
 				},
@@ -108,7 +108,7 @@ export default function ApplicationBandwidthCard({ rows, totalBadge, axisMax = 8
 		<div className="card flex min-h-0 flex-1 flex-col p-4">
 			<CardHeader
 				left={<h3 className="card-title !mb-0 text-[15px] font-semibold">Application Bandwidth</h3>}
-				right={<span className="rounded-[3px] bg-white/[0.08] px-2 py-1 text-[11px] font-medium text-white/55">{totalBadge}</span>}
+				right={<span className="rounded-[3px] bg-panel px-2 py-1 text-[11px] font-medium text-text-dim">{totalBadge}</span>}
 			/>
 			<CardBody className="overflow-visible pt-1">
 				<div className="w-full overflow-visible" style={{ height: chartHeight, minHeight: chartHeight }}>

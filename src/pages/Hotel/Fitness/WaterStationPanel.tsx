@@ -5,11 +5,11 @@ import { fitnessPageMock } from '../../../data/mock'
 export default function WaterStationPanel() {
 	const u = fitnessPageMock.waterStation
 	return (
-		<Card className="rounded-2xl border border-white/10 bg-[#FFFFFF08]">
+		<Card className="rounded-2xl border border-border bg-panel">
 			<CardHeader
 				left={(
-					<div className="flex items-center gap-2 text-[18px] font-medium text-white">
-						<GlassWater className="h-5 w-5 text-[#00d4c0]" strokeWidth={1.75} />
+					<div className="flex items-center gap-2 text-[18px] font-medium text-text">
+						<GlassWater className="h-5 w-5 text-brand" strokeWidth={1.75} />
 						<span>Water Station</span>
 					</div>
 				)}
@@ -19,22 +19,22 @@ export default function WaterStationPanel() {
 			<CardBody className="pt-0">
 				<div className="flex flex-row justify-between gap-6 pt-5 sm:grid-cols-3 sm:gap-8">
 					<div className="flex flex-col gap-2">
-						<div className="text-[18px] font-bold leading-tight text-white">
+						<div className="text-[18px] font-bold leading-tight text-text">
 							{u.bottleFillsToday}
 						</div>
-						<div className="text-[12px] text-white/50">Bottle Fills Today</div>
+						<div className="text-[12px] text-text-dim">Bottle Fills Today</div>
 					</div>
 					<div className="flex flex-col gap-2">
-						<div className="text-[18px] font-bold leading-tight text-white">
+						<div className="text-[18px] font-bold leading-tight text-text">
 							{u.lastFilterChange}
 						</div>
-						<div className="text-[12px] text-white/50">Last Filter Change</div>
+						<div className="text-[12px] text-text-dim">Last Filter Change</div>
 					</div>
 					<div className="flex flex-col gap-2">
-						<div className="text-[18px] font-bold leading-tight text-white">
+						<div className="text-[18px] font-bold leading-tight text-text">
 							{u.filterDaysLeft}
 						</div>
-						<div className="text-[12px] text-white/50">Filter Days Left</div>
+						<div className="text-[12px] text-text-dim">Filter Days Left</div>
 					</div>
 				</div>
 			</CardBody>

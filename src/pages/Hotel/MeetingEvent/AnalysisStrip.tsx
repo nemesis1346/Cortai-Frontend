@@ -11,27 +11,27 @@ export default function AnalysisStrip() {
 	}, [])
 	const updated = new Intl.DateTimeFormat(undefined, { hour: 'numeric', minute: '2-digit', second: '2-digit' }).format(now)
 	return (
-		<Card className="rounded-2xl border border-[#0f3c3a] bg-[#062325]">
+		<Card className="rounded-2xl border border-[color:var(--primitive-brand-800)] bg-[color:var(--primitive-brand-900)]">
 			<div className="mb-3 flex flex-col justify-between gap-3 sm:flex-row sm:items-center sm:gap-4">
-				<div className="inline-flex min-w-0 items-center gap-2 text-[17px] text-white sm:text-[18px]">
-					<Sparkles className="h-4 w-4 shrink-0 text-[#00D4C0]" />
+				<div className="inline-flex min-w-0 items-center gap-2 text-[17px] text-text sm:text-[18px]">
+					<Sparkles className="h-4 w-4 shrink-0 text-brand" />
 					<span className="truncate">CORTAI Analysis</span>
 				</div>
-				<div className="rounded-[3px] bg-white/10 px-2 py-1 text-[12px] text-white/70">Updated: {updated}</div>
+				<div className="rounded-[3px] bg-panel px-2 py-1 text-[12px] text-text-dim">Updated: {updated}</div>
 				<div className="flex flex-wrap items-center justify-between gap-2 sm:justify-end sm:gap-3">
-					<button type="button" className="inline-flex items-center text-white/70">
+					<button type="button" className="inline-flex items-center text-text-dim">
 						<MoreHorizontal className="h-4 w-4" />
 					</button>
 				</div>
 			</div>
-			<CardBody className="grid grid-cols-1 gap-px bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+			<CardBody className="grid grid-cols-1 gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
 				{meetingPageMock.analysisStrips.map((strip, i) => (
 					<div
 						key={i}
-						className={`bg-[#062325] px-2 py-3 sm:px-3 ${i === 0 ? 'lg:pr-2' : ''} ${i === 1 || i === 2 ? 'lg:px-3' : ''} ${i === 3 ? 'lg:pl-4' : ''}`}
+						className={`bg-[color:var(--primitive-brand-900)] px-2 py-3 sm:px-3 ${i === 0 ? 'lg:pr-2' : ''} ${i === 1 || i === 2 ? 'lg:px-3' : ''} ${i === 3 ? 'lg:pl-4' : ''}`}
 					>
 						{'plain' in strip ? (
-							<div className="text-[14px] leading-6 text-white/80">{strip.plain}</div>
+							<div className="text-[14px] leading-6 text-text">{strip.plain}</div>
 						) : (
 							<>
 								<div className={`text-[14px] ${strip.titleClass}`}>{strip.title}:</div>
@@ -39,7 +39,7 @@ export default function AnalysisStrip() {
 									{strip.segments.map((s, si) => (
 										<span
 											key={si}
-											className={s.bold ? 'font-semibold text-white/80' : 'text-white/45'}
+											className={s.bold ? 'font-semibold text-text' : 'text-text-dim'}
 										>
 											{s.text}
 										</span>

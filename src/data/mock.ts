@@ -1,3 +1,4 @@
+import { chartHex, primitive } from '../theme/tokens.generated'
 import type { KPI } from './types'
 
 export const kpis: KPI[] = [
@@ -85,28 +86,28 @@ export const fitnessPageMock = {
 		},
 		{
 			title: 'Peak pattern',
-			titleClass: 'text-white/80',
+			titleClass: 'text-text',
 			body: 'Two peak windows:5:30-7 am(business travellers) and 5-6 pm(leisure guests). Morning peak 18 guests is at 90% capacity.',
 		},
 		{
 			title: 'Equipment',
-			titleClass: 'text-[#C58B11]',
+			titleClass: 'text-warn',
 			body: 'Weight Machines flagged for maintenance attention. 114 total equipment uses today across 27 units.',
 		},
 		{
 			title: 'Air quality',
-			titleClass: 'text-[#00D4C0]',
+			titleClass: 'text-brand',
 			body: 'CO₂ at 620ppm (Good). 8 air changes/hr. Water filter replacement in 16 days.',
 		},
 	],
 	kpis: [
-		{ label: 'Guest Served', value: '43', valueClass: 'text-white', showLink: true },
-		{ label: 'Current / Capacity', value: '12 / 20', valueClass: 'text-white' },
-		{ label: 'Avg. Session', value: '38m', valueClass: 'text-white' },
-		{ label: 'Temperature / Humidity', value: '68°F / 45%', valueClass: 'text-white' },
-		{ label: 'Equipment in Use', value: '12 / 27', valueClass: 'text-white' },
-		{ label: 'Noise', value: '52 dB', valueClass: 'text-[#22c55e]' },
-		{ label: 'Air Quality', value: 'Good', valueClass: 'text-[#22c55e]' },
+		{ label: 'Guest Served', value: '43', valueClass: 'text-text', showLink: true },
+		{ label: 'Current / Capacity', value: '12 / 20', valueClass: 'text-text' },
+		{ label: 'Avg. Session', value: '38m', valueClass: 'text-text' },
+		{ label: 'Temperature / Humidity', value: '68°F / 45%', valueClass: 'text-text' },
+		{ label: 'Equipment in Use', value: '12 / 27', valueClass: 'text-text' },
+		{ label: 'Noise', value: '52 dB', valueClass: 'text-ok' },
+		{ label: 'Air Quality', value: 'Good', valueClass: 'text-ok' },
 	],
 	trafficSeries: [
 		{ time: '5:00am', guests: 3 },
@@ -253,7 +254,7 @@ export const meetingPageMock = {
 		},
 		{
 			title: 'Tonight',
-			titleClass: 'font-semibold text-white',
+			titleClass: 'font-semibold text-text',
 			segments: [
 				{ text: 'Wedding Reception (Patel/Shah) at ' },
 				{ text: '6 PM', bold: true },
@@ -270,7 +271,7 @@ export const meetingPageMock = {
 		},
 		{
 			title: 'Banquet prep',
-			titleClass: 'font-semibold text-[#00d4c0]',
+			titleClass: 'font-semibold text-brand',
 			segments: [
 				{ text: 'Banquet washrooms last cleaned at noon. Schedule deep clean by ' },
 				{ text: '5:30 pm', bold: true },
@@ -279,7 +280,7 @@ export const meetingPageMock = {
 		},
 		{
 			title: 'YTD utilization',
-			titleClass: 'font-semibold text-[#00d4c0]',
+			titleClass: 'font-semibold text-brand',
 			segments: [
 				{ text: 'Meeting rooms averaging ' },
 				{ text: '11 events/week', bold: true },
@@ -292,13 +293,13 @@ export const meetingPageMock = {
 		},
 	],
 	kpis: [
-		{ label: 'People Now', value: '15', valueClass: 'text-white' },
-		{ label: 'Spaces Active', value: '1 / 3', valueClass: 'text-white' },
-		{ label: 'Avg. Guests', value: '18', valueClass: 'text-white' },
-		{ label: 'Total Capacity', value: '182', valueClass: 'text-white' },
-		{ label: 'YTD Events', value: '78', valueClass: 'text-white' },
-		{ label: 'YTD Guests', value: '1,394', valueClass: 'text-[#00d4c0]' },
-		{ label: 'YTD Revenue', value: '$45K', valueClass: 'text-[#22c55e]' },
+		{ label: 'People Now', value: '15', valueClass: 'text-text' },
+		{ label: 'Spaces Active', value: '1 / 3', valueClass: 'text-text' },
+		{ label: 'Avg. Guests', value: '18', valueClass: 'text-text' },
+		{ label: 'Total Capacity', value: '182', valueClass: 'text-text' },
+		{ label: 'YTD Events', value: '78', valueClass: 'text-text' },
+		{ label: 'YTD Guests', value: '1,394', valueClass: 'text-brand' },
+		{ label: 'YTD Revenue', value: '$45K', valueClass: 'text-ok' },
 	],
 	meetingRooms: [
 		{
@@ -383,7 +384,7 @@ export const meetingPageMock = {
 			guestsYtd: 736,
 			status: 'setup' as const,
 			durationLabel: 'Avr. Duration',
-			chartColors: { events: '#D138FF', guests: '#00C2A0' },
+			chartColors: { events: primitive.AccentPurple, guests: chartHex.brand },
 			currentEvent: {
 				name: 'Wedding Reception - Patel/Shah',
 				time: 'Today, 6:00 pm',
@@ -453,27 +454,27 @@ export const poolPageMock = {
 		},
 		{
 			title: 'Safety',
-			titleClass: 'text-[#C58B11]',
+			titleClass: 'text-warn',
 			body: '1 unresolved safety event. Running detected at 2:18 PM in Spa Area. Staff notified.',
 		},
 		{
 			title: 'Dirty towels',
-			titleClass: 'text-[#C58B11]',
+			titleClass: 'text-warn',
 			body: '9 dirty towels detected (6 on chairs, 3 on deck). Housekeeping pickup needed.',
 		},
 		{
 			title: 'Towel supply',
-			titleClass: 'text-[#00D4C0]',
+			titleClass: 'text-brand',
 			body: '14 clean towels remaining of 40. At current pace, restock needed by 4 pm',
 		},
 	],
 	kpis: [
-		{ label: 'Visitors Today', value: '34', valueClass: 'text-white', showLink: true },
-		{ label: 'Adults / Kids', value: '6 / 4', valueClass: 'text-white' },
-		{ label: 'Pool / Spa Temp', value: '82°F / 102°F', valueClass: 'text-white' },
-		{ label: 'Room', value: '78°F / 62%', valueClass: 'text-white' },
-		{ label: 'Safety Events', value: '5', valueClass: 'text-[#f87171]' },
-		{ label: 'Noise Level', value: '68 dB', valueClass: 'text-[#22c55e]' },
+		{ label: 'Visitors Today', value: '34', valueClass: 'text-text', showLink: true },
+		{ label: 'Adults / Kids', value: '6 / 4', valueClass: 'text-text' },
+		{ label: 'Pool / Spa Temp', value: '82°F / 102°F', valueClass: 'text-text' },
+		{ label: 'Room', value: '78°F / 62%', valueClass: 'text-text' },
+		{ label: 'Safety Events', value: '5', valueClass: 'text-danger' },
+		{ label: 'Noise Level', value: '68 dB', valueClass: 'text-ok' },
 	],
 	trafficSeries: [
 		{ time: '6:00 am', zone: 'Pool' as const, count: 2 },

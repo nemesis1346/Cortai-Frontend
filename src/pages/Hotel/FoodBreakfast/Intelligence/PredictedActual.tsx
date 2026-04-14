@@ -1,6 +1,7 @@
 import Card, { CardBody, CardHeader } from '../../../../components/Card'
 import { LineChart } from 'lucide-react'
 import { Column } from '@ant-design/plots'
+import { chartHex, primitive } from '../../../../theme/tokens.generated'
 
 type DayPoint = {
 	day: number
@@ -46,25 +47,25 @@ export default function PredictedActual({ points }: Props) {
 		group: true,
 		legend: false,
 		axis: {
-			x: { labelAutoHide: true, labelSpacing: 9, labelFill: 'rgba(255, 255, 255, 0.96)' },
+			x: { labelAutoHide: true, labelSpacing: 9, labelFill: primitive.WhiteShadow90 },
 			y: false,
 		},
 		style: { inset: 0 },
 		height: 150,
-		color: ({ series }: { series: string }) => (series === 'Predicted' ? '#B758F112' : '#00D4C0'),
+		color: ({ series }: { series: string }) => (series === 'Predicted' ? primitive.AccentPurple10 : chartHex.brand),
 		tooltip: { items: [{ channel: 'y', valueFormatter: (v: number) => `${v} guests` }] },
 		theme: { type: 'classicDark' },
 	} as unknown) as any
 	return (
-		<Card className="bg-white/5">
+		<Card className="bg-panel">
 			<CardHeader
 				left={
-					<div className="text-white inline-flex items-center gap-2">
-						<LineChart className="w-5 h-5 text-[#00d4c0]" />
-						<span className="text-[14px] text-white/80">Predicted vs Actual — Last 14 Days</span>
+					<div className="text-text inline-flex items-center gap-2">
+						<LineChart className="w-5 h-5 text-brand" />
+						<span className="text-[14px] text-text">Predicted vs Actual — Last 14 Days</span>
 					</div>
 				}
-				right={<span className="rounded-md  px-2 py-1 text-[12px] text-[#00d4c0]">Avg error: ±3.4 guests</span>}
+				right={<span className="rounded-md px-2 py-1 text-[12px] text-brand">Avg error: ±3.4 guests</span>}
 			/>
 			<CardBody>
 				<div className="flex flex-row items-center justify-between px-6">
@@ -72,11 +73,11 @@ export default function PredictedActual({ points }: Props) {
 						<>
 							{dataset.map((p) => (
 								<div key={p.day} className="flex flex-col items-center gap-3">
-									<div className="text-[10px] text-white/60 border-b border-white/10">{p.occupancyPct != null ? `Occ: ${p.occupancyPct}%` : ''}</div>
-									<div className="text-[10px] text-white/60">{p.deltaGuests != null ? `Δ ${(p.deltaGuests > 0 ? '+' : '')}${p.deltaGuests}` : ''}</div>
+									<div className="text-[10px] text-text-dim border-b border-border">{p.occupancyPct != null ? `Occ: ${p.occupancyPct}%` : ''}</div>
+									<div className="text-[10px] text-text-dim">{p.deltaGuests != null ? `Δ ${(p.deltaGuests > 0 ? '+' : '')}${p.deltaGuests}` : ''}</div>
 									<div className="text-[10px] inline-flex items-center gap-2">
-										<span className="text-[#00D4C0]">{p.actual}</span>
-										<span className="text-[#B758F1]">{p.predicted}</span>
+										<span className="text-brand">{p.actual}</span>
+										<span style={{ color: primitive.AccentPurple }}>{p.predicted}</span>
 									</div>
 								</div>
 							))}

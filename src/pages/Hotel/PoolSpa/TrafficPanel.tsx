@@ -2,6 +2,8 @@ import { Clock } from 'lucide-react'
 import { Line } from '@ant-design/plots'
 import { useMemo } from 'react'
 import { poolPageMock } from '../../../data/mock'
+import { chart } from '../../../theme/fromExport'
+import { chartHex, primitive } from '../../../theme/tokens.generated'
 
 const peakPoolSet = new Set(poolPageMock.peakPoolTimes)
 const peakSpaSet = new Set(poolPageMock.peakSpaTimes)
@@ -17,7 +19,7 @@ export default function TrafficPanel() {
 			xField: 'time',
 			yField: 'count',
 			seriesField: 'zone',
-			color: ['#00D4C0', '#f59e0b'],
+			color: [chartHex.brand, chartHex.warn],
 			smooth: true,
 			tooltip: {
 				items: [{ channel: 'y', name: 'Visitors' }],
@@ -35,19 +37,19 @@ export default function TrafficPanel() {
 			},
 			axis: {
 				x: {
-					labelFill: 'rgba(255,255,255,0.55)',
-					lineStroke: 'rgba(255,255,255,0.12)',
-					tickStroke: 'rgba(255,255,255,0.15)',
+					labelFill: primitive.WhiteShadow50,
+					lineStroke: primitive.WhiteShadow10,
+					tickStroke: primitive.WhiteShadow20,
 					grid: null,
 				},
 				y: {
-					labelFill: 'rgba(255,255,255,0.55)',
-					lineStroke: 'rgba(255,255,255,0.12)',
-					tickStroke: 'rgba(255,255,255,0.15)',
+					labelFill: primitive.WhiteShadow50,
+					lineStroke: primitive.WhiteShadow10,
+					tickStroke: primitive.WhiteShadow20,
 					grid: {
 						line: {
 							style: {
-								stroke: 'rgba(255,255,255,0.12)',
+								stroke: chart.gridStroke,
 								lineDash: [4, 4],
 							},
 						},
@@ -73,14 +75,14 @@ export default function TrafficPanel() {
 				style: (d: { time: string; zone: string }) => ({
 					stroke:
 						(d.zone === 'Pool' && peakPoolSet.has(d.time)) || (d.zone === 'Spa' && peakSpaSet.has(d.time))
-							? '#F84247'
+							? chartHex.danger
 							: d.zone === 'Pool'
-								? '#00D4C0'
-								: '#f59e0b',
+								? chartHex.brand
+								: chartHex.warn,
 					fill:
 						(d.zone === 'Pool' && peakPoolSet.has(d.time)) || (d.zone === 'Spa' && peakSpaSet.has(d.time))
-							? '#F84247'
-							: '#0b0f13',
+							? chartHex.danger
+							: chartHex.bg,
 					lineWidth: 1,
 				}),
 			},
@@ -88,27 +90,27 @@ export default function TrafficPanel() {
 		[maxCount],
 	)
 	return (
-		<div className="rounded-2xl border border-white/10 bg-[#FFFFFF08] p-4">
+		<div className="rounded-2xl border border-border bg-panel p-4">
 			<div className="grid grid-cols-[1fr_auto_1fr] items-center gap-2">
-				<div className="text-[18px] text-white inline-flex items-center gap-2 min-w-0">
-					<Clock className="w-4 h-4 text-[#00d4c0] shrink-0" />
+				<div className="text-[18px] text-text inline-flex items-center gap-2 min-w-0">
+					<Clock className="w-4 h-4 text-brand shrink-0" />
 					<span className="truncate">Traffic Throughout the Day</span>
 				</div>
 				<div className="justify-self-center inline-flex flex-wrap items-center justify-center gap-4 text-[12px]">
-					<span className="inline-flex items-center gap-1 text-white/60">
-						<span className="w-2.5 h-2.5 rounded-sm rotate-45 bg-[#F84247] inline-block" />
+					<span className="inline-flex items-center gap-1 text-text-dim">
+						<span className="w-2.5 h-2.5 rounded-sm rotate-45 bg-danger inline-block" />
 						Peak
 					</span>
-					<span className="inline-flex items-center gap-1 text-white/60">
-						<span className="w-2.5 h-2.5 rounded-full bg-[#00D4C0] inline-block" />
+					<span className="inline-flex items-center gap-1 text-text-dim">
+						<span className="w-2.5 h-2.5 rounded-full bg-brand inline-block" />
 						Pool
 					</span>
-					<span className="inline-flex items-center gap-1 text-white/60">
-						<span className="w-2.5 h-2.5 rounded-full bg-[#f59e0b] inline-block" />
+					<span className="inline-flex items-center gap-1 text-text-dim">
+						<span className="w-2.5 h-2.5 rounded-full bg-warn inline-block" />
 						Spa
 					</span>
 				</div>
-				<span className="justify-self-end rounded-[3px] bg-white/10 px-2 py-1 text-[12px] text-white/50 whitespace-nowrap">
+				<span className="justify-self-end rounded-[3px] bg-panel px-2 py-1 text-[12px] text-text-dim whitespace-nowrap">
 					6:00 am – 8:00 pm
 				</span>
 			</div>

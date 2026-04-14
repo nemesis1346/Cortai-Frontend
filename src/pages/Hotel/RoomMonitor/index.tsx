@@ -6,12 +6,12 @@ import { useMemo, useState } from 'react'
 import RoomDetailAside from './RoomDetailAside'
 
 const summary: SummaryItem[] = [
-	{ label: 'Total rooms', value: 120, color: 'text-white' },
-	{ label: 'Cleaned', value: 22, color: 'text-green-500' },
-	{ label: 'Cleaning required', value: 14, color: 'text-amber-400' },
-	{ label: 'Occupied', value: 68, color: 'text-white' },
-	{ label: 'Inspected', value: 6, color: 'text-white' },
-	{ label: 'Maintenance', value: 10, color: 'text-red-400' },
+	{ label: 'Total rooms', value: 120, color: 'text-text' },
+	{ label: 'Cleaned', value: 22, color: 'text-ok' },
+	{ label: 'Cleaning required', value: 14, color: 'text-warn' },
+	{ label: 'Occupied', value: 68, color: 'text-text' },
+	{ label: 'Inspected', value: 6, color: 'text-text' },
+	{ label: 'Maintenance', value: 10, color: 'text-danger' },
 ]
 
 const floors: Floor[] = [

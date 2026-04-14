@@ -1,22 +1,8 @@
+@import "./theme/tokens.generated.css";
 @import "tailwindcss";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@theme {
-	--color-bg: #0f1518;
-	--color-card: #141c20;
-	--color-border: #1f2a30;
-	--color-text: #d5e4ea;
-	--color-text-dim: #9fb3bd;
-	--color-text-mute: #6e838d;
-	--color-brand: #22d3ee;
-	--color-ok: #22c55e;
-	--color-warn: #f59e0b;
-	--color-danger: #ef4444;
-	--color-info: #38bdf8;
-	--shadow-inner-card: inset 0 1px 0 rgba(255,255,255,0.03);
-}
 
 @layer base {
 	html, body, #root { height: 100%; }
@@ -41,12 +27,12 @@
 
 @layer utilities {
 	.scrollbar-none {
-	  -ms-overflow-style: none; /* IE/Edge legacy */
-	  scrollbar-width: none;    /* Firefox */
+	  -ms-overflow-style: none;
+	  scrollbar-width: none;
 	}
   
 	.scrollbar-none::-webkit-scrollbar {
-	  display: none;            /* Chrome, Safari, Opera */
+	  display: none;
 	}
 
 	.meeting-tab-panel {

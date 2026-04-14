@@ -1,6 +1,7 @@
 import Card, { CardBody, CardHeader } from '../../../components/Card'
 import { Building2, Users, MoreHorizontal } from 'lucide-react'
 import { elevatorsMock } from '../../../data/mock'
+import { themeDark } from '../../../theme/tokens.generated'
 import { useEffect, useState } from 'react'
 
 export default function Elevators() {
@@ -52,17 +53,17 @@ export default function Elevators() {
 			<CardHeader
 				left={
 					<div className="flex gap-2">
-						<Building2 size={20} className="text-teal-400" />
+						<Building2 size={20} className="text-brand" />
 						<h3 className="card-title">Elevators</h3>
 					</div>
 				}
 				middle={
-					<span className="rounded-[6px] bg-[#A9AEB51A]/80 px-3 py-1 !text-[12px] text-white/70">
+					<span className="rounded-[6px] bg-[color:var(--primitive-semantic-normal-10)] px-3 py-1 !text-[12px] text-text-dim">
 						{elevatorsMock.ridesToday} rides today
 					</span>
 				}
 				right={
-					<div className="text-white/80">
+					<div className="text-text">
 						<MoreHorizontal className="w-5 h-5" />
 					</div>
 				}
@@ -73,25 +74,31 @@ export default function Elevators() {
 						const bottomPct = ((e.floor - 1) / (TOTAL_FLOORS - 1)) * 100
 						return (
 						<div key={e.id} className="flex flex-col items-center gap-3">
-							<div className="text-white/70 !text-[14px] font-semibold">{e.id.replace('E', 'ELV-')}</div>
-							<div className={`px-2 py-1 rounded-[3px] !text-[12px] ${e.status === 'Running' ? 'bg-[#04D4001A]/90 text-green-500' : 'bg-[#F842471A]/80 text-red-500'}`}>
+							<div className="text-text-dim !text-[14px] font-semibold">{e.id.replace('E', 'ELV-')}</div>
+							<div className={`px-2 py-1 rounded-[3px] !text-[12px] ${e.status === 'Running' ? 'bg-[color:var(--primitive-semantic-success-10)] text-ok' : 'bg-[color:var(--primitive-semantic-danger-10)] text-danger'}`}>
 								{e.status}
 							</div>
-							<div className="relative h-35 w-[16px] rounded bg-[#121517]/80">
+							<div className="relative h-35 w-[16px] rounded bg-bg">
 								<div className="absolute left-1/2 -translate-x-1/2 transition-all duration-300 ease-out" style={{ bottom: `calc(${bottomPct}% - 8px)` }}>
-									<div className={`px-2 py-1 rounded-[4px] min-w-[40px] text-white ${e.status === 'Running' ? 'bg-emerald-900' : 'bg-red-900'}`}>
+									<div
+										className="px-2 py-1 rounded-[4px] min-w-[40px]"
+										style={{
+											background: e.status === 'Running' ? themeDark['WidgetDefaultElevator-success'] : themeDark['WidgetDefaultElevator-danger'],
+											color: e.status === 'Running' ? themeDark['WidgetDefaultElevator-txt-success'] : themeDark['WidgetDefaultElevator-txt-danger'],
+										}}
+									>
 										<div className="flex items-center gap-1 justify-center">
 											<span className="!text-[12px]">{e.floor}</span>
 											<div className="flex flex-col leading-none">
 												<svg
-													className={`w-3 h-3 fill-current cursor-not-allowed ${e.Direction === 'Up' ? 'text-white opacity-100' : 'text-white/50 opacity-60'}`}
+													className={`w-3 h-3 fill-current cursor-not-allowed ${e.Direction === 'Up' ? 'opacity-100' : 'opacity-50'}`}
 													viewBox="0 0 24 24"
 													aria-hidden="true"
 												>
 													<polygon points="12,5 19,19 5,19" />
 												</svg>
 												<svg
-													className={`w-3 h-3 -mt-0.5 rotate-180 fill-current cursor-not-allowed ${e.Direction === 'Down' ? 'text-white opacity-100' : 'text-white/50 opacity-60'}`}
+													className={`w-3 h-3 -mt-0.5 rotate-180 fill-current cursor-not-allowed ${e.Direction === 'Down' ? 'opacity-100' : 'opacity-50'}`}
 													viewBox="0 0 24 24"
 													aria-hidden="true"
 												>
@@ -102,7 +109,7 @@ export default function Elevators() {
 									</div>
 								</div>
 							</div>
-							<div className="text-white/50 !text-[11px]">{`Riders: ${e.ridersPercent}%`}</div>
+							<div className="text-text-dim !text-[11px]">{`Riders: ${e.ridersPercent}%`}</div>
 						</div>
 						)
 					})}
@@ -110,30 +117,30 @@ export default function Elevators() {
                 <div className="flex flex-col w-full">
 					<div className="flex flex-col gap-2">
 						<div className="flex flex-col items-baseline gap-2">
-							<div className="!text-[18px] font-semibold text-white">{elevatorsMock.waitingNow}</div>
-							<div className="!text-[14px] text-white/40">Waiting now / {elevatorsMock.waitingAvg} avg</div>
+							<div className="!text-[18px] font-semibold text-text">{elevatorsMock.waitingNow}</div>
+							<div className="!text-[14px] text-text-dim">Waiting now / {elevatorsMock.waitingAvg} avg</div>
 						</div>
 						<div className="flex flex-wrap items-center gap-2">
 							{elevatorsMock.alerts.map((a) => (
 								<span
 									key={a.id}
 									className={`inline-flex items-center gap-2 rounded-md px-2 py-1 !text-[11px] ${
-										a.color === 'red' ? 'bg-[#F842471A]/80 text-red-500' : 'bg-[#EDB13226]/80 text-yellow-500'
+										a.color === 'red' ? 'bg-[color:var(--primitive-semantic-danger-10)] text-danger' : 'bg-[color:var(--primitive-accent-yellow-10)] text-warn'
 									}`}
 								>
-									{a.text} <Users className="w-4 h-4 text-white/40" />
+									{a.text} <Users className="w-4 h-4 text-text-dim" />
 								</span>
 							))}
 						</div>
 					</div>
-					<div className="my-3 h-px bg-white/10" />
+					<div className="my-3 h-px bg-border" />
 					<div>
-						<div className="!text-[18px] font-semibold text-white">{elevatorsMock.longestWait}</div>
-						<div className="!text-[14px] text-white/40 mt-1">Longest waits today / {elevatorsMock.longestAvg} avg</div>
+						<div className="!text-[18px] font-semibold text-text">{elevatorsMock.longestWait}</div>
+						<div className="!text-[14px] text-text-mute mt-1">Longest waits today / {elevatorsMock.longestAvg} avg</div>
 						<div className="mt-3 flex flex-wrap items-center gap-3">
 							{elevatorsMock.timeline.map(t => (
-								<span key={t.id} className="rounded-md bg-white/20 px-2 py-1 !text-[12px] text-black/70">
-									<span className="text-red-500 font-medium">{t.left}</span>
+								<span key={t.id} className="rounded-md bg-[color:var(--primitive-white-shadow-20)] px-2 py-1 !text-[12px] text-text">
+									<span className="text-danger font-medium">{t.left}</span>
 									{' · '}{t.mid}{' · '}{t.right}
 								</span>
 							))}

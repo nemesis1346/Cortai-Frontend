@@ -1,6 +1,7 @@
 import { Pie } from '@ant-design/plots'
 import { useMemo } from 'react'
 import { CardBody, CardHeader } from '../../../components/Card'
+import { chartHex, primitive } from '../../../theme/tokens.generated'
 import type { CategorySlice } from './types'
 
 type CategoryDistributionCardProps = {
@@ -8,7 +9,7 @@ type CategoryDistributionCardProps = {
 }
 
 const CHART_MIN_HEIGHT = 280
-const SLICE_GAP_STROKE = '#141c20'
+const SLICE_GAP_STROKE = chartHex.card
 
 export default function CategoryDistributionCard({ slices }: CategoryDistributionCardProps) {
 	const chartData = useMemo(
@@ -45,7 +46,7 @@ export default function CategoryDistributionCard({ slices }: CategoryDistributio
 					text: 'labelText',
 					position: 'outside',
 					style: {
-						fill: (d: { labelColor?: string; color?: string }) => d.labelColor ?? d.color ?? '#ffffff',
+						fill: (d: { labelColor?: string; color?: string }) => d.labelColor ?? d.color ?? primitive.WhiteShadow100,
 						fontSize: 12,
 					},
 				},
@@ -54,7 +55,7 @@ export default function CategoryDistributionCard({ slices }: CategoryDistributio
 						title: false,
 						position: 'right',
 						rowPadding: 10,
-						itemLabelFill: 'rgba(255,255,255,0.78)',
+						itemLabelFill: primitive.WhiteShadow80,
 						itemLabelFontSize: 12,
 					},
 				},

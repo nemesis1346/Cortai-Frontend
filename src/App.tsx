@@ -1,3 +1,4 @@
+import { chartHex } from './theme/tokens.generated'
 import Sidebar from './components/Sidebar'
 import { useState } from 'react'
 import Topbar from './components/Topbar'
@@ -14,9 +15,11 @@ export default function App() {
 			theme={{
 				algorithm: theme.darkAlgorithm,
 				token: {
-					colorPrimary: '#00D4C0',
-					colorSuccess: '#22c55e',
-					colorWarning: '#d97706',
+					colorPrimary: chartHex.brand,
+					colorSuccess: chartHex.ok,
+					colorWarning: chartHex.warn,
+					colorError: chartHex.danger,
+					colorInfo: chartHex.info,
 				},
 			}}
 		>

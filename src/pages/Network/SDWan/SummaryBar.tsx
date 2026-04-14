@@ -1,5 +1,5 @@
 import { ExternalLink } from 'lucide-react'
-import { SD_WAN_NEON } from './constants'
+import { primitive } from '../../../theme/tokens.generated'
 import type { SdWanSummaryMetric } from './types'
 
 type SummaryBarProps = {
@@ -12,14 +12,14 @@ export default function SummaryBar({ items }: SummaryBarProps) {
 			{items.map((s) => (
 				<div key={s.id} className="card relative p-3">
 					{s.link && (
-						<ExternalLink className="absolute right-2 top-2 h-3.5 w-3.5 text-white/35" strokeWidth={1.75} aria-hidden />
+						<ExternalLink className="absolute right-2 top-2 h-3.5 w-3.5 text-text-dim" strokeWidth={1.75} aria-hidden />
 					)}
-					<div className="text-[14px] text-white/45">{s.label}</div>
+					<div className="text-[14px] text-text-dim">{s.label}</div>
 					<div
 						className="mt-1 text-[24px]"
-						style={s.valueTone === 'neon' ? { color: SD_WAN_NEON } : undefined}
+						style={s.valueTone === 'neon' ? { color: primitive.AccentGreen } : undefined}
 					>
-						{s.valueTone === 'white' ? <span className="text-white">{s.value}</span> : s.value}
+						{s.valueTone === 'white' ? <span className="text-text">{s.value}</span> : s.value}
 					</div>
 				</div>
 			))}

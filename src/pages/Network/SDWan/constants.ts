@@ -1,2 +1,5 @@
-export const SD_WAN_NEON = '#39ff14'
-export const SD_WAN_CYAN = '#00D4C0'
+import { chartHex, primitive } from '../../../theme/tokens.generated'
+
+export const SD_WAN_NEON = primitive.AccentGreen
+
+export const SD_WAN_CYAN = chartHex.brand

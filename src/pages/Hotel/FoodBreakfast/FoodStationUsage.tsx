@@ -1,5 +1,6 @@
 import { UtensilsCrossed } from 'lucide-react'
 import { Progress } from 'antd'
+import { chartHex, primitive } from '../../../theme/tokens.generated'
 
 type Row = {
 	name: string
@@ -22,23 +23,23 @@ const rows: Row[] = [
 
 export default function FoodStationUsage() {
 	return (
-		<section className="rounded-2xl border border-white/10 bg-[#FFFFFF08] p-4">
+		<section className="rounded-2xl border border-border bg-panel p-4">
 			<div className="flex flex-row justify-between items-center gap-2">
-				<div className="text-[18px] text-white inline-flex items-center gap-2">
-					<UtensilsCrossed className="w-4 h-4 text-[#00d4c0]" />
+				<div className="text-[18px] text-text inline-flex items-center gap-2">
+					<UtensilsCrossed className="w-4 h-4 text-brand" />
 					<span>Food Station Usage</span>
 				</div>
-				<span className="rounded-[3px] px-2 py-1 text-[12px] text-white/50">Guests who visited</span>
+				<span className="rounded-[3px] px-2 py-1 text-[12px] text-text-dim">Guests who visited</span>
 			</div>
 			<div className="mt-4 rounded-xl overflow-hidden grid grid-cols-1">
 				{rows.map((r) => (
 					<div
 						key={r.name}
-						className="grid grid-cols-[0.8fr_2fr_0.2fr_0.2fr_0.4fr] items-center gap-3 py-2 border-b border-white/10 last:border-b-0"
+						className="grid grid-cols-[0.8fr_2fr_0.2fr_0.2fr_0.4fr] items-center gap-3 py-2 border-b border-border last:border-b-0"
 					>
-						<div className="text-[14px] text-white/90">{r.name}</div>
-						<div className="flex flex-row gap-x-4 text-[14px] text-white/40">{r.items.map((x) => <span key={x}>{x}</span>)}</div>
-						<div className="text-[14px] text-white">{r.count}</div>
+						<div className="text-[14px] text-text">{r.name}</div>
+						<div className="flex flex-row gap-x-4 text-[14px] text-text-dim">{r.items.map((x) => <span key={x}>{x}</span>)}</div>
+						<div className="text-[14px] text-text">{r.count}</div>
 						<div className="flex flex-row gap-2 items-center">
 							<Progress
 								type="circle"
@@ -46,15 +47,20 @@ export default function FoodStationUsage() {
 								size={24}
 								strokeWidth={12}
 								strokeLinecap="round"
-								strokeColor={r.color === 'teal' ? '#00d4c0' : '#f59e0b'}
-								railColor={r.color === 'teal' ? '#00d4c033' : '#f59e0b33'}
+								strokeColor={r.color === 'teal' ? chartHex.brand : chartHex.warn}
+								railColor={r.color === 'teal' ? chartHex.brandRail : primitive.SemanticWarning10}
 								format={() => null}
 							/>
-							<div className="text-[14px] text-white/70 w-10 text-right">{r.percent}%</div>
+							<div className="text-[14px] text-text-dim w-10 text-right">{r.percent}%</div>
 						</div>
 						{r.wait ? (
 							<div className="justify-self-end">
-								<span className="rounded-[3px] bg-[#f59e0b33] text-[#f59e0b] text-[12px] px-3 py-1">{r.wait}</span>
+								<span
+									className="rounded-[3px] text-[12px] px-3 py-1"
+									style={{ background: primitive.AccentOrange20, color: primitive.AccentOrange }}
+								>
+									{r.wait}
+								</span>
 							</div>
 						) : <span />}
 					</div>

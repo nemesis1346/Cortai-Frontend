@@ -1,8 +1,9 @@
 import { Area } from '@ant-design/plots'
 import { useMemo } from 'react'
+import { chartHex, primitive } from '../../../theme/tokens.generated'
 
-const TREND_LINE = '#00D4C0'
-const TREND_FILL = 'linear-gradient(180deg, rgba(0, 212, 192, 0.28) 0%, rgba(0, 0, 0, 0) 88%)'
+const TREND_LINE = chartHex.brand
+const TREND_FILL = `linear-gradient(180deg, ${primitive.BrandShadow30} 0%, transparent 88%)`
 
 type TrendSparklineProps = {
 	points: number[]
@@ -37,12 +38,12 @@ export default function TrendSparkline({ points }: TrendSparklineProps) {
 				},
 				scale: {
 					x: { type: 'point' as const, padding: 0.005 },
-					y: { domain: [0, maxY * 0.4], nice: false },
+					y: { domain: [0, maxY * 0.5], nice: false },
 				},
 				axis: {
 					x: false,
 					y: {
-						labelFill: 'rgba(255,255,255,0.38)',
+						labelFill: primitive.WhiteShadow40,
 						labelFontSize: 10,
 						tickCount: 1,
 						lineStroke: 'transparent',
@@ -50,7 +51,7 @@ export default function TrendSparkline({ points }: TrendSparklineProps) {
 						grid: {
 							line: {
 								style: {
-									stroke: 'rgba(255,255,255,0.12)',
+									stroke: primitive.WhiteShadow10,
 									lineDash: [4, 4],
 								},
 							},

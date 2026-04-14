@@ -1,25 +1,26 @@
+import { chartHex, primitive } from '../../../theme/tokens.generated'
 import type { BandwidthRow, CategorySlice, DetectedAppRow } from './types'
 
 export const bandwidthTotalLabel = 'Total: 14.2Gb'
 
 export const bandwidthRows: BandwidthRow[] = [
-	{ id: 'm365', name: 'Microsoft 365', gb: 4.2, color: '#3b82f6' },
-	{ id: 'meet', name: 'Google Meet', gb: 2.8, color: '#00D4C0' },
-	{ id: 'yt', name: 'YouTube', gb: 2.1, color: '#ef4444' },
-	{ id: 'slack', name: 'Slack', gb: 1.5, color: '#3b82f6' },
-	{ id: 's3', name: 'AWS S3', gb: 1.2, color: '#f97316' },
-	{ id: 'zoom', name: 'Zoom', gb: 0.9, color: '#00D4C0' },
-	{ id: 'dbx', name: 'Dropbox', gb: 0.7, color: '#f97316' },
-	{ id: 'nf', name: 'Netflix', gb: 0.5, color: '#ef4444' },
-	{ id: 'other', name: 'Others', gb: 0.3, color: '#6b7280' },
+	{ id: 'm365', name: 'Microsoft 365', gb: 4.2, color: primitive.AccentBlue },
+	{ id: 'meet', name: 'Google Meet', gb: 2.8, color: chartHex.brand },
+	{ id: 'yt', name: 'YouTube', gb: 2.1, color: primitive.SemanticDanger },
+	{ id: 'slack', name: 'Slack', gb: 1.5, color: primitive.AccentBlue },
+	{ id: 's3', name: 'AWS S3', gb: 1.2, color: primitive.AccentOrange },
+	{ id: 'zoom', name: 'Zoom', gb: 0.9, color: chartHex.brand },
+	{ id: 'dbx', name: 'Dropbox', gb: 0.7, color: primitive.AccentOrange },
+	{ id: 'nf', name: 'Netflix', gb: 0.5, color: primitive.SemanticDanger },
+	{ id: 'other', name: 'Others', gb: 0.3, color: primitive.Neutral500 },
 ]
 
 export const categorySlices: CategorySlice[] = [
-	{ id: 'vc', label: 'Video Conf', pct: 24, color: '#00D4C0' },
-	{ id: 'cloud', label: 'Cloud Storage', pct: 12, color: '#f97316' },
-	{ id: 'str', label: 'Streaming', pct: 16, color: '#ef4444' },
-	{ id: 'oth', label: 'Other', pct: 6, color: '#6b7280' },
-	{ id: 'bus', label: 'Business', pct: 42, color: '#3b82f6' },
+	{ id: 'vc', label: 'Video Conf', pct: 24, color: chartHex.brand },
+	{ id: 'cloud', label: 'Cloud Storage', pct: 12, color: primitive.AccentOrange },
+	{ id: 'str', label: 'Streaming', pct: 16, color: primitive.SemanticDanger },
+	{ id: 'oth', label: 'Other', pct: 6, color: primitive.Neutral500 },
+	{ id: 'bus', label: 'Business', pct: 42, color: primitive.AccentBlue },
 ]
 
 export const detectedAppsTotalLabel = 'Total: 54 apps'

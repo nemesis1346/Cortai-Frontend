@@ -14,23 +14,23 @@ export default function FloorSection({
 }) {
 
 	return (
-		<Card className="bg-[#0f1518] p-2 md:p-4">
+		<Card className="bg-card p-2 md:p-4">
 			<CardHeader
 				left={
-					<div className="inline-flex items-center gap-2 text-white !text-[18px]">
-					<DoorOpen className="w-5 h-5 text-[#00d4c0]" />
+					<div className="inline-flex items-center gap-2 text-text !text-[18px]">
+					<DoorOpen className="w-5 h-5 text-brand" />
 					<span>Floor {floor.level}</span>
 					</div>
 				}
 				middle={
-					<span className="rounded-[3px] bg-white/10 px-2 py-1 text-[12px] text-white/70">20 rooms / {floor.occupied} occupied</span>
+					<span className="rounded-[3px] bg-[color:var(--primitive-white-shadow-10)] px-2 py-1 text-[12px] text-text-dim">20 rooms / {floor.occupied} occupied</span>
 				}
 				right={
 					<div className="flex gap-2">
-						<span className="rounded-[3px] bg-white/10 px-2 py-1 text-[12px]">
-							<span className="text-green-500">{floor.clean} clean</span>
-							<span className="text-white/50"> / </span>
-							<span className="text-amber-400">{floor.dirty} dirty</span>
+						<span className="rounded-[3px] bg-[color:var(--primitive-white-shadow-10)] px-2 py-1 text-[12px]">
+							<span className="text-ok">{floor.clean} clean</span>
+							<span className="text-text-mute"> / </span>
+							<span className="text-warn">{floor.dirty} dirty</span>
 						</span>
 					</div>
 				}

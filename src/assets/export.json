@@ -1,0 +1,4146 @@
+[
+  {
+    "Primitive": {
+      "modes": {
+        "Mode 1": {
+          "Brand": {
+            "25": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#fdffff"
+            },
+            "50": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#e4fbf9"
+            },
+            "100": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#caf6f2"
+            },
+            "150": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#b1f2ec"
+            },
+            "200": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#98eee6"
+            },
+            "300": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#65e5d9"
+            },
+            "400": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#33ddcd"
+            },
+            "500": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#00d4c0"
+            },
+            "600": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#00aa9a"
+            },
+            "700": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#007f73"
+            },
+            "800": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#00554d"
+            },
+            "850": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#00403a"
+            },
+            "900": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#002a26"
+            },
+            "950": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#001513"
+            }
+          },
+          "Brand Shadow": {
+            "5": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(0, 212, 192, 0.05)"
+            },
+            "10": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(0, 212, 192, 0.1)"
+            },
+            "20": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(0, 212, 192, 0.2)"
+            },
+            "30": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(0, 212, 192, 0.3)"
+            },
+            "40": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(0, 212, 192, 0.4)"
+            },
+            "50": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(0, 212, 192, 0.5)"
+            },
+            "60": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(0, 212, 192, 0.6)"
+            },
+            "70": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(0, 212, 192, 0.7)"
+            },
+            "80": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(0, 212, 192, 0.8)"
+            },
+            "90": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(0, 212, 192, 0.9)"
+            }
+          },
+          "Neutral": {
+            "25": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#fbfcfc"
+            },
+            "50": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#ebedee"
+            },
+            "100": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#dbdfe1"
+            },
+            "150": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#cbd0d3"
+            },
+            "200": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#bbc2c5"
+            },
+            "300": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#9ca5aa"
+            },
+            "400": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#7c888e"
+            },
+            "500": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#5c6b73"
+            },
+            "600": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#4a565c"
+            },
+            "700": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#374045"
+            },
+            "800": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#252b2e"
+            },
+            "850": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#1c2023"
+            },
+            "900": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#121517"
+            },
+            "950": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#090b0c"
+            },
+            "Body Background Old": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#0c1117"
+            },
+            "500 old": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#465568"
+            }
+          },
+          "Neutral Shadow": {
+            "5": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(18, 21, 23, 0.05)"
+            },
+            "10": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(18, 21, 23, 0.1)"
+            },
+            "20": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(18, 21, 23, 0.2)"
+            },
+            "30": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(18, 21, 23, 0.3)"
+            },
+            "40": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(18, 21, 23, 0.4)"
+            },
+            "50": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(18, 21, 23, 0.5)"
+            },
+            "60": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(18, 21, 23, 0.6)"
+            },
+            "70": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(18, 21, 23, 0.7)"
+            },
+            "80": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(18, 21, 23, 0.8)"
+            },
+            "90": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(18, 21, 23, 0.9)"
+            }
+          },
+          "White Shadow": {
+            "5": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(255, 255, 255, 0.05)"
+            },
+            "10": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(255, 255, 255, 0.1)"
+            },
+            "20": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(255, 255, 255, 0.2)"
+            },
+            "30": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(255, 255, 255, 0.3)"
+            },
+            "40": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(255, 255, 255, 0.4)"
+            },
+            "50": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(255, 255, 255, 0.5)"
+            },
+            "60": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(255, 255, 255, 0.6)"
+            },
+            "70": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(255, 255, 255, 0.7)"
+            },
+            "80": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(255, 255, 255, 0.8)"
+            },
+            "90": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(255, 255, 255, 0.9)"
+            },
+            "100": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#ffffff"
+            },
+            "Transparent": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(255, 255, 255, 0)"
+            }
+          },
+          "Accent": {
+            "Blue": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#12baf3"
+            },
+            "Blue 80": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(18, 186, 243, 0.8)"
+            },
+            "Blue 60": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(18, 186, 243, 0.6)"
+            },
+            "Blue 20": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(18, 186, 243, 0.2)"
+            },
+            "Blue 10": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(18, 186, 243, 0.1)"
+            },
+            "Blue 5": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(18, 186, 243, 0.07)"
+            },
+            "Purple": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#b758f1"
+            },
+            "Purple 80": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(183, 88, 241, 0.8)"
+            },
+            "Purple 60": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(183, 88, 241, 0.7)"
+            },
+            "Purple 20": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(183, 88, 241, 0.2)"
+            },
+            "Purple 10": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(183, 88, 241, 0.1)"
+            },
+            "Purple 5": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(183, 88, 241, 0.07)"
+            },
+            "Orange": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#f38612"
+            },
+            "Orange 80": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(243, 134, 18, 0.8)"
+            },
+            "Orange 60": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(243, 134, 18, 0.6)"
+            },
+            "Orange 20": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(243, 134, 18, 0.2)"
+            },
+            "Orange 10": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(243, 134, 18, 0.1)"
+            },
+            "Orange 5": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(243, 134, 18, 0.07)"
+            },
+            "Yellow": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#edb132"
+            },
+            "Yellow 80": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(237, 177, 50, 0.8)"
+            },
+            "Yellow 60": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(237, 177, 50, 0.6)"
+            },
+            "Yellow 20": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(237, 177, 50, 0.2)"
+            },
+            "Yellow 10": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(237, 177, 50, 0.1)"
+            },
+            "Yellow 5": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(237, 177, 50, 0.07)"
+            },
+            "Green": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#04d400"
+            },
+            "Green 80": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(4, 212, 0, 0.8)"
+            },
+            "Green 60": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(4, 212, 0, 0.6)"
+            },
+            "Green 20": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(4, 212, 0, 0.2)"
+            },
+            "Green 10": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(4, 212, 0, 0.1)"
+            },
+            "Green 5": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(4, 212, 0, 0.07)"
+            },
+            "Red": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#f84247"
+            },
+            "Red 80": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(248, 66, 71, 0.8)"
+            },
+            "Red 60": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(248, 66, 71, 0.6)"
+            },
+            "Red 20": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(248, 66, 71, 0.2)"
+            },
+            "Red 10": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(248, 66, 71, 0.1)"
+            },
+            "Red 5": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(248, 66, 71, 0.07)"
+            }
+          },
+          "Semantic": {
+            "Danger": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#f84247"
+            },
+            "Danger 70": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(248, 66, 71, 0.7)"
+            },
+            "Danger 10": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(248, 66, 71, 0.1)"
+            },
+            "Success": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#04d400"
+            },
+            "Success 70": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(4, 212, 0, 0.7)"
+            },
+            "Success 10": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(4, 212, 0, 0.1)"
+            },
+            "Warning": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#c58b11"
+            },
+            "Warning 70": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(237, 177, 50, 0.7)"
+            },
+            "Warning 10": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(237, 177, 50, 0.15)"
+            },
+            "Normal": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#a9aeb5"
+            },
+            "Normal 70": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(169, 174, 181, 0.7)"
+            },
+            "Normal 10": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(169, 174, 181, 0.1)"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "Size": {
+      "modes": {
+        "Mode 1": {
+          "1": {
+            "$scopes": [
+              "CORNER_RADIUS",
+              "WIDTH_HEIGHT",
+              "GAP",
+              "STROKE_FLOAT",
+              "EFFECT_FLOAT"
+            ],
+            "$type": "float",
+            "$value": 1
+          },
+          "2": {
+            "$scopes": [
+              "CORNER_RADIUS",
+              "WIDTH_HEIGHT",
+              "GAP",
+              "STROKE_FLOAT",
+              "EFFECT_FLOAT"
+            ],
+            "$type": "float",
+            "$value": 2
+          },
+          "4": {
+            "$scopes": [
+              "CORNER_RADIUS",
+              "WIDTH_HEIGHT",
+              "GAP",
+              "STROKE_FLOAT",
+              "EFFECT_FLOAT"
+            ],
+            "$type": "float",
+            "$value": 4
+          },
+          "8": {
+            "$scopes": [
+              "CORNER_RADIUS",
+              "WIDTH_HEIGHT",
+              "GAP",
+              "STROKE_FLOAT",
+              "EFFECT_FLOAT"
+            ],
+            "$type": "float",
+            "$value": 8
+          },
+          "12": {
+            "$scopes": [
+              "CORNER_RADIUS",
+              "WIDTH_HEIGHT",
+              "GAP",
+              "STROKE_FLOAT",
+              "EFFECT_FLOAT"
+            ],
+            "$type": "float",
+            "$value": 12
+          },
+          "16": {
+            "$scopes": [
+              "CORNER_RADIUS",
+              "WIDTH_HEIGHT",
+              "GAP",
+              "STROKE_FLOAT",
+              "EFFECT_FLOAT"
+            ],
+            "$type": "float",
+            "$value": 16
+          },
+          "20": {
+            "$scopes": [
+              "CORNER_RADIUS",
+              "WIDTH_HEIGHT",
+              "GAP",
+              "STROKE_FLOAT",
+              "EFFECT_FLOAT"
+            ],
+            "$type": "float",
+            "$value": 20
+          },
+          "24": {
+            "$scopes": [
+              "CORNER_RADIUS",
+              "WIDTH_HEIGHT",
+              "GAP",
+              "STROKE_FLOAT",
+              "EFFECT_FLOAT"
+            ],
+            "$type": "float",
+            "$value": 24
+          },
+          "32": {
+            "$scopes": [
+              "CORNER_RADIUS",
+              "WIDTH_HEIGHT",
+              "GAP",
+              "STROKE_FLOAT",
+              "EFFECT_FLOAT"
+            ],
+            "$type": "float",
+            "$value": 32
+          },
+          "40": {
+            "$scopes": [
+              "CORNER_RADIUS",
+              "WIDTH_HEIGHT",
+              "GAP",
+              "STROKE_FLOAT",
+              "EFFECT_FLOAT"
+            ],
+            "$type": "float",
+            "$value": 40
+          },
+          "48": {
+            "$scopes": [
+              "CORNER_RADIUS",
+              "WIDTH_HEIGHT",
+              "GAP",
+              "STROKE_FLOAT",
+              "EFFECT_FLOAT"
+            ],
+            "$type": "float",
+            "$value": 48
+          },
+          "64": {
+            "$scopes": [
+              "CORNER_RADIUS",
+              "WIDTH_HEIGHT",
+              "GAP",
+              "STROKE_FLOAT",
+              "EFFECT_FLOAT"
+            ],
+            "$type": "float",
+            "$value": 64
+          },
+          "80": {
+            "$scopes": [
+              "CORNER_RADIUS",
+              "WIDTH_HEIGHT",
+              "GAP",
+              "STROKE_FLOAT",
+              "EFFECT_FLOAT"
+            ],
+            "$type": "float",
+            "$value": 80
+          },
+          "Success": {
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$type": "boolean",
+            "$value": true
+          },
+          "Warning": {
+            "$scopes": [
+              "ALL_SCOPES"
+            ],
+            "$type": "boolean",
+            "$value": true
+          }
+        }
+      }
+    }
+  },
+  {
+    "Theme": {
+      "modes": {
+        "Dark": {
+          "Global": {
+            "body-bkg": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Neutral.900}"
+            },
+            "popup-bkg": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Neutral.800}"
+            },
+            "popup-border": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{White Shadow.20}"
+            },
+            "module-title-txt": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{White Shadow.90}"
+            },
+            "general-txt": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{White Shadow.60}"
+            },
+            "shadow-txt": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{White Shadow.50}"
+            },
+            "line-divider": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{White Shadow.10}"
+            },
+            "divider-txt": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{White Shadow.50}"
+            },
+            "app-logo-txt": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Brand.500}"
+            },
+            "app-icon-brand": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Brand.500}"
+            },
+            "app-icon-neutral": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{White Shadow.90}"
+            }
+          },
+          "Widget": {
+            "Default": {
+              "title-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.50}"
+              },
+              "stat-num-general-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.90}"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.5}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$value": "rgba(255, 255, 255, 0.03)"
+              },
+              "chart": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Theme",
+                "$value": "{Widget.Rating.chart}"
+              },
+              "chart-bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Theme",
+                "$value": "{Widget.Rating.chart-bkg}"
+              },
+              "chart 2": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.50}"
+              },
+              "elevator-success": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Brand.800}"
+              },
+              "elevator-txt-success": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.100}"
+              },
+              "elevator-danger": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$value": "#670814"
+              },
+              "elevator-txt-danger": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$value": "#f6767a"
+              }
+            },
+            "Occupancy": {
+              "title-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Blue 60}"
+              },
+              "stat-num-general-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Blue}"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Blue 10}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Blue 5}"
+              },
+              "chart": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Blue}"
+              },
+              "chart-bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Blue 20}"
+              }
+            },
+            "Warning": {
+              "title-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Semantic.Warning}"
+              },
+              "stat-num-general-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Semantic.Warning}"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Semantic.Warning 10}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$value": "rgba(237, 177, 50, 0.05)"
+              },
+              "chart": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Semantic.Warning}"
+              },
+              "chart-bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$value": "rgba(237, 177, 50, 0.2)"
+              }
+            },
+            "stat-num-txt": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{White Shadow.80}"
+            },
+            "icon-and-delimiter": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{White Shadow.30}"
+            },
+            "back-bkg": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{White Shadow.Transparent}"
+            },
+            "Arrivals": {
+              "title-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Purple 60}"
+              },
+              "stat-num-general-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Purple}"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Purple 10}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Purple 5}"
+              },
+              "chart": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Purple}"
+              },
+              "chart-bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Purple 20}"
+              }
+            },
+            "Departure": {
+              "title-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Orange 60}"
+              },
+              "stat-num-general-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Orange}"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Orange 10}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Orange 5}"
+              },
+              "chart": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Orange}"
+              },
+              "chart-bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Orange 20}"
+              }
+            },
+            "Ready": {
+              "title-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Green 60}"
+              },
+              "stat-num-general-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Green}"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Green 10}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Green 5}"
+              },
+              "chart": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Green}"
+              },
+              "chart-bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Green 20}"
+              }
+            },
+            "Alert": {
+              "title-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Red 80}"
+              },
+              "stat-num-general-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Red}"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Red 10}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Red 5}"
+              },
+              "chart": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Red}"
+              },
+              "chart-bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Red 20}"
+              }
+            },
+            "Rating": {
+              "title-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Brand Shadow.70}"
+              },
+              "stat-num-general-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Brand.500}"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Brand Shadow.10}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Brand Shadow.5}"
+              },
+              "chart": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Brand.500}"
+              },
+              "chart-bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Brand Shadow.20}"
+              }
+            }
+          },
+          "Table": {
+            "header-text": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{White Shadow.50}"
+            },
+            "body-text-high": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{White Shadow.80}"
+            },
+            "body-text": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{White Shadow.50}"
+            },
+            "header-icon-default": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{White Shadow.30}"
+            },
+            "header-icon-active": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Theme",
+              "$value": "{Secondary.default.icon}"
+            },
+            "header-border": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{White Shadow.10}"
+            },
+            "body-icon": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Brand Shadow.60}"
+            }
+          },
+          "Cards": {
+            "title-icon": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Brand.500}"
+            },
+            "title-text": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{White Shadow.80}"
+            },
+            "bkg": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Theme",
+              "$value": "{Widget.Default.bkg}"
+            },
+            "border": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Theme",
+              "$value": "{Widget.Default.border}"
+            },
+            "values": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{White Shadow.50}"
+            }
+          },
+          "Primary": {
+            "default": {
+              "txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.100}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Brand Shadow.30}"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.Transparent}"
+              },
+              "icon": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.100}"
+              }
+            },
+            "hover, active": {
+              "txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.100}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Brand Shadow.50}"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.Transparent}"
+              },
+              "icon": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.100}"
+              },
+              "outline": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Brand Shadow.10}"
+              }
+            },
+            "disabled": {
+              "txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.40}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.20}"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.Transparent}"
+              },
+              "icon": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.40}"
+              }
+            }
+          },
+          "Input": {
+            "value": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{White Shadow.80}"
+            },
+            "value-strong": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Theme",
+              "$value": "{Global.body-bkg}"
+            },
+            "placeholder": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{White Shadow.40}"
+            },
+            "bkg": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Neutral Shadow.90}"
+            },
+            "border": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(255, 255, 255, 0.15)"
+            },
+            "border-hover": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Brand Shadow.40}"
+            },
+            "border-hover-stronger": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Brand.300}"
+            },
+            "focus-border": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Brand Shadow.10}"
+            },
+            "fill-brand-element": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Brand.600}"
+            },
+            "disabled": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Neutral Shadow.30}"
+            }
+          },
+          "Secondary": {
+            "default": {
+              "txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.70}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$value": "rgba(255, 255, 255, 0.02)"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.10}"
+              },
+              "icon": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.80}"
+              }
+            },
+            "hover, active": {
+              "txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.90}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.5}"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.20}"
+              },
+              "icon": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Brand Shadow.90}"
+              },
+              "outline": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Brand Shadow.10}"
+              }
+            },
+            "disabled": {
+              "txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.40}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.Transparent}"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.10}"
+              },
+              "icon": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.40}"
+              }
+            }
+          },
+          "Danger": {
+            "default": {
+              "txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.100}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$value": "rgba(248, 66, 71, 0.3)"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.Transparent}"
+              },
+              "icon": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.100}"
+              }
+            },
+            "hover, active": {
+              "txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.100}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$value": "rgba(248, 66, 71, 0.5)"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.Transparent}"
+              },
+              "icon": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.100}"
+              },
+              "outline": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Red 10}"
+              }
+            },
+            "disabled": {
+              "txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.40}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.20}"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.Transparent}"
+              },
+              "icon": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.40}"
+              }
+            }
+          },
+          "Navigation": {
+            "sidebar": {
+              "bkd": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$value": "rgba(255, 255, 255, 0.03)"
+              },
+              "line": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.5}"
+              },
+              "title": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.40}"
+              },
+              "app icon": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.90}"
+              }
+            },
+            "default": {
+              "txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.60}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.Transparent}"
+              },
+              "icon": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.80}"
+              }
+            },
+            "hover, active": {
+              "txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.90}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.5}"
+              },
+              "icon": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.90}"
+              }
+            },
+            "active": {
+              "txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.100}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.Transparent}"
+              },
+              "icon": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Brand Shadow.90}"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Brand Shadow.90}"
+              }
+            }
+          },
+          "Badge": {
+            "Default": {
+              "icon-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Semantic.Normal}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Semantic.Normal 10}"
+              }
+            },
+            "Danger": {
+              "icon-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Semantic.Danger}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Semantic.Danger 10}"
+              }
+            },
+            "Success": {
+              "icon-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Semantic.Success}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Semantic.Success 10}"
+              }
+            },
+            "Warning": {
+              "icon-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Semantic.Warning}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Semantic.Warning 10}"
+              }
+            },
+            "Progress": {
+              "icon-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Blue}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Blue 10}"
+              }
+            },
+            "Accent": {
+              "icon-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Purple}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Purple 10}"
+              }
+            },
+            "Brand": {
+              "icon-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Brand.500}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Brand Shadow.10}"
+              }
+            }
+          }
+        },
+        "Light": {
+          "Global": {
+            "body-bkg": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "#f6f8f8"
+            },
+            "popup-bkg": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{White Shadow.100}"
+            },
+            "popup-border": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Neutral Shadow.20}"
+            },
+            "module-title-txt": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Neutral.900}"
+            },
+            "general-txt": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Neutral.800}"
+            },
+            "shadow-txt": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Neutral.500}"
+            },
+            "line-divider": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Neutral Shadow.10}"
+            },
+            "divider-txt": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Neutral Shadow.60}"
+            },
+            "app-logo-txt": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Brand.600}"
+            },
+            "app-icon-brand": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Brand.600}"
+            },
+            "app-icon-neutral": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Neutral Shadow.90}"
+            }
+          },
+          "Widget": {
+            "Default": {
+              "title-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral Shadow.90}"
+              },
+              "stat-num-general-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral Shadow.90}"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral Shadow.5}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$value": "rgba(255, 255, 255, 0.8)"
+              },
+              "chart": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Theme",
+                "$value": "{Widget.Rating.chart}"
+              },
+              "chart-bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Theme",
+                "$value": "{Widget.Rating.chart-bkg}"
+              },
+              "chart 2": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral Shadow.50}"
+              },
+              "elevator-success": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Brand.300}"
+              },
+              "elevator-txt-success": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Brand.800}"
+              },
+              "elevator-danger": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$value": "#f6767a"
+              },
+              "elevator-txt-danger": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$value": "#670814"
+              }
+            },
+            "Occupancy": {
+              "title-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$value": "#0b9bcc"
+              },
+              "stat-num-general-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Blue}"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Blue 10}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Blue 5}"
+              },
+              "chart": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Blue}"
+              },
+              "chart-bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Blue 20}"
+              }
+            },
+            "Warning": {
+              "title-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Semantic.Warning}"
+              },
+              "stat-num-general-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Semantic.Warning}"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$value": "rgba(237, 177, 50, 0.1)"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$value": "rgba(237, 177, 50, 0.05)"
+              },
+              "chart": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Semantic.Warning}"
+              },
+              "chart-bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$value": "rgba(237, 177, 50, 0.2)"
+              }
+            },
+            "stat-num-txt": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Neutral.700}"
+            },
+            "icon-and-delimiter": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Neutral Shadow.50}"
+            },
+            "back-bkg": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{White Shadow.Transparent}"
+            },
+            "Arrivals": {
+              "title-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Purple}"
+              },
+              "stat-num-general-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Purple}"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Purple 10}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Purple 5}"
+              },
+              "chart": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Purple}"
+              },
+              "chart-bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Purple 20}"
+              }
+            },
+            "Departure": {
+              "title-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Orange}"
+              },
+              "stat-num-general-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Orange}"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Orange 10}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Orange 5}"
+              },
+              "chart": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Orange}"
+              },
+              "chart-bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Orange 20}"
+              }
+            },
+            "Ready": {
+              "title-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$value": "#03a300"
+              },
+              "stat-num-general-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$value": "#03a300"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Green 10}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Green 5}"
+              },
+              "chart": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$value": "#03a300"
+              },
+              "chart-bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Green 20}"
+              }
+            },
+            "Alert": {
+              "title-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Red}"
+              },
+              "stat-num-general-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Red}"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Red 10}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Red 5}"
+              },
+              "chart": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Red}"
+              },
+              "chart-bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Red 20}"
+              }
+            },
+            "Rating": {
+              "title-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Brand.600}"
+              },
+              "stat-num-general-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Brand.600}"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$value": "rgba(0, 212, 192, 0.15)"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Brand Shadow.5}"
+              },
+              "chart": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Brand.600}"
+              },
+              "chart-bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Brand Shadow.30}"
+              }
+            }
+          },
+          "Table": {
+            "header-text": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Neutral.400}"
+            },
+            "body-text-high": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Neutral Shadow.90}"
+            },
+            "body-text": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Neutral.600}"
+            },
+            "header-icon-default": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Neutral Shadow.30}"
+            },
+            "header-icon-active": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Theme",
+              "$value": "{Secondary.default.icon}"
+            },
+            "header-border": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Neutral Shadow.10}"
+            },
+            "body-icon": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Brand.600}"
+            }
+          },
+          "Cards": {
+            "title-icon": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Brand.600}"
+            },
+            "title-text": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Neutral Shadow.90}"
+            },
+            "bkg": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(255, 255, 255, 0.8)"
+            },
+            "border": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Neutral Shadow.5}"
+            },
+            "values": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Neutral.500}"
+            }
+          },
+          "Primary": {
+            "default": {
+              "txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral.700}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Brand Shadow.40}"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.Transparent}"
+              },
+              "icon": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral.700}"
+              }
+            },
+            "hover, active": {
+              "txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral.700}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Brand Shadow.60}"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.Transparent}"
+              },
+              "icon": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral.700}"
+              },
+              "outline": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Brand Shadow.20}"
+              }
+            },
+            "disabled": {
+              "txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral Shadow.30}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral Shadow.10}"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.Transparent}"
+              },
+              "icon": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral Shadow.30}"
+              }
+            }
+          },
+          "Input": {
+            "value": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Neutral.850}"
+            },
+            "value-strong": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{White Shadow.100}"
+            },
+            "placeholder": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Neutral.300}"
+            },
+            "bkg": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(18, 21, 23, 0.05)"
+            },
+            "border": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Neutral Shadow.5}"
+            },
+            "border-hover": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Brand Shadow.60}"
+            },
+            "border-hover-stronger": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Neutral Shadow.20}"
+            },
+            "focus-border": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$value": "rgba(0, 212, 192, 0.15)"
+            },
+            "fill-brand-element": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Brand.600}"
+            },
+            "disabled": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "color",
+              "$libraryName": "",
+              "$collectionName": "Primitive",
+              "$value": "{Neutral Shadow.30}"
+            }
+          },
+          "Secondary": {
+            "default": {
+              "txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral.600}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.80}"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral Shadow.10}"
+              },
+              "icon": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral.600}"
+              }
+            },
+            "hover, active": {
+              "txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral.700}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral Shadow.5}"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral Shadow.10}"
+              },
+              "icon": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral.700}"
+              },
+              "outline": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Brand Shadow.10}"
+              }
+            },
+            "disabled": {
+              "txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral Shadow.40}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.Transparent}"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral Shadow.10}"
+              },
+              "icon": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral Shadow.40}"
+              }
+            }
+          },
+          "Danger": {
+            "default": {
+              "txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral.800}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$value": "rgba(248, 66, 71, 0.4)"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.Transparent}"
+              },
+              "icon": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral.700}"
+              }
+            },
+            "hover, active": {
+              "txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral.800}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Red 60}"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.Transparent}"
+              },
+              "icon": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral.700}"
+              },
+              "outline": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Red 20}"
+              }
+            },
+            "disabled": {
+              "txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral Shadow.30}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral Shadow.10}"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.Transparent}"
+              },
+              "icon": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral Shadow.30}"
+              }
+            }
+          },
+          "Navigation": {
+            "sidebar": {
+              "bkd": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$value": "rgba(255, 255, 255, 0.8)"
+              },
+              "line": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral Shadow.5}"
+              },
+              "title": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral Shadow.50}"
+              },
+              "app icon": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral Shadow.80}"
+              }
+            },
+            "default": {
+              "txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral Shadow.60}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.Transparent}"
+              },
+              "icon": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral.600}"
+              }
+            },
+            "hover, active": {
+              "txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral Shadow.80}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral Shadow.5}"
+              },
+              "icon": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral Shadow.80}"
+              }
+            },
+            "active": {
+              "txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral.900}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{White Shadow.Transparent}"
+              },
+              "icon": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Brand.600}"
+              },
+              "border": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Brand.600}"
+              }
+            }
+          },
+          "Badge": {
+            "Default": {
+              "icon-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Neutral.600}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Semantic.Normal 10}"
+              }
+            },
+            "Danger": {
+              "icon-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Semantic.Danger}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Semantic.Danger 10}"
+              }
+            },
+            "Success": {
+              "icon-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$value": "#028f00"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Semantic.Success 10}"
+              }
+            },
+            "Warning": {
+              "icon-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Semantic.Warning}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Semantic.Warning 10}"
+              }
+            },
+            "Progress": {
+              "icon-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$value": "#08769b"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Blue 10}"
+              }
+            },
+            "Accent": {
+              "icon-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Purple}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Accent.Purple 10}"
+              }
+            },
+            "Brand": {
+              "icon-txt": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Brand.600}"
+              },
+              "bkg": {
+                "$scopes": [
+                  "ALL_SCOPES"
+                ],
+                "$type": "color",
+                "$libraryName": "",
+                "$collectionName": "Primitive",
+                "$value": "{Brand Shadow.10}"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "Tockens": {
+      "modes": {
+        "Mode 1": {
+          "radius": {
+            "Badge": {
+              "$scopes": [
+                "CORNER_RADIUS",
+                "FONT_VARIATIONS"
+              ],
+              "$type": "float",
+              "$libraryName": "",
+              "$collectionName": "Size",
+              "$value": "{4}"
+            },
+            "button": {
+              "$scopes": [
+                "CORNER_RADIUS",
+                "FONT_VARIATIONS"
+              ],
+              "$type": "float",
+              "$value": 6
+            },
+            "card": {
+              "$scopes": [
+                "CORNER_RADIUS",
+                "FONT_VARIATIONS"
+              ],
+              "$type": "float",
+              "$libraryName": "",
+              "$collectionName": "Size",
+              "$value": "{12}"
+            },
+            "popup": {
+              "$scopes": [
+                "CORNER_RADIUS",
+                "FONT_VARIATIONS"
+              ],
+              "$type": "float",
+              "$libraryName": "",
+              "$collectionName": "Size",
+              "$value": "{16}"
+            }
+          },
+          "space": {
+            "xs": {
+              "$scopes": [
+                "GAP",
+                "FONT_VARIATIONS"
+              ],
+              "$type": "float",
+              "$libraryName": "",
+              "$collectionName": "Size",
+              "$value": "{4}"
+            },
+            "sm": {
+              "$scopes": [
+                "GAP",
+                "FONT_VARIATIONS"
+              ],
+              "$type": "float",
+              "$libraryName": "",
+              "$collectionName": "Size",
+              "$value": "{8}"
+            },
+            "ms": {
+              "$scopes": [
+                "GAP",
+                "FONT_VARIATIONS"
+              ],
+              "$type": "float",
+              "$libraryName": "",
+              "$collectionName": "Size",
+              "$value": "{12}"
+            },
+            "md": {
+              "$scopes": [
+                "GAP",
+                "FONT_VARIATIONS"
+              ],
+              "$type": "float",
+              "$libraryName": "",
+              "$collectionName": "Size",
+              "$value": "{16}"
+            },
+            "lg": {
+              "$scopes": [
+                "GAP",
+                "FONT_VARIATIONS"
+              ],
+              "$type": "float",
+              "$libraryName": "",
+              "$collectionName": "Size",
+              "$value": "{20}"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "Typography": {
+      "modes": {
+        "Mode 1": {
+          "Font": {
+            "Family": {
+              "$scopes": [
+                "ALL_SCOPES"
+              ],
+              "$type": "string",
+              "$value": "Inter"
+            }
+          },
+          "Font Size": {
+            "11 xs": {
+              "$scopes": [
+                "TEXT_CONTENT",
+                "FONT_WEIGHT",
+                "FONT_SIZE",
+                "LINE_HEIGHT",
+                "LETTER_SPACING",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+              ],
+              "$type": "float",
+              "$value": 11
+            },
+            "12 sm": {
+              "$scopes": [
+                "TEXT_CONTENT",
+                "FONT_WEIGHT",
+                "FONT_SIZE",
+                "LINE_HEIGHT",
+                "LETTER_SPACING",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+              ],
+              "$type": "float",
+              "$value": 12
+            },
+            "14 md": {
+              "$scopes": [
+                "TEXT_CONTENT",
+                "FONT_WEIGHT",
+                "FONT_SIZE",
+                "LINE_HEIGHT",
+                "LETTER_SPACING",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+              ],
+              "$type": "float",
+              "$value": 14
+            },
+            "16 lg": {
+              "$scopes": [
+                "TEXT_CONTENT",
+                "FONT_WEIGHT",
+                "FONT_SIZE",
+                "LINE_HEIGHT",
+                "LETTER_SPACING",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+              ],
+              "$type": "float",
+              "$value": 16
+            },
+            "18 xl": {
+              "$scopes": [
+                "TEXT_CONTENT",
+                "FONT_WEIGHT",
+                "FONT_SIZE",
+                "LINE_HEIGHT",
+                "LETTER_SPACING",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+              ],
+              "$type": "float",
+              "$value": 18
+            },
+            "20 2xl": {
+              "$scopes": [
+                "TEXT_CONTENT",
+                "FONT_WEIGHT",
+                "FONT_SIZE",
+                "LINE_HEIGHT",
+                "LETTER_SPACING",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+              ],
+              "$type": "float",
+              "$value": 20
+            },
+            "24 3xl": {
+              "$scopes": [
+                "TEXT_CONTENT",
+                "FONT_WEIGHT",
+                "FONT_SIZE",
+                "LINE_HEIGHT",
+                "LETTER_SPACING",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+              ],
+              "$type": "float",
+              "$value": 24
+            },
+            "28 4xl": {
+              "$scopes": [
+                "TEXT_CONTENT",
+                "FONT_WEIGHT",
+                "FONT_SIZE",
+                "LINE_HEIGHT",
+                "LETTER_SPACING",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+              ],
+              "$type": "float",
+              "$value": 28
+            },
+            "32 5xl": {
+              "$scopes": [
+                "TEXT_CONTENT",
+                "FONT_WEIGHT",
+                "FONT_SIZE",
+                "LINE_HEIGHT",
+                "LETTER_SPACING",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+              ],
+              "$type": "float",
+              "$value": 32
+            },
+            "40 6xl": {
+              "$scopes": [
+                "TEXT_CONTENT",
+                "FONT_WEIGHT",
+                "FONT_SIZE",
+                "LINE_HEIGHT",
+                "LETTER_SPACING",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+              ],
+              "$type": "float",
+              "$value": 40
+            },
+            "48 7xl": {
+              "$scopes": [
+                "TEXT_CONTENT",
+                "FONT_WEIGHT",
+                "FONT_SIZE",
+                "LINE_HEIGHT",
+                "LETTER_SPACING",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+              ],
+              "$type": "float",
+              "$value": 48
+            },
+            "56 8xl": {
+              "$scopes": [
+                "TEXT_CONTENT",
+                "FONT_WEIGHT",
+                "FONT_SIZE",
+                "LINE_HEIGHT",
+                "LETTER_SPACING",
+                "PARAGRAPH_SPACING",
+                "PARAGRAPH_INDENT"
+              ],
+              "$type": "float",
+              "$value": 56
+            }
+          }
+        }
+      }
+    }
+  }
+]

@@ -1,4 +1,5 @@
 import { Progress } from 'antd'
+import { chartHex } from '../theme/tokens.generated'
 
 type KPIProps = {
 	label: string
@@ -21,8 +22,8 @@ export default function KPI({ label, value, sub, percent }: KPIProps) {
 					size={42}
 					strokeWidth={13}
 					strokeLinecap="round"
-					strokeColor="#00D4C0"
-					railColor="#00D4C033"
+					strokeColor={chartHex.brand}
+					railColor={chartHex.brandRail}
 					format={() => null}
 				/>
 			</div>

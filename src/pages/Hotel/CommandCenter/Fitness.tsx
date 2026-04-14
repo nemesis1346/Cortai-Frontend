@@ -8,13 +8,13 @@ export default function Fitness() {
 			<CardHeader
 				left={
 					<div className="flex gap-2">
-						<Dumbbell size={20} className="text-teal-400" />
+						<Dumbbell size={20} className="text-brand" />
 						<h3 className="card-title">{fitnessMock.title}</h3>
 					</div>
 				}
-				middle={<span className="rounded-[3px] bg-[#A9AEB51A] text-white/70 px-2 py-1 !text-[12px]">{fitnessMock.capacity} capacity</span>}
+				middle={<span className="rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] text-text-dim px-2 py-1 !text-[12px]">{fitnessMock.capacity} capacity</span>}
 				right={
-					<div className="text-white/40">
+					<div className="text-text-mute">
 						<ExternalLink className="w-5 h-5" />
 					</div>
 				}
@@ -22,24 +22,24 @@ export default function Fitness() {
 			<CardBody>
 				<div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-5 gap-4">
 					<div className="flex flex-col items-baseline gap-2">
-						<div className="!text-[18px] font-semibold text-white">{fitnessMock.now}</div>
-						<div className="!text-[12px] text-white/60">Now</div>
+						<div className="!text-[18px] font-semibold text-text">{fitnessMock.now}</div>
+						<div className="!text-[12px] text-text-dim">Now</div>
 					</div>
 					<div className="flex flex-col items-baseline gap-2">
-						<div className="!text-[18px] font-semibold text-white">{fitnessMock.total}</div>
-						<div className="!text-[12px] text-white/60">Total</div>
+						<div className="!text-[18px] font-semibold text-text">{fitnessMock.total}</div>
+						<div className="!text-[12px] text-text-dim">Total</div>
 					</div>
 					<div className="flex flex-col items-baseline gap-2">
-						<div className="!text-[18px] font-semibold text-white">{fitnessMock.avgSession}</div>
-						<div className="!text-[12px] text-white/60">Avg Session</div>
+						<div className="!text-[18px] font-semibold text-text">{fitnessMock.avgSession}</div>
+						<div className="!text-[12px] text-text-dim">Avg Session</div>
 					</div>
 					<div className="flex flex-col items-baseline gap-2">
-						<div className="!text-[18px] font-semibold text-[#22c55e]">{fitnessMock.temperature}</div>
-						<div className="!text-[12px] text-white/60">Temperature</div>
+						<div className="!text-[18px] font-semibold text-ok">{fitnessMock.temperature}</div>
+						<div className="!text-[12px] text-text-dim">Temperature</div>
 					</div>
 					<div className="flex flex-col items-baseline gap-2">
-						<div className="!text-[18px] font-semibold text-[#22c55e]">{fitnessMock.humidity}</div>
-						<div className="!text-[12px] text-white/60">Humidity</div>
+						<div className="!text-[18px] font-semibold text-ok">{fitnessMock.humidity}</div>
+						<div className="!text-[12px] text-text-dim">Humidity</div>
 					</div>
 				</div>
 			</CardBody>
