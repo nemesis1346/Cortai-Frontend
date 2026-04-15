@@ -1,6 +1,8 @@
 import { Pie } from '@ant-design/plots'
 import { useMemo } from 'react'
 import { CardBody, CardHeader } from '../../../components/Card'
+import { chartAxisColorFallback, readResolvedChartColor } from '../../../theme/resolvedChartColors'
+import { useThemePreference } from '../../../theme/ThemePreferenceProvider'
 import { chartHex, primitive } from '../../../theme/tokens.generated'
 import type { CategorySlice } from './types'
 
@@ -12,6 +14,7 @@ const CHART_MIN_HEIGHT = 280
 const SLICE_GAP_STROKE = chartHex.card
 
 export default function CategoryDistributionCard({ slices }: CategoryDistributionCardProps) {
+	const { effective } = useThemePreference()
 	const chartData = useMemo(
 		() =>
 			slices.map((s) => ({
@@ -25,8 +28,9 @@ export default function CategoryDistributionCard({ slices }: CategoryDistributio
 	)
 
 	const config = useMemo(
-		() =>
-			({
+		() => {
+			const legendText = readResolvedChartColor('--color-text', chartAxisColorFallback.text)
+			return {
 				data: chartData,
 				angleField: 'value',
 				colorField: 'legendLabel',
@@ -55,14 +59,14 @@ export default function CategoryDistributionCard({ slices }: CategoryDistributio
 						title: false,
 						position: 'right',
 						rowPadding: 10,
-						itemLabelFill: primitive.WhiteShadow80,
+						itemLabelFill: legendText,
 						itemLabelFontSize: 12,
 					},
 				},
 				tooltip: {
 					items: [{ channel: 'y', name: 'Share', valueFormatter: (v: number) => `${v}%` }],
 				},
-				theme: { type: 'classicDark' },
+				theme: { type: effective === 'dark' ? 'classicDark' : 'classic' },
 				height: CHART_MIN_HEIGHT,
 				autoFit: true,
 				containerStyle: {
@@ -70,8 +74,9 @@ export default function CategoryDistributionCard({ slices }: CategoryDistributio
 					minHeight: CHART_MIN_HEIGHT,
 					overflow: 'visible',
 				},
-			}) as Record<string, unknown>,
-		[chartData],
+			} as Record<string, unknown>
+		},
+		[chartData, effective],
 	)
 
 	return (

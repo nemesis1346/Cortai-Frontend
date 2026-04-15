@@ -23,7 +23,7 @@ const rows: Row[] = [
 
 export default function FoodStationUsage() {
 	return (
-		<section className="rounded-2xl border border-border bg-panel p-4">
+		<section className="rounded-2xl border border-border card p-4">
 			<div className="flex flex-row justify-between items-center gap-2">
 				<div className="text-[18px] text-text inline-flex items-center gap-2">
 					<UtensilsCrossed className="w-4 h-4 text-brand" />

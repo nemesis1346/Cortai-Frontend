@@ -3,22 +3,27 @@ import { Area } from '@ant-design/plots'
 import { useMemo } from 'react'
 import Card, { CardBody, CardHeader } from '../../../components/Card'
 import { fitnessPageMock } from '../../../data/mock'
-import { chart } from '../../../theme/fromExport'
+import { chartAxisColorFallback, readResolvedChartColor } from '../../../theme/resolvedChartColors'
+import { useThemePreference } from '../../../theme/ThemePreferenceProvider'
 import { chartHex, primitive } from '../../../theme/tokens.generated'
 
 const CHART_HEIGHT = 300
 
-const gridLineStyle = {
-	stroke: chart.gridStroke,
-	lineDash: [2, 4],
-}
-
 export default function TrafficPanel() {
+	const { effective } = useThemePreference()
 	const peakTime = fitnessPageMock.peakTime
 	const meta = fitnessPageMock.trafficTimeline
 	const maxGuests = 18
-	const areaConfig = useMemo(
-		() => ({
+	const areaConfig = useMemo(() => {
+		const text = readResolvedChartColor('--color-text', chartAxisColorFallback.text)
+		const textDim = readResolvedChartColor('--color-text-dim', chartAxisColorFallback.textDim)
+		const textMute = readResolvedChartColor('--color-text-mute', chartAxisColorFallback.textMute)
+		const border = readResolvedChartColor('--color-border', chartAxisColorFallback.border)
+		const gridLineStyle = {
+			stroke: border,
+			lineDash: [2, 4],
+		}
+		return {
 			data: fitnessPageMock.trafficSeries,
 			xField: 'time',
 			yField: 'guests',
@@ -44,9 +49,9 @@ export default function TrafficPanel() {
 			},
 			axis: {
 				x: {
-					labelFill: primitive.WhiteShadow50,
-					lineStroke: primitive.WhiteShadow10,
-					tickStroke: primitive.WhiteShadow20,
+					labelFill: text,
+					lineStroke: textMute,
+					tickStroke: border,
 					grid: {
 						line: {
 							style: gridLineStyle,
@@ -54,9 +59,9 @@ export default function TrafficPanel() {
 					},
 				},
 				y: {
-					labelFill: primitive.WhiteShadow50,
-					lineStroke: primitive.WhiteShadow10,
-					tickStroke: primitive.WhiteShadow20,
+					labelFill: textDim,
+					lineStroke: textMute,
+					tickStroke: border,
 					grid: {
 						line: {
 							style: gridLineStyle,
@@ -79,9 +84,9 @@ export default function TrafficPanel() {
 					lineWidth: 1,
 				}),
 			},
-		}),
-		[peakTime],
-	)
+			theme: { type: effective === 'dark' ? 'classicDark' : 'classic' },
+		}
+	}, [peakTime, effective])
 	return (
 		<Card className="flex w-full min-w-0 flex-col rounded-2xl border border-border bg-panel">
 			<CardHeader
@@ -105,10 +110,10 @@ export default function TrafficPanel() {
 				)}
 				right={(
 					<div className="flex flex-wrap justify-end gap-2">
-						<span className="rounded-[3px] bg-panel px-2 py-1 text-[11px] text-text-dim">
+						<span className="rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] px-2 py-1 text-[11px] text-text-dim">
 							First guest {meta.firstGuest}
 						</span>
-						<span className="rounded-[3px] bg-panel px-2 py-1 text-[11px] text-text-dim">
+						<span className="rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] px-2 py-1 text-[11px] text-text-dim">
 							Peak {meta.peakGuests} @ {meta.peakAt}
 						</span>
 					</div>

@@ -12,9 +12,10 @@ const data = JSON.parse(fs.readFileSync(exportPath, 'utf8'))
 
 const primitiveRoot = data.find((x) => x.Primitive)?.Primitive?.modes?.['Mode 1']
 const themeDarkRoot = data.find((x) => x.Theme)?.Theme?.modes?.Dark
+const themeLightRoot = data.find((x) => x.Theme)?.Theme?.modes?.Light
 
-if (!primitiveRoot || !themeDarkRoot) {
-	console.error('generate-tokens: missing Primitive.Mode 1 or Theme.modes.Dark')
+if (!primitiveRoot || !themeDarkRoot || !themeLightRoot) {
+	console.error('generate-tokens: missing Primitive.Mode 1 or Theme.modes.Dark / Light')
 	process.exit(1)
 }
 
@@ -36,6 +37,9 @@ collectColorLeaves(primitiveRoot, [], primitiveUnresolved)
 const themeUnresolved = {}
 collectColorLeaves(themeDarkRoot, [], themeUnresolved)
 
+const themeLightUnresolved = {}
+collectColorLeaves(themeLightRoot, [], themeLightUnresolved)
+
 function walkPath(root, segments) {
 	let n = root
 	for (const s of segments) {
@@ -50,7 +54,7 @@ function getByPathString(objRoot, dotPath) {
 	return walkPath(objRoot, segments)
 }
 
-function resolveOnce(val, primitiveMap, themeMap) {
+function resolveOnce(val, primitiveMap, themeMap, themeRootForRefs) {
 	if (typeof val !== 'string' || !val.startsWith('{') || !val.endsWith('}')) return val
 	const inner = val.slice(1, -1)
 	if (primitiveMap[inner] !== undefined && !String(primitiveMap[inner]).startsWith('{')) {
@@ -63,14 +67,14 @@ function resolveOnce(val, primitiveMap, themeMap) {
 	if (node && typeof node === 'object' && node.$type === 'color' && node.$value) {
 		return node.$value
 	}
-	const tnode = getByPathString(themeDarkRoot, inner)
+	const tnode = getByPathString(themeRootForRefs, inner)
 	if (tnode && typeof tnode === 'object' && tnode.$type === 'color' && tnode.$value) {
 		return tnode.$value
 	}
 	return val
 }
 
-function resolveMap(map) {
+function resolveMap(map, themeRootForRefs) {
 	const out = { ...map }
 	let changed = true
 	let guard = 0
@@ -79,7 +83,7 @@ function resolveMap(map) {
 		changed = false
 		for (const [k, v] of Object.entries(out)) {
 			if (typeof v !== 'string') continue
-			const next = resolveOnce(v, out, out)
+			const next = resolveOnce(v, out, out, themeRootForRefs)
 			if (next !== v) {
 				out[k] = next
 				changed = true
@@ -88,15 +92,16 @@ function resolveMap(map) {
 	}
 	for (const [k, v] of Object.entries(out)) {
 		if (typeof v === 'string' && v.startsWith('{')) {
-			const next = resolveOnce(v, out, out)
+			const next = resolveOnce(v, out, out, themeRootForRefs)
 			out[k] = next
 		}
 	}
 	return out
 }
 
-const primitiveResolved = resolveMap(primitiveUnresolved)
-const themeResolved = resolveMap(themeUnresolved)
+const primitiveResolved = resolveMap(primitiveUnresolved, themeDarkRoot)
+const themeResolved = resolveMap(themeUnresolved, themeDarkRoot)
+const themeLightResolved = resolveMap(themeLightUnresolved, themeLightRoot)
 
 function toVarName(prefix, dotPath) {
 	return `--${prefix}-${dotPath.replace(/\./g, '-').replace(/\s+/g, '-').toLowerCase()}`
@@ -124,6 +129,11 @@ for (const [k, v] of Object.entries(themeResolved)) {
 	css.push(`  ${toVarName('theme-dark', k)}: ${v};`)
 }
 
+for (const [k, v] of Object.entries(themeLightResolved)) {
+	if (typeof v !== 'string' || v.startsWith('{')) continue
+	css.push(`  ${toVarName('theme-light', k)}: ${v};`)
+}
+
 const appAliases = {
 	'--color-bg': 'var(--theme-dark-global-body-bkg)',
 	'--color-card': 'var(--primitive-neutral-850)',
@@ -142,11 +152,37 @@ const appAliases = {
 	'--shadow-inner-card': 'inset 0 1px 0 var(--primitive-white-shadow-5)',
 }
 
+const appAliasesLight = {
+	'--color-bg': 'var(--theme-light-global-body-bkg)',
+	'--color-card': 'var(--theme-light-cards-bkg)',
+	'--color-elevated': 'var(--theme-light-global-popup-bkg)',
+	'--color-panel': 'var(--theme-light-widget-default-bkg)',
+	'--color-border': 'var(--theme-light-global-line-divider)',
+	'--color-text': 'var(--theme-light-global-general-txt)',
+	'--color-text-dim': 'var(--theme-light-global-shadow-txt)',
+	'--color-text-mute': 'var(--theme-light-global-divider-txt)',
+	'--color-brand': 'var(--primitive-brand-600)',
+	'--color-brand-muted': 'var(--primitive-brand-shadow-10)',
+	'--color-ok': 'var(--primitive-semantic-success)',
+	'--color-warn': 'var(--primitive-semantic-warning)',
+	'--color-danger': 'var(--primitive-semantic-danger)',
+	'--color-info': 'var(--primitive-accent-blue)',
+	'--shadow-inner-card': 'inset 0 1px 0 var(--primitive-neutral-shadow-10)',
+}
+
 css.push('}')
 css.push('')
 css.push('@theme {')
 
 for (const [alias, ref] of Object.entries(appAliases)) {
+	css.push(`  ${alias}: ${ref};`)
+}
+
+css.push('}')
+css.push('')
+css.push('html[data-theme="light"] {')
+
+for (const [alias, ref] of Object.entries(appAliasesLight)) {
 	css.push(`  ${alias}: ${ref};`)
 }
 
@@ -179,10 +215,17 @@ for (const [k, v] of Object.entries(themeResolved)) {
 	if (typeof v === 'string' && !v.startsWith('{')) themeTs[toCamel(k)] = v
 }
 
+const themeLightTs = {}
+for (const [k, v] of Object.entries(themeLightResolved)) {
+	if (typeof v === 'string' && !v.startsWith('{')) themeLightTs[toCamel(k)] = v
+}
+
 const ts = `/** Generated by scripts/generate-tokens.mjs — do not edit. Source: src/assets/export.json */
 export const primitive = ${JSON.stringify(primTs, null, '\t')} as const
 
 export const themeDark = ${JSON.stringify(themeTs, null, '\t')} as const
+
+export const themeLight = ${JSON.stringify(themeLightTs, null, '\t')} as const
 
 export const chartHex = ${JSON.stringify(chartHex, null, '\t')} as const
 `

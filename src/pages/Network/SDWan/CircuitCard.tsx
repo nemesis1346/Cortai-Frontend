@@ -15,7 +15,7 @@ export default function CircuitCard({ circuit }: CircuitCardProps) {
 		>
 			<div className="mb-4 flex flex-col gap-2 pb-2 sm:flex-row sm:items-start sm:justify-between">
 				<div className="text-[18px] text-text">{circuit.name}</div>
-				<div className="rounded-[3px] bg-[color:var(--primitive-white-shadow-10)] px-2 py-1 text-[12px] text-text-dim">{circuit.subtitle}</div>
+				<div className="rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] px-2 py-1 text-[12px] text-text">{circuit.subtitle}</div>
 				{isPrimary ? (
 					<span
 						className="w-fit rounded-[3px] bg-brand/10 px-2 py-1 text-[11px] font-medium"

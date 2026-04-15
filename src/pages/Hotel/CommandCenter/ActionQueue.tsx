@@ -38,8 +38,8 @@ export default function ActionQueue() {
 				)}
 				middle={(
 					<div className="hidden md:flex items-center gap-2 text-xs">
-						<span className="rounded-[3px] bg-[color:var(--primitive-white-shadow-10)] px-3 py-1 text-text">11 queue</span>
-						<span className="rounded-[3px] bg-[color:var(--primitive-white-shadow-10)] px-3 py-1 text-text">6 guest(s)</span>
+						<span className="rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] px-3 py-1 text-text">11 queue</span>
+						<span className="rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] px-3 py-1 text-text">6 guest(s)</span>
 						<span className="rounded-[3px] bg-[color:var(--primitive-semantic-danger-10)] px-3 py-1 text-danger">4 alert(s)</span>
 					</div>
 				)}
@@ -79,7 +79,7 @@ export default function ActionQueue() {
 									</div>
 								</div>
 								<div>
-									<span className="rounded-[3px] bg-[color:var(--primitive-white-shadow-5)] px-2 py-1 text-xs text-text-dim">{r.room}</span>
+									<span className="rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] px-2 py-1 text-xs text-text-dim">{r.room}</span>
 								</div>
 								<div className="flex items-center gap-1 text-xs text-text-dim">
 									<Clock className="w-3 h-3 text-brand" /> {r.ago}

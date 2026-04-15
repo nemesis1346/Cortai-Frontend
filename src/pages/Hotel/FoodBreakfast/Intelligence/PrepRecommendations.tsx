@@ -40,7 +40,7 @@ export default function PrepRecommendations() {
 									<span className="text-text-dim text-[12px]">Predicted</span>
 								</div>
 							</div>
-							<div className="rounded-[3px] bg-[color:var(--primitive-semantic-success-10)] text-[12px] text-ok px-2 py-1 text-center">{x.note}</div>
+							<div className="rounded-[3px] bg-brand/[0.1] text-[12px] text-brand px-2 py-1 text-center">{x.note}</div>
 						</div>
 					))}
 				</div>
@@ -66,7 +66,7 @@ export default function PrepRecommendations() {
 							<div className="text-text-dim text-[24px] leading-none mt-2">68</div>
 						</div>
 					</div>
-					<div className="rounded-[6px] bg-bg p-4 text-[14px] leading-[1.6] text-text">
+					<div className="rounded-[6px] bg-[color:var(--primitive-semantic-normal-10)] p-4 text-[14px] leading-[1.6] text-text">
 						Before CORTAI, average daily food waste was <span className="text-danger">18 lbs/day</span>. With predictive prep, waste dropped to <span className="text-ok">11 lbs/day</span> — a <span className="text-ok">39%</span> reduction saving <span className="text-ok">$420/month</span>. Accuracy improves as more data is collected.
 					</div>
 				</div>

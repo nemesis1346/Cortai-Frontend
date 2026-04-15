@@ -40,7 +40,7 @@ export default function Washroom() {
 								<div className="grid grid-cols-[40px_1fr] items-center gap-x-2">
 									<div className="!text-[12px] text-text-mute">Last</div>
 									<div className="!text-[12px] text-text-dim text-right">{a.last}</div>
-									<div className="col-span-2 h-px bg-[color:var(--primitive-white-shadow-20)] my-1" />
+									<div className="col-span-2 h-px bg-border my-1" />
 									<div className="!text-[12px] text-text-mute mt-2">Next</div>
 									<div className="!text-[12px] text-text-dim text-right mt-2">{a.next}</div>
 								</div>

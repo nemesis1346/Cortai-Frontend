@@ -1,6 +1,9 @@
 import Card, { CardBody, CardHeader } from '../../../../components/Card'
 import { LineChart } from 'lucide-react'
 import { Column } from '@ant-design/plots'
+import { useMemo } from 'react'
+import { chartAxisColorFallback, readResolvedChartColor } from '../../../../theme/resolvedChartColors'
+import { useThemePreference } from '../../../../theme/ThemePreferenceProvider'
 import { chartHex, primitive } from '../../../../theme/tokens.generated'
 
 type DayPoint = {
@@ -33,29 +36,37 @@ export default function PredictedActual({ points }: Props) {
 		{ day: 14, predicted: 156, actual: 148, occupancyPct: 64, deltaGuests: 4 },
 	]
 
+	const { effective } = useThemePreference()
 	const dataset = Array.isArray(points) && points.length > 0 ? points : defaultPoints
-	const mappedData = dataset.flatMap((p) => [
-		{ day: String(p.day), value: p.predicted, series: 'Predicted' },
-		{ day: String(p.day), value: p.actual, series: 'Actual' },
-	])
+	const mappedData = useMemo(
+		() =>
+			dataset.flatMap((p) => [
+				{ day: String(p.day), value: p.predicted, series: 'Predicted' },
+				{ day: String(p.day), value: p.actual, series: 'Actual' },
+			]),
+		[dataset],
+	)
 
-	const config = ({
-		data: mappedData,
-		xField: 'day',
-		yField: 'value',
-		colorField: 'series',
-		group: true,
-		legend: false,
-		axis: {
-			x: { labelAutoHide: true, labelSpacing: 9, labelFill: primitive.WhiteShadow90 },
-			y: false,
-		},
-		style: { inset: 0 },
-		height: 150,
-		color: ({ series }: { series: string }) => (series === 'Predicted' ? primitive.AccentPurple10 : chartHex.brand),
-		tooltip: { items: [{ channel: 'y', valueFormatter: (v: number) => `${v} guests` }] },
-		theme: { type: 'classicDark' },
-	} as unknown) as any
+	const config = useMemo(() => {
+		const xLabelFill = readResolvedChartColor('--color-text', chartAxisColorFallback.text)
+		return {
+			data: mappedData,
+			xField: 'day',
+			yField: 'value',
+			colorField: 'series',
+			group: true,
+			legend: false,
+			axis: {
+				x: { labelAutoHide: true, labelSpacing: 9, labelFill: xLabelFill },
+				y: false,
+			},
+			style: { inset: 0 },
+			height: 150,
+			color: ({ series }: { series: string }) => (series === 'Predicted' ? primitive.AccentPurple10 : chartHex.brand),
+			tooltip: { items: [{ channel: 'y', valueFormatter: (v: number) => `${v} guests` }] },
+			theme: { type: effective === 'dark' ? 'classicDark' : 'classic' },
+		} as Record<string, unknown>
+	}, [mappedData, effective])
 	return (
 		<Card className="bg-panel">
 			<CardHeader

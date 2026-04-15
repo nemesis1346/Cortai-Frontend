@@ -45,7 +45,7 @@ export default function LiveAlertsPanel({ items, summary }: LiveAlertsPanelProps
 				)}
 				middle={(
 					<div className="flex flex-wrap items-center justify-center gap-2">
-						<span className="rounded-[3px] bg-panel px-2 py-1 text-[11px] font-medium text-text-dim">
+						<span className="rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] px-2 py-1 text-[11px] font-medium text-text">
 							{s.today}
 							{' '}
 							today

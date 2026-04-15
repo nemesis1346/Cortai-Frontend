@@ -3,7 +3,7 @@ import Card, { CardBody, CardHeader } from '../../../components/Card'
 
 export default function AnalysisStrip() {
 	return (
-		<Card className="rounded-2xl border border-[color:var(--primitive-brand-800)] bg-[color:var(--primitive-brand-900)]">
+		<Card className="rounded-2xl border border-brand/60 bg-brand/10">
 			<CardHeader
 				left={(
 					<div className="text-[18px] text-text inline-flex items-center gap-2">
@@ -11,7 +11,7 @@ export default function AnalysisStrip() {
 						<span>CORTAI Analysis</span>
 					</div>
 				)}
-				middle={<span className="rounded-[3px] bg-panel px-2 py-1 text-[12px] text-text-dim">Updated: 1:41:50 pm</span>}
+				middle={<span className="rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] px-2 py-1 text-[12px] text-text-dim">Updated: 1:41:50 pm</span>}
 				right={(
 					<button type="button" className="inline-flex items-center text-text-dim">
 						<MoreHorizontal className="w-4 h-4" />

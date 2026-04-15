@@ -1,11 +1,16 @@
 import type { ReactElement } from 'react'
 import avatar from '../assets/avatar.jpg'
+import hotelBrandDark from '../assets/hotel-brand-dark.svg?url'
+import hotelBrandLight from '../assets/hotel-brand-light.svg?url'
+import { useThemePreference } from '../theme/ThemePreferenceProvider'
 type NavItem = {
 	key: string
 	label: string
 	icon: ReactElement
 	route: string
 }
+
+import { ChevronLeft } from 'lucide-react'
 
 const LeftRailIcon = ({ children, active, onClick }: { children: ReactElement; active?: boolean; onClick?: () => void }) => (
 	<button
@@ -52,6 +57,7 @@ const securityNavItems: NavItem[] = [
 type SidebarProps = { collapsed?: boolean; onToggleCollapsed?: () => void }
 
 export default function Sidebar({ collapsed = false, onToggleCollapsed }: SidebarProps) {
+	const { effective } = useThemePreference()
 	const [activeKey, setActiveKey] = useState<string>("command")
 	const [activeSection, setActiveSection] = useState<'hotel' | 'security'>('hotel')
 	const [sectionPanelOpen, setSectionPanelOpen] = useState(true)
@@ -85,7 +91,11 @@ export default function Sidebar({ collapsed = false, onToggleCollapsed }: Sideba
 			{/* Header */}
 			<header className="h-[72px] border-b border-border flex items-center" role="banner" aria-label="Sidebar header">
 				<div className="w-[72px] flex items-center justify-center">
-					<img src="/icons/hotel.svg" alt="" className="w-7 h-7 opacity-90" />
+					<img
+						src={effective === 'dark' ? hotelBrandDark : hotelBrandLight}
+						alt=""
+						className="h-7 w-7 shrink-0 opacity-90"
+					/>
 				</div>
 				<div className={`flex flex-col justify-center flex-1 transition-all duration-300 ${collapsed ? 'opacity-0 w-0 overflow-hidden px-0' : 'opacity-100 px-6'}`}>
 					<div className="text-brand/90 text-lg font-semibold tracking-wide">CORTAI</div>
@@ -98,7 +108,7 @@ export default function Sidebar({ collapsed = false, onToggleCollapsed }: Sideba
 						aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
 						className="w-9 h-9 rounded-lg border border-border flex items-center justify-center text-text hover:bg-card"
 					>
-						<img src="/icons/sidebar-toggle.svg" alt="" className="w-4 h-4" />
+						<ChevronLeft className="w-4 h-4" />
 					</button>
 				</div>
 			</header>

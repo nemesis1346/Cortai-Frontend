@@ -5,9 +5,9 @@ import { eventsMock, type EventStatus } from '../../../data/mock'
 function StatusPill({ status }: { status: EventStatus }) {
 	const color =
 		status === 'Live' ? 'bg-[color:var(--primitive-semantic-success-10)] text-ok'
-		: status === 'Open' ? 'bg-[color:var(--primitive-white-shadow-20)] text-text-dim'
+		: status === 'Open' ? 'bg-[color:var(--primitive-semantic-normal-10)] text-text-dim'
 		: 'bg-[color:var(--primitive-accent-yellow-10)] text-warn'
-	return <span className={`px-2 py-1 rounded-md !text-[12px] ${color}`}>{status}</span>
+	return <span className={`px-2 py-1 rounded-[3px] !text-[12px] ${color}`}>{status}</span>
 }
 
 export default function Events() {

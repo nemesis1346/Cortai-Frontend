@@ -37,7 +37,7 @@ export default function TrafficSteeringPolicies({ rows }: TrafficSteeringPolicie
 									<div className="font-medium text-text">{row.policy}</div>
 									<div className="flex flex-wrap gap-1">
 										{row.apps.map((a) => (
-											<span key={a} className="rounded-[3px] bg-[color:var(--primitive-white-shadow-10)] px-2 py-1 text-[11px] text-text-dim">
+											<span key={a} className="rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] px-2 py-1 text-[11px] text-text">
 												{a}
 											</span>
 										))}

@@ -7,13 +7,15 @@ import { Route, Routes } from 'react-router-dom'
 import { hotelRoutes } from './pages/Hotel'
 import { networkRoutes } from './pages/Network/routes'
 import { ConfigProvider, theme } from 'antd'
+import { useThemePreference } from './theme/ThemePreferenceProvider'
 
 export default function App() {
 	const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
+	const { effective } = useThemePreference()
 	return (
 		<ConfigProvider
 			theme={{
-				algorithm: theme.darkAlgorithm,
+				algorithm: effective === 'dark' ? theme.darkAlgorithm : theme.defaultAlgorithm,
 				token: {
 					colorPrimary: chartHex.brand,
 					colorSuccess: chartHex.ok,

@@ -4,7 +4,7 @@ import { Progress } from 'antd'
 import { CardBody, CardHeader } from '../../../components/Card'
 import { chartHex, primitive } from '../../../theme/tokens.generated'
 
-const rail = chartHex.rail
+const rail = chartHex.brandRail
 
 function PanelShell({
 	icon,
@@ -28,7 +28,7 @@ function PanelShell({
 						<h3 className="card-title !mb-0 text-[15px] font-semibold">{title}</h3>
 					</div>
 				)}
-				right={<span className={`rounded-[3px] px-2 py-1 text-[11px] font-medium ${badgeClassName}`}>{badge}</span>}
+				right={<span className={`rounded-[3px]  px-2 py-1 text-[11px] font-medium ${badgeClassName}`}>{badge}</span>}
 			/>
 			<CardBody className="flex min-h-0 flex-1 flex-col pt-1">{children}</CardBody>
 		</div>
@@ -154,7 +154,7 @@ export default function InsightPanels() {
 				icon={<UserRound className="h-5 w-5" strokeWidth={1.75} />}
 				title="User Activity"
 				badge="3 remove"
-				badgeClassName="bg-panel text-text-dim"
+				badgeClassName="bg-[color:var(--primitive-semantic-normal-10)] text-text"
 			>
 				<div className="mb-4 grid grid-cols-2 gap-4">
 					<div className="flex items-center gap-3">

@@ -1,7 +1,8 @@
 import { Bar } from '@ant-design/plots'
 import { useMemo } from 'react'
 import { CardBody, CardHeader } from '../../../components/Card'
-import { chart, primitive } from '../../../theme/fromExport'
+import { chartAxisColorFallback, readResolvedChartColor } from '../../../theme/resolvedChartColors'
+import { useThemePreference } from '../../../theme/ThemePreferenceProvider'
 import type { BandwidthRow } from './types'
 
 
@@ -12,6 +13,7 @@ type ApplicationBandwidthCardProps = {
 }
 
 export default function ApplicationBandwidthCard({ rows, totalBadge, axisMax = 8 }: ApplicationBandwidthCardProps) {
+	const { effective } = useThemePreference()
 	const maxGb = Math.max(axisMax, ...rows.map((r) => r.gb))
 
 	const chartData = useMemo(
@@ -29,8 +31,12 @@ export default function ApplicationBandwidthCard({ rows, totalBadge, axisMax = 8
 	const chartHeight = useMemo(() => Math.max(300, chartData.length * 34 + 58), [chartData.length])
 
 	const config = useMemo(
-		() =>
-			({
+		() => {
+			const text = readResolvedChartColor('--color-text', chartAxisColorFallback.text)
+			const textDim = readResolvedChartColor('--color-text-dim', chartAxisColorFallback.textDim)
+			const textMute = readResolvedChartColor('--color-text-mute', chartAxisColorFallback.textMute)
+			const border = readResolvedChartColor('--color-border', chartAxisColorFallback.border)
+			return {
 				data: chartData,
 				yField: 'gb',
 				xField: 'name',
@@ -48,13 +54,13 @@ export default function ApplicationBandwidthCard({ rows, totalBadge, axisMax = 8
 				legend: false,
 				axis: {
 					y: {
-						labelFill: primitive.WhiteShadow40,
-						lineStroke: primitive.WhiteShadow5,
-						tickStroke: primitive.WhiteShadow20,
+						labelFill: textDim,
+						lineStroke: textMute,
+						tickStroke: border,
 						grid: {
 							line: {
 								style: {
-									stroke: chart.gridStroke,
+									stroke: border,
 									lineDash: [2, 4],
 								},
 							},
@@ -62,9 +68,9 @@ export default function ApplicationBandwidthCard({ rows, totalBadge, axisMax = 8
 						tickCount: 5,
 					},
 					x: {
-						labelFill: primitive.WhiteShadow80,
-						lineStroke: primitive.WhiteShadowTransparent,
-						tickStroke: primitive.WhiteShadowTransparent,
+						labelFill: text,
+						lineStroke: 'transparent',
+						tickStroke: 'transparent',
 						grid: null,
 						labelAutoHide: false,
 						labelAutoEllipsis: false,
@@ -81,18 +87,18 @@ export default function ApplicationBandwidthCard({ rows, totalBadge, axisMax = 8
 				insetRight: 4,
 				insetBottom: 14,
 				insetTop: 14,
-				theme: { type: 'classicDark' },
+				theme: { type: effective === 'dark' ? 'classicDark' : 'classic' },
 				label: {
 					text: 'labelText',
 					position: 'right',
 					offset: 8,
 					style: {
-						fill: primitive.WhiteShadow50,
+						fill: textDim,
 						fontSize: 10,
 					},
 				},
 				tooltip: {
-					items: [{ channel: 'x', name: 'Bandwidth', valueFormatter: (v: number) => `${v} Gb` }],
+					items: [{ channel: 'y', name: 'Bandwidth', valueFormatter: (v: number) => `${v} Gb` }],
 				},
 				containerStyle: {
 					width: '100%',
@@ -100,15 +106,16 @@ export default function ApplicationBandwidthCard({ rows, totalBadge, axisMax = 8
 					minHeight: chartHeight,
 					overflow: 'visible',
 				},
-			}) as Record<string, unknown>,
-		[chartData, chartHeight, maxGb],
+			} as Record<string, unknown>
+		},
+		[chartData, chartHeight, maxGb, effective],
 	)
 
 	return (
 		<div className="card flex min-h-0 flex-1 flex-col p-4">
 			<CardHeader
 				left={<h3 className="card-title !mb-0 text-[15px] font-semibold">Application Bandwidth</h3>}
-				right={<span className="rounded-[3px] bg-panel px-2 py-1 text-[11px] font-medium text-text-dim">{totalBadge}</span>}
+				right={<span className="rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] px-2 py-1 text-[11px] font-medium text-text">{totalBadge}</span>}
 			/>
 			<CardBody className="overflow-visible pt-1">
 				<div className="w-full overflow-visible" style={{ height: chartHeight, minHeight: chartHeight }}>

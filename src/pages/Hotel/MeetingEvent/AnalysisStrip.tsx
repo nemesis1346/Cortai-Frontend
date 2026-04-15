@@ -11,7 +11,7 @@ export default function AnalysisStrip() {
 	}, [])
 	const updated = new Intl.DateTimeFormat(undefined, { hour: 'numeric', minute: '2-digit', second: '2-digit' }).format(now)
 	return (
-		<Card className="rounded-2xl border border-[color:var(--primitive-brand-800)] bg-[color:var(--primitive-brand-900)]">
+		<Card className="rounded-2xl border border-brand/60 bg-brand/10">
 			<div className="mb-3 flex flex-col justify-between gap-3 sm:flex-row sm:items-center sm:gap-4">
 				<div className="inline-flex min-w-0 items-center gap-2 text-[17px] text-text sm:text-[18px]">
 					<Sparkles className="h-4 w-4 shrink-0 text-brand" />
@@ -24,11 +24,11 @@ export default function AnalysisStrip() {
 					</button>
 				</div>
 			</div>
-			<CardBody className="grid grid-cols-1 gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
+			<CardBody className="grid grid-cols-1 divide-x divide-border/80 sm:grid-cols-2 lg:grid-cols-4">
 				{meetingPageMock.analysisStrips.map((strip, i) => (
 					<div
 						key={i}
-						className={`bg-[color:var(--primitive-brand-900)] px-2 py-3 sm:px-3 ${i === 0 ? 'lg:pr-2' : ''} ${i === 1 || i === 2 ? 'lg:px-3' : ''} ${i === 3 ? 'lg:pl-4' : ''}`}
+						className={`px-2 py-3 sm:px-3 ${i === 0 ? 'lg:pr-2' : ''} ${i === 1 || i === 2 ? 'lg:px-3' : ''} ${i === 3 ? 'lg:pl-4' : ''}`}
 					>
 						{'plain' in strip ? (
 							<div className="text-[14px] leading-6 text-text">{strip.plain}</div>

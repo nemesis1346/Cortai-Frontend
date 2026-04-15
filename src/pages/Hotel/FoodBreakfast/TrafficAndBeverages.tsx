@@ -1,8 +1,10 @@
 import { Clock, Coffee, ExternalLink } from 'lucide-react'
+import { useMemo } from 'react'
 import turnoverIcon from '../../../assets/table-turnover.svg'
 import { Area } from '@ant-design/plots'
-import { chart } from '../../../theme/fromExport'
+import { chartAxisColorFallback, readResolvedChartColor } from '../../../theme/resolvedChartColors'
 import { chartHex, primitive } from '../../../theme/tokens.generated'
+import { useThemePreference } from '../../../theme/ThemePreferenceProvider'
 
 const trafficData = [
 	{ time: '6:00', guests: 2 },
@@ -24,73 +26,80 @@ const trafficData = [
 
 const isPeakPoint = (time: string) => time === '7:45'
 
-const trafficConfig = {
-	data: trafficData,
-	xField: 'time',
-	yField: 'guests',
-	smooth: true,
-	tooltip: {
-		items: [{ channel: 'y', name: 'Guests' }],
-	},
-	interaction: {
-		tooltip: { marker: false },
-	},
-	style: {
-		fill: `linear-gradient(-90deg, ${primitive.NeutralShadow20} 68%, ${primitive.BrandShadow30} 100%)`,
-	},
-	scale: {
-		x: {
-			type: 'point',
-			tickCount: 4,
-		},
-		y: {
-			domain: [0, 68],
-			tickCount: 4,
-			nice: true,
-		},
-	},
-	axis: {
-		x: {
-			labelFill: primitive.WhiteShadow50,
-			lineStroke: primitive.WhiteShadow10,
-			tickStroke: primitive.WhiteShadow20,
-			grid: null,
-		},
-		y: {
-			labelFill: primitive.WhiteShadow50,
-			lineStroke: primitive.WhiteShadow10,
-			tickStroke: primitive.WhiteShadow20,
-			grid: {
-				line: {
-					style: {
-						stroke: chart.gridStroke,
-						lineDash: [4, 4],
+export default function TrafficAndBeverages() {
+	const { effective } = useThemePreference()
+
+	const trafficConfig = useMemo(() => {
+		const textMute = readResolvedChartColor('--color-text-mute', chartAxisColorFallback.textMute)
+		const textDim = readResolvedChartColor('--color-text-dim', chartAxisColorFallback.textDim)
+		const border = readResolvedChartColor('--color-border', chartAxisColorFallback.border)
+		return {
+			data: trafficData,
+			xField: 'time',
+			yField: 'guests',
+			smooth: true,
+			tooltip: {
+				items: [{ channel: 'y', name: 'Guests' }],
+			},
+			interaction: {
+				tooltip: { marker: false },
+			},
+			style: {
+				fill: `linear-gradient(-90deg, ${primitive.NeutralShadow20} 68%, ${primitive.BrandShadow30} 100%)`,
+			},
+			scale: {
+				x: {
+					type: 'point',
+					tickCount: 4,
+				},
+				y: {
+					domain: [0, 68],
+					tickCount: 4,
+					nice: true,
+				},
+			},
+			axis: {
+				x: {
+					labelFill: textMute,
+					lineStroke: textMute,
+					tickStroke: textMute,
+					grid: null,
+				},
+				y: {
+					labelFill: textDim,
+					lineStroke: border,
+					tickStroke: border,
+					grid: {
+						line: {
+							style: {
+								stroke: border,
+								lineDash: [4, 4],
+							},
+						},
 					},
 				},
 			},
-		},
-	},
-	line: {
-		style: {
-			stroke: chartHex.brand,
-			lineWidth: 2,
-		},
-	},
-	point: {
-		size: (d: { time: string }) => (isPeakPoint(d.time) ? 6 : 3),
-		shape: (d: { time: string }) => (isPeakPoint(d.time) ? 'diamond' : 'circle'),
-		style: (d: { time: string }) => ({
-			stroke: isPeakPoint(d.time) ? chartHex.danger : chartHex.brand,
-			fill: isPeakPoint(d.time) ? chartHex.danger : chartHex.bg,
-			lineWidth: 1,
-		}),
-	},
-}
+			line: {
+				style: {
+					stroke: chartHex.brand,
+					lineWidth: 2,
+				},
+			},
+			point: {
+				size: (d: { time: string }) => (isPeakPoint(d.time) ? 6 : 3),
+				shape: (d: { time: string }) => (isPeakPoint(d.time) ? 'diamond' : 'circle'),
+				style: (d: { time: string }) => ({
+					stroke: isPeakPoint(d.time) ? chartHex.danger : chartHex.brand,
+					fill: isPeakPoint(d.time) ? chartHex.danger : chartHex.bg,
+					lineWidth: 1,
+				}),
+			},
+		}
+	}, [effective])
 
-export default function TrafficAndBeverages() {
 	return (
 		<section className="grid grid-cols-1 xl:grid-cols-[1.35fr_1fr] gap-4">
-			<div className="rounded-2xl border border-border bg-panel p-4">
+			<div className="rounded-2xl border border-border card p-4">
 				<div className="grid grid-cols-[1fr_auto_1fr] items-center">
 					<div className="text-[18px] text-text inline-flex items-center gap-2">
 						<Clock className="w-4 h-4 text-brand" />
@@ -108,7 +117,7 @@ export default function TrafficAndBeverages() {
 						</span>
 					</div>
 
-					<span className="justify-self-end rounded-[3px] bg-panel px-2 py-1 text-[12px] text-text-dim">
+					<span className="justify-self-end rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] px-2 py-1 text-[12px] text-text-dim">
 						6:00 am - 10:00 am
 					</span>
 				</div>
@@ -118,7 +127,7 @@ export default function TrafficAndBeverages() {
 				</div>
 			</div>
 
-			<div className="rounded-2xl border border-border bg-panel p-4">
+			<div className="rounded-2xl border border-border card p-4">
 				<div className="grid grid-cols-[1fr_1fr] items-center">
 					<div className="text-[18px] text-text inline-flex items-center gap-2">
 						<Coffee className="w-4 h-4 text-brand" />
@@ -135,7 +144,7 @@ export default function TrafficAndBeverages() {
 							<span>Tea / Coffee</span>
 							<span>80%</span>
 						</div>
-						<div className="mt-1 h-[8px] rounded-full bg-[color:var(--primitive-brand-900)]">
+						<div className="mt-1 h-[8px] rounded-full bg-brand/20">
 							<div className="h-full w-[80%] rounded-full bg-brand" />
 						</div>
 					</div>
@@ -145,7 +154,7 @@ export default function TrafficAndBeverages() {
 							<span>Other</span>
 							<span>45%</span>
 						</div>
-						<div className="mt-1 h-[8px] rounded-full bg-[color:var(--primitive-brand-900)]">
+						<div className="mt-1 h-[8px] rounded-full bg-brand/20">
 							<div className="h-full w-[45%] rounded-full bg-brand" />
 						</div>
 					</div>

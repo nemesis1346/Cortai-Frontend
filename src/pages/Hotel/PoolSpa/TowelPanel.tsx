@@ -57,7 +57,7 @@ export default function TowelPanel() {
 						</div>
 					</div>
 				</div>
-				<div className="rounded-xl bg-panel p-4">
+				<div className="rounded-xl bg-panel border border-border p-4">
 					<div className="text-[13px] font-medium text-text">Clean Supply</div>
 					<div className="mt-5 text-[14px] font-bold leading-none tracking-tight text-ok">
 						{c.count}/{c.capacity}

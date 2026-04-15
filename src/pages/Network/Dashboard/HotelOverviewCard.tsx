@@ -15,7 +15,7 @@ type HotelOverviewCardProps = {
 
 export default function HotelOverviewCard({ title, address, stats }: HotelOverviewCardProps) {
 	return (
-		<div className="rounded-xl border border-border bg-panel p-3">
+		<div className="rounded-xl border border-border card p-3">
 			<div className="flex items-start justify-between gap-3">
 				<div className="flex flex-col gap-1">
 					<div className="text-[18px] font-semibold text-brand">{title}</div>

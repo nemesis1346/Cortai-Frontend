@@ -1,6 +1,7 @@
-import { Search, Settings, Bell, BedDouble, AlertTriangle, Star, Plus, Sparkles } from "lucide-react"
-import { useEffect, useRef, useState } from "react"
+import { Search, Settings, Bell, BedDouble, AlertTriangle, Star, Plus, Sparkles, Sun, Moon, Monitor } from "lucide-react"
+import { useEffect, useRef, useState, type ReactNode } from "react"
 import { useLocation } from "react-router-dom"
+import { useThemePreference, type ThemePreference } from "../theme/ThemePreferenceProvider"
 
 export default function Topbar() {
 	const [now, setNow] = useState(new Date())
@@ -41,7 +42,7 @@ export default function Topbar() {
 		<header className="px-5 pt-5 h-14 flex items-center justify-between ">
 			<div className="flex items-center gap-3 relative">
 				<div className="text-xl font-semibold text-text tracking-[0.2px]">{pageTitle}</div>
-				<div className="text-xs px-2.5 py-1 rounded-md bg-elevated/[0.1] text-brand inline-flex items-center gap-1.5">
+				<div className="text-xs px-2.5 py-1 rounded-md bg-brand/[0.2] text-brand inline-flex items-center gap-1.5">
 					<Sparkles className="w-3.5 h-3.5" />
 					<span>AI Live / 30s upd</span>
 				</div>
@@ -68,9 +69,7 @@ export default function Topbar() {
 				<button className="w-8 h-8 rounded-full border border-border flex items-center justify-center text-text hover:bg-card">
 					<Search className="w-4 h-4" />
 				</button>
-				<button className="w-8 h-8 rounded-full border border-border flex items-center justify-center text-text hover:bg-card">
-					<Settings className="w-4 h-4" />
-				</button>
+				<SettingsMenu />
 				<button className="relative w-8 h-8 rounded-full border border-border flex items-center justify-center text-text hover:bg-card">
 					<Bell className="w-4 h-4" />
 					<span className="absolute -top-1 -right-1 text-[10px] bg-danger text-[color:var(--primitive-white-shadow-100)] rounded-full px-1.5 py-[1px]">4</span>
@@ -78,6 +77,72 @@ export default function Topbar() {
 				<OperationsMenu />
 			</div>
 		</header>
+	)
+}
+
+function SettingsMenu() {
+	const [open, setOpen] = useState(false)
+	const ref = useRef<HTMLDivElement>(null)
+	const { preference, setPreference } = useThemePreference()
+
+	useEffect(() => {
+		function onDocClick(e: MouseEvent) {
+			if (!ref.current) return
+			if (!ref.current.contains(e.target as Node)) setOpen(false)
+		}
+		function onEsc(e: KeyboardEvent) {
+			if (e.key === 'Escape') setOpen(false)
+		}
+		document.addEventListener('mousedown', onDocClick)
+		document.addEventListener('keydown', onEsc)
+		return () => {
+			document.removeEventListener('mousedown', onDocClick)
+			document.removeEventListener('keydown', onEsc)
+		}
+	}, [])
+
+	const rows: { id: ThemePreference; label: string; icon: ReactNode }[] = [
+		{ id: 'light', label: 'Light', icon: <Sun className="w-4 h-4 shrink-0" /> },
+		{ id: 'dark', label: 'Dark', icon: <Moon className="w-4 h-4 shrink-0" /> },
+		{ id: 'system', label: 'System', icon: <Monitor className="w-4 h-4 shrink-0" /> },
+	]
+
+	return (
+		<div className="relative z-50" ref={ref}>
+			<button
+				type="button"
+				onClick={() => setOpen((v) => !v)}
+				className="w-8 h-8 rounded-full border border-border flex items-center justify-center text-text hover:bg-card"
+				aria-expanded={open}
+				aria-haspopup="menu"
+				aria-label="Settings"
+			>
+				<Settings className="w-4 h-4" />
+			</button>
+			{open && (
+				<div className="absolute right-0 top-full mt-1 w-[200px] rounded-xl bg-card shadow-xl p-2 z-50 border border-border" role="menu">
+					<div className="px-2 py-1.5 text-[11px] font-semibold uppercase tracking-wide text-text-mute">Appearance</div>
+					<ul className="!m-0 list-none p-0">
+						{rows.map((row) => (
+							<li key={row.id}>
+								<button
+									type="button"
+									role="menuitem"
+									onClick={() => {
+										setPreference(row.id)
+										setOpen(false)
+									}}
+									className={`w-full flex items-center gap-2 text-left !text-[14px] p-2.5 rounded-lg ${preference === row.id ? 'bg-panel text-text' : 'text-text-dim hover:bg-panel'}`}
+								>
+									{row.icon}
+									<span>{row.label}</span>
+								</button>
+							</li>
+						))}
+					</ul>
+				</div>
+			)}
+		</div>
 	)
 }
 
@@ -109,7 +174,7 @@ function OperationsMenu() {
 
 	return (
 		<div className="relative z-50" ref={ref}>
-			<button onClick={() => setOpen(v => !v)} className="ml-2 px-3 h-9 rounded-md bg-elevated/[0.3] text-brand text-sm font-medium inline-flex items-center gap-1">
+			<button onClick={() => setOpen(v => !v)} className="ml-2 px-3 h-9 rounded-md bg-brand/[0.4] text-brand text-sm font-medium inline-flex items-center gap-1">
 				<Plus className="w-4 h-4" />
 				<span>Operations</span>
 			</button>
@@ -118,7 +183,7 @@ function OperationsMenu() {
 					<ul className="!m-0">
 						{items.map((label) => (
 							<li key={label}>
-								<button className="w-full text-left !text-[14px] p-3 text-text-dim hover:bg-panel rounded-lg">{label}</button>
+								<button className="w-full text-left !text-[14px] hover:bg-[color:var(--primitive-semantic-normal-10)] p-3 text-text rounded-lg">{label}</button>
 							</li>
 						))}
 					</ul>

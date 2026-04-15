@@ -11,7 +11,7 @@ export default function AnalysisStrip() {
 	}, [])
 	const updated = new Intl.DateTimeFormat(undefined, { hour: 'numeric', minute: '2-digit', second: '2-digit' }).format(now)
 	return (
-		<Card className="rounded-2xl border border-[color:var(--primitive-brand-800)] bg-[color:var(--primitive-brand-900)]">
+		<Card className="rounded-2xl border border-brand/60 bg-brand/10">
 			<CardHeader
 				left={(
 					<div className="text-[18px] text-text inline-flex items-center gap-2">

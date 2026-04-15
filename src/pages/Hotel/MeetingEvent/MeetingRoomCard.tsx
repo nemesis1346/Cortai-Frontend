@@ -4,6 +4,8 @@ import { Progress } from 'antd'
 import { Column } from '@ant-design/plots'
 import Card, { CardBody } from '../../../components/Card'
 import { meetingPageMock } from '../../../data/mock'
+import { chartAxisColorFallback, readResolvedChartColor } from '../../../theme/resolvedChartColors'
+import { useThemePreference } from '../../../theme/ThemePreferenceProvider'
 import { chartHex, primitive } from '../../../theme/tokens.generated'
 
 type Room = (typeof meetingPageMock.meetingRooms)[number]
@@ -45,6 +47,7 @@ const COLOR_EVENTS = primitive.AccentPurple
 const COLOR_GUESTS = chartHex.brand
 
 export default function MeetingRoomCard({ room }: { room: Room }) {
+	const { effective } = useThemePreference()
 	const [tab, setTab] = useState<Tab>('overview')
 
 	const peakLabel = useMemo(() => {
@@ -64,6 +67,7 @@ export default function MeetingRoomCard({ room }: { room: Room }) {
 			{ month: m.month, value: m.events, series: 'Events' as const },
 			{ month: m.month, value: m.guests, series: 'Guests' as const },
 		])
+		const xLabelFill = readResolvedChartColor('--color-text', chartAxisColorFallback.text)
 		return {
 			data: flat,
 			xField: 'month',
@@ -81,7 +85,7 @@ export default function MeetingRoomCard({ room }: { room: Room }) {
 			},
 			style: { maxWidth: 50, radius: 0 },
 			scale: {
-				x: { paddingInner: 0.3, paddingOuter: 0.1 },
+				x: { paddingInner: 0.3, paddingOuter: 0.1},
 				y: { domain: [0, CHART_Y_MAX], nice: false },
 				color: {
 					domain: ['Events', 'Guests'],
@@ -91,7 +95,7 @@ export default function MeetingRoomCard({ room }: { room: Room }) {
 			label: false,
 			axis: {
 				x: {
-					labelFill: primitive.WhiteShadow50,
+					labelFill: xLabelFill,
 					lineStroke: primitive.WhiteShadowTransparent,
 					labelFontSize: 11,
 				},
@@ -100,8 +104,9 @@ export default function MeetingRoomCard({ room }: { room: Room }) {
 			tooltip: {
 				items: [{ channel: 'y' }],
 			},
+			theme: { type: effective === 'dark' ? 'classicDark' : 'classic' },
 		}
-	}, [room.monthlyUsage, chartEventColor, chartGuestColor])
+	}, [room.monthlyUsage, chartEventColor, chartGuestColor, effective])
 
 	const m = room.metrics
 	const ev = room.currentEvent
@@ -127,7 +132,7 @@ export default function MeetingRoomCard({ room }: { room: Room }) {
 								? 'bg-[color:var(--primitive-semantic-warning-10)] text-warn'
 								: room.status === 'in_use'
 									? 'bg-[color:var(--primitive-semantic-success-10)] text-ok'
-									: 'bg-panel text-text-dim'
+									: 'bg-[color:var(--primitive-semantic-normal-10)] text-text'
 						}`}
 					>
 						{room.status === 'setup' ? 'Setup' : room.status === 'in_use' ? 'In Use' : 'Available'}
@@ -157,7 +162,7 @@ export default function MeetingRoomCard({ room }: { room: Room }) {
 						<div
 							className={`shrink-0 p-4 lg:max-w-[22rem] lg:min-w-[14rem] ${
 								'setupProgress' in ev && ev.setupProgress != null
-									? 'rounded-[5px] border border-[color:var(--primitive-semantic-warning-10)] bg-[color:var(--primitive-neutral-850)]'
+									? 'rounded-[5px] border border-border bg-warn/10'
 									: 'rounded-[5px] bg-panel'
 							}`}
 						>
@@ -174,7 +179,7 @@ export default function MeetingRoomCard({ room }: { room: Room }) {
 											size={28}
 											strokeWidth={15}
 											strokeColor={primitive.SemanticWarning}
-											trailColor={primitive.Neutral850}
+											trailColor={primitive.SemanticNormal10}
 											format={() => ''}
 										/>
 										<span className="text-center text-[12px] leading-tight text-text-dim">
@@ -186,7 +191,7 @@ export default function MeetingRoomCard({ room }: { room: Room }) {
 										className={`shrink-0 rounded-[3px] px-2 py-1 text-[11px] font-medium ${
 											ev.badge === 'Now'
 												? 'bg-brand/20 text-brand'
-												: 'bg-panel text-text-dim'
+												: 'bg-[color:var(--primitive-semantic-normal-10)] text-text'
 										}`}
 									>
 										{ev.badge}

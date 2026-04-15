@@ -2,19 +2,25 @@ import { Clock } from 'lucide-react'
 import { Line } from '@ant-design/plots'
 import { useMemo } from 'react'
 import { poolPageMock } from '../../../data/mock'
-import { chart } from '../../../theme/fromExport'
-import { chartHex, primitive } from '../../../theme/tokens.generated'
+import { chartAxisColorFallback, readResolvedChartColor } from '../../../theme/resolvedChartColors'
+import { useThemePreference } from '../../../theme/ThemePreferenceProvider'
+import { chartHex } from '../../../theme/tokens.generated'
 
 const peakPoolSet = new Set(poolPageMock.peakPoolTimes)
 const peakSpaSet = new Set(poolPageMock.peakSpaTimes)
 
 export default function TrafficPanel() {
+	const { effective } = useThemePreference()
 	const maxCount = useMemo(
 		() => Math.max(...poolPageMock.trafficSeries.map((d) => d.count), 1),
 		[],
 	)
-	const lineConfig = useMemo(
-		() => ({
+	const lineConfig = useMemo(() => {
+		const text = readResolvedChartColor('--color-text', chartAxisColorFallback.text)
+		const textDim = readResolvedChartColor('--color-text-dim', chartAxisColorFallback.textDim)
+		const textMute = readResolvedChartColor('--color-text-mute', chartAxisColorFallback.textMute)
+		const border = readResolvedChartColor('--color-border', chartAxisColorFallback.border)
+		return {
 			data: poolPageMock.trafficSeries,
 			xField: 'time',
 			yField: 'count',
@@ -37,19 +43,19 @@ export default function TrafficPanel() {
 			},
 			axis: {
 				x: {
-					labelFill: primitive.WhiteShadow50,
-					lineStroke: primitive.WhiteShadow10,
-					tickStroke: primitive.WhiteShadow20,
+					labelFill: text,
+					lineStroke: textMute,
+					tickStroke: border,
 					grid: null,
 				},
 				y: {
-					labelFill: primitive.WhiteShadow50,
-					lineStroke: primitive.WhiteShadow10,
-					tickStroke: primitive.WhiteShadow20,
+					labelFill: textDim,
+					lineStroke: textMute,
+					tickStroke: border,
 					grid: {
 						line: {
 							style: {
-								stroke: chart.gridStroke,
+								stroke: border,
 								lineDash: [4, 4],
 							},
 						},
@@ -86,9 +92,9 @@ export default function TrafficPanel() {
 					lineWidth: 1,
 				}),
 			},
-		}),
-		[maxCount],
-	)
+			theme: { type: effective === 'dark' ? 'classicDark' : 'classic' },
+		}
+	}, [maxCount, effective])
 	return (
 		<div className="rounded-2xl border border-border bg-panel p-4">
 			<div className="grid grid-cols-[1fr_auto_1fr] items-center gap-2">
@@ -110,7 +116,7 @@ export default function TrafficPanel() {
 						Spa
 					</span>
 				</div>
-				<span className="justify-self-end rounded-[3px] bg-panel px-2 py-1 text-[12px] text-text-dim whitespace-nowrap">
+				<span className="justify-self-end rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] px-2 py-1 text-[12px] text-text whitespace-nowrap">
 					6:00 am – 8:00 pm
 				</span>
 			</div>

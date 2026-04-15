@@ -23,11 +23,11 @@ export default function FloorSection({
 					</div>
 				}
 				middle={
-					<span className="rounded-[3px] bg-[color:var(--primitive-white-shadow-10)] px-2 py-1 text-[12px] text-text-dim">20 rooms / {floor.occupied} occupied</span>
+					<span className="rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] px-2 py-1 text-[12px] text-text-dim">20 rooms / {floor.occupied} occupied</span>
 				}
 				right={
 					<div className="flex gap-2">
-						<span className="rounded-[3px] bg-[color:var(--primitive-white-shadow-10)] px-2 py-1 text-[12px]">
+						<span className="rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] px-2 py-1 text-[12px]">
 							<span className="text-ok">{floor.clean} clean</span>
 							<span className="text-text-mute"> / </span>
 							<span className="text-warn">{floor.dirty} dirty</span>

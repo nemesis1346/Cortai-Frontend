@@ -1,6 +1,6 @@
 import Card, { CardHeader, CardBody } from '../../../components/Card'
 import robotImg from '../../../assets/robot.png'
-import { Sparkles } from 'lucide-react'
+import { Sparkles, MoreHorizontal } from 'lucide-react'
 
 export default function Analysis() {
 	return (
@@ -13,11 +13,15 @@ export default function Analysis() {
 					</div>
 				)}
 				middle={(
-					<span className="rounded-md bg-[color:var(--primitive-white-shadow-10)] px-2 py-1 text-[11px] text-text">
+					<span className="rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] px-2 py-1 text-[11px] text-text">
 						Updated: <span className="opacity-90">{new Intl.DateTimeFormat(undefined, { hour: 'numeric', minute: '2-digit', second: '2-digit' }).format(new Date())}</span>
 					</span>
 				)}
-				right={<img src="/icons/ellipsis.svg" alt="" className="h-5 w-5 opacity-90" />}
+				right={
+				<div className="text-text">
+					<MoreHorizontal className="w-5 h-5" />
+				</div>
+				}
 			/>
 			<CardBody className="w-full lg:w-[90%]">
 				<p className="!text-[14px] mb-6 text-text">
@@ -32,14 +36,14 @@ export default function Analysis() {
 						</p>
 					</div>
 					<div className="relative px-5">
-						<div className="absolute -left-3 top-0 hidden h-full w-px bg-[color:var(--primitive-white-shadow-20)] lg:block" />
+						<div className="absolute -left-3 top-0 hidden h-full w-px bg-border lg:block" />
 						<div className="mb-2 text-[12px] font-semibold text-brand">Auto Show prep:</div>
 						<p className="mb-4 text-[12px] text-text-dim">
 							Feb 20-22 rates are <span className="font-semibold">$10-15</span> below compset. Raise to <span className="font-semibold">$185-$195</span> before booking window closes.
 						</p>
 					</div>
 					<div className="relative px-5">
-						<div className="absolute -left-3 top-0 hidden h-full w-px bg-[color:var(--primitive-white-shadow-20)] lg:block" />
+						<div className="absolute -left-3 top-0 hidden h-full w-px bg-border lg:block" />
 						<div className="mb-2 text-[12px] font-semibold text-brand">Arrivals pace:</div>
 						<p className="mb-4 text-[12px] text-text-dim">
 							8 of 23 arrivals already checked in (<span className="font-semibold">35%</span>). 8 departures still pending.

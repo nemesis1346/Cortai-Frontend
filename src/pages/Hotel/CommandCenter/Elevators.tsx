@@ -139,7 +139,7 @@ export default function Elevators() {
 						<div className="!text-[14px] text-text-mute mt-1">Longest waits today / {elevatorsMock.longestAvg} avg</div>
 						<div className="mt-3 flex flex-wrap items-center gap-3">
 							{elevatorsMock.timeline.map(t => (
-								<span key={t.id} className="rounded-md bg-[color:var(--primitive-white-shadow-20)] px-2 py-1 !text-[12px] text-text">
+								<span key={t.id} className="rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] px-2 py-1 !text-[12px] text-text">
 									<span className="text-danger font-medium">{t.left}</span>
 									{' · '}{t.mid}{' · '}{t.right}
 								</span>

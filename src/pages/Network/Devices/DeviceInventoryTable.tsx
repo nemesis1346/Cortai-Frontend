@@ -62,7 +62,7 @@ export default function DeviceInventoryTable({ rows, totalBadge }: DeviceInvento
 						})}
 					</nav>
 				)}
-				right={<span className="rounded-[3px] bg-panel px-2 py-1 text-[11px] font-medium text-text-dim">{totalBadge}</span>}
+				right={<span className="rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] px-2 py-1 text-[11px] font-medium text-text">{totalBadge}</span>}
 			/>
 			<CardBody className="pt-1">
 				<div className="overflow-x-auto">

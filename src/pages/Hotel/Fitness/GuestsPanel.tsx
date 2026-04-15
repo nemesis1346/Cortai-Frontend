@@ -22,7 +22,7 @@ export default function GuestsPanel({ className }: GuestsPanelProps) {
 						<span className="text-text">{g.adults} now</span>
 						<span className="text-text-dim">38 as today</span>
 					</div>
-					<div className="text-[12px] text-text-dim bg-panel rounded-[3px] px-2 py-1">{g.capacityPercent}% capacity</div>
+					<div className="text-[12px] text-text-dim bg-[color:var(--primitive-semantic-normal-10)] rounded-[3px] px-2 py-1">{g.capacityPercent}% capacity</div>
 					<div className="flex flex-row items-center gap-2">
 						<span className="text-warn">Kids</span>
 						<span className="text-text">{g.kids} now</span>

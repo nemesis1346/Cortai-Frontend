@@ -64,7 +64,7 @@ export default function ThreatIntelligencePanel({ items, summary }: ThreatIntell
 				)}
 				middle={(
 					<div className="flex flex-wrap items-center justify-center gap-2">
-						<span className="rounded-[3px] bg-[color:var(--primitive-white-shadow-10)] px-2 py-1 text-[11px] font-medium text-text-dim">
+						<span className="rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] px-2 py-1 text-[11px] font-medium text-text">
 							{s.blocked}
 						</span>
 						<span className="rounded-[3px] bg-[color:var(--primitive-semantic-success-10)] px-2 py-1 text-[11px] font-medium text-ok">

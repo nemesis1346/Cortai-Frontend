@@ -10,7 +10,7 @@ const toneClassMap: Record<NonNullable<SummaryMetric['tone']>, string> = {
 	blue: 'text-info',
 }
 
-const rail = chartHex.rail
+const rail = chartHex.brandRail
 
 type SummaryStripProps = {
 	metrics: SummaryMetric[]
@@ -31,7 +31,7 @@ function MetricVisual({ metric }: { metric: SummaryMetric }) {
 					trailColor={rail}
 					format={() => null}
 				/>
-				<span className="text-[10px] text-text-dim">{v.footnote}</span>
+				<span className="text-[10px] text-text">{v.footnote}</span>
 			</div>
 		)
 	}
@@ -39,14 +39,14 @@ function MetricVisual({ metric }: { metric: SummaryMetric }) {
 		return (
 			<div className="flex flex-row h-16 items-end justify-end gap-2">
 				<div className="flex flex-col items-end justify-end gap-0.5">
-					<span className="text-[10px] text-text-dim">{v.left.value}</span>
-					<div className="h-8 w-5 bg-[color:var(--primitive-white-shadow-20)]" />
-					<span className="text-[9px] text-text-dim">{v.left.label}</span>
+					<span className="text-[10px] text-text">{v.left.value}</span>
+					<div className="h-8 w-5 bg-text/80" />
+					<span className="text-[9px] text-text">{v.left.label}</span>
 				</div>
 				<div className="flex flex-col items-center gap-0.5">
 					<span className="text-[10px] text-brand">{v.right.value}</span>
 					<div className="h-10 w-5 bg-brand" />
-					<span className="text-[9px] text-text-dim">{v.right.label}</span>
+					<span className="text-[9px] text-text">{v.right.label}</span>
 				</div>
 			</div>
 		)
@@ -63,7 +63,7 @@ function MetricVisual({ metric }: { metric: SummaryMetric }) {
 				trailColor={rail}
 				format={() => null}
 			/>
-			<span className="text-[10px] text-text-dim">{v.maxLabel}</span>
+			<span className="text-[10px] text-text">{v.maxLabel}</span>
 		</div>
 	)
 }
@@ -74,7 +74,7 @@ export default function SummaryStrip({ metrics }: SummaryStripProps) {
 			{metrics.map((metric) => (
 				<div
 					key={metric.id}
-					className="relative rounded-xl border border-border bg-panel p-3.5"
+					className="relative rounded-xl border border-border bg-card p-3.5"
 				>
 					<div className="absolute right-3 top-3">
 						<button
@@ -87,11 +87,11 @@ export default function SummaryStrip({ metrics }: SummaryStripProps) {
 					</div>
 					<div className="flex flex-row items-center justify-between gap-2 pr-7">
 						<div className="min-w-0 flex-1 flex flex-col gap-2">
-							<div className="text-[14px] text-text-dim">{metric.label}</div>
+							<div className="text-[14px] text-text">{metric.label}</div>
 							<div className={`text-[24px] font-semibold leading-none ${toneClassMap[metric.tone ?? 'teal']}`}>
 								{metric.value}
 							</div>
-							<div className="text-[12px] text-text-dim">{metric.subvalue}</div>
+							<div className="text-[12px] text-text">{metric.subvalue}</div>
 						</div>
 						<MetricVisual metric={metric} />
 					</div>

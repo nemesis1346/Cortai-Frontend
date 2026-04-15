@@ -23,7 +23,7 @@ export default function Housekeeping() {
 	function stateClass(state: string) {
 		if (state === 'done') return 'bg-[color:var(--primitive-semantic-success-10)] text-ok'
 		if (state === 'transit') return 'bg-[color:var(--primitive-accent-blue-10)] text-info'
-		if (state === 'break') return 'bg-panel text-text-dim'
+		if (state === 'break') return 'bg-[color:var(--primitive-semantic-normal-10)] text-text-dim'
 		return 'bg-[color:var(--primitive-semantic-warning-10)] text-warn'
 	}
 
@@ -48,7 +48,7 @@ export default function Housekeeping() {
 					}
 					middle={
 						<div className="flex items-center gap-3 text-xs">
-							<span className="rounded-[3px] bg-panel px-3 py-1 text-text-dim">
+							<span className="rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] px-3 py-1 text-text-dim">
 								{housekeepingMock.rooms} rooms
 							</span>
 							<span className="rounded-[3px] bg-[color:var(--primitive-semantic-warning-10)] px-3 py-1 text-warn">
@@ -140,16 +140,16 @@ export default function Housekeeping() {
 					onClick={() => setOpenModal(false)}
 				>
 					<div
-						className={`w-[min(600px,calc(100vw-24px))] rounded-2xl border-[6px] border-[color:var(--primitive-white-shadow-30)] bg-card px-3 sm:px-6 overflow-hidden transition-all duration-300 ease-out ${modalEntered ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 -translate-y-4 scale-[0.98]'}`}
+						className={`w-[min(600px,calc(100vw-24px))] rounded-2xl border-[6px] border-border bg-bg px-3 sm:px-6 overflow-hidden transition-all duration-300 ease-out ${modalEntered ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 -translate-y-4 scale-[0.98]'}`}
 						onClick={(e) => e.stopPropagation()}
 					>
 						<div className="flex items-center justify-between py-3">
 							<h3 className="!text-[18px] text-text">Staff on duty</h3>
-							<button type="button" onClick={() => setOpenModal(false)} className="text-text-dim">
+							<button type="button" onClick={() => setOpenModal(false)} className="text-text">
 								<X className="w-[32px] h-[32px]" />
 							</button>
 						</div>
-						<div className="py-3 min-w-[520px] grid grid-cols-[1fr_80px_100px_80px] !text-[10px] text-text-dim border-b border-border">
+						<div className="py-3 min-w-[520px] grid grid-cols-[1fr_80px_100px_80px] !text-[10px] text-text border-b border-border">
 							<div>REQUEST / GUEST</div>
 							<div>ROOM</div>
 							<div>ROOMS</div>
@@ -159,7 +159,7 @@ export default function Housekeeping() {
 							{staffRows.map((s) => (
 								<div key={s.id} className="py-3 min-w-[520px] grid grid-cols-[1fr_80px_100px_80px] items-center">
 									<div className="flex items-center gap-3">
-										<div className="relative w-[36px] h-[36px] rounded-full bg-panel flex items-center justify-center text-text text-sm">
+										<div className="relative w-[36px] h-[36px] rounded-full bg-brand/[0.1] flex items-center justify-center text-brand text-sm">
 											{s.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
 											<span className="absolute right-0 top-0 w-[9px] h-[9px] rounded-full bg-ok" />
 										</div>
@@ -172,13 +172,13 @@ export default function Housekeeping() {
 										</div>
 									</div>
 									<div>
-										{s.room ? <span className="rounded-md bg-panel px-2 py-1 !text-[14px] text-text-dim">{s.room}</span> : null}
+										{s.room ? <span className="rounded-md bg-[color:var(--primitive-semantic-normal-10)] px-2 py-1 !text-[14px] text-text-dim">{s.room}</span> : null}
 									</div>
 									<div>
 										<span className={`rounded-md px-2 text-[14px] py-1 ${stateClass(s.state)}`}>{s.rooms}</span>
 									</div>
 									<div className="text-right">
-										<button type="button" className="w-[32px] h-[32px] rounded-md border border-border inline-flex items-center justify-center text-text-dim">
+										<button type="button" className="w-[32px] h-[32px] rounded-md border border-border inline-flex items-center justify-center text-text">
 											<Phone className="w-[16px] h-[16px]" />
 										</button>
 									</div>
@@ -187,7 +187,7 @@ export default function Housekeeping() {
 						</div>
 						<div className="flex items-center justify-between py-3 border-t border-border">
 							<button type="button" onClick={() => setOpenModal(false)} className="px-4 py-3 rounded-lg border border-border text-text">Close</button>
-							<button type="button" className="px-4 py-3 rounded-lg bg-elevated/[0.3] !text-[14px] text-[color:var(--primitive-white-shadow-100)]">Housekeeping Overview</button>
+							<button type="button" className="px-4 py-3 rounded-lg bg-brand/[0.8] !text-[14px] text-text">Housekeeping Overview</button>
 						</div>
 					</div>
 				</div>

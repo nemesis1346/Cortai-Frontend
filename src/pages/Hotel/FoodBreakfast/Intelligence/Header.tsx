@@ -8,9 +8,9 @@ export default function IntelligenceHeader() {
 				<span className="text-[18px] text-text">CORTAI Predictive F&amp;B Intelligence</span>
 			</div>
 			<div className="hidden md:flex items-center gap-2 text-[12px] justify-self-center">
-				<span className="rounded-[3px] bg-[color:var(--primitive-white-shadow-10)] px-2 py-1 text-text-dim">5.5 weeks of data</span>
-				<span className="rounded-[3px] bg-[color:var(--primitive-white-shadow-10)] px-2 py-1 text-text-dim">Model accuracy 94.2%</span>
-				<span className="rounded-[3px] bg-[color:var(--primitive-white-shadow-10)] px-2 py-1 text-text-dim">Learning improves weekly</span>
+				<span className="rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] px-2 py-1 text-text-dim">5.5 weeks of data</span>
+				<span className="rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] px-2 py-1 text-text-dim">Model accuracy 94.2%</span>
+				<span className="rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] px-2 py-1 text-text-dim">Learning improves weekly</span>
 			</div>
 			<div className="hidden md:flex items-center gap-6 pl-6 justify-self-end">
 				<div className="flex flex-col items-start gap-1">
