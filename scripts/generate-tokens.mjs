@@ -104,7 +104,12 @@ const themeResolved = resolveMap(themeUnresolved, themeDarkRoot)
 const themeLightResolved = resolveMap(themeLightUnresolved, themeLightRoot)
 
 function toVarName(prefix, dotPath) {
-	return `--${prefix}-${dotPath.replace(/\./g, '-').replace(/\s+/g, '-').toLowerCase()}`
+	return `--${prefix}-${dotPath
+		.replace(/[^a-zA-Z0-9.]+/g, '-')
+		.replace(/\./g, '-')
+		.replace(/-+/g, '-')
+		.replace(/^-|-$/g, '')
+		.toLowerCase()}`
 }
 
 function toCamel(dotPath) {
@@ -140,7 +145,7 @@ const appAliases = {
 	'--color-elevated': 'var(--theme-dark-global-popup-bkg)',
 	'--color-panel': 'var(--theme-dark-widget-default-bkg)',
 	'--color-border': 'var(--theme-dark-global-line-divider)',
-	'--color-text': 'var(--theme-dark-global-general-txt)',
+	'--color-text': 'var(--primitive-white-shadow-100)',
 	'--color-text-dim': 'var(--theme-dark-global-shadow-txt)',
 	'--color-text-mute': 'var(--theme-dark-global-divider-txt)',
 	'--color-brand': 'var(--primitive-brand-500)',
