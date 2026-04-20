@@ -1,14 +1,14 @@
 import Card, { CardBody, CardHeader } from '../../../../components/Card'
-import { AlertTriangle } from 'lucide-react'
+import alertTriangleIconUrl from '../../../../assets/alert-triangle.svg?url'
 import { primitive } from '../../../../theme/tokens.generated'
 
 export default function PrepRecommendations() {
 	return (
-		<Card className="bg-panel">
+		<Card className="rounded-2xl border border-border !bg-panel">
 			<CardHeader
 				left={
 					<div className="inline-flex items-center gap-2 text-text">
-						<AlertTriangle className="w-5 h-5 text-brand" />
+						<img src={alertTriangleIconUrl} alt="" className="h-5 w-5 shrink-0" />
 						<span className="text-[18px] text-text">Tomorrow&apos;s Prep Recommendations</span>
 					</div>
 				}
@@ -24,7 +24,7 @@ export default function PrepRecommendations() {
 						{ title: 'Bakery / Pastry', today: 102, predicted: 110, delta: '+8%', note: 'Increase muffin batch by 12 units' },
 						{ title: 'Omelette Station', today: 46, predicted: 52, delta: '+13%', note: 'Pre-chop extra veg, expect 6 more covers' },
 					].map((x) => (
-						<div key={x.title} className="rounded-[3px] bg-panel p-4 flex flex-col gap-3">
+						<div key={x.title} className="flex flex-col gap-3 rounded-[0.5rem] bg-panel p-4">
 							<div className="flex items-center justify-between">
 								<div className="text-text-dim text-[14px]">{x.title}</div>
 								<div className="text-brand text-[12px]">{x.delta}</div>
@@ -46,7 +46,7 @@ export default function PrepRecommendations() {
 				</div>
 
 				<div className="grid grid-cols-1 xl:grid-cols-[1fr_1fr_2fr] gap-4">
-					<div className="rounded-[6px] bg-panel p-4 flex items-start justify-between">
+					<div className="flex items-start justify-between rounded-[0.5rem]  bg-panel p-4">
 						<div>
 							<div className="text-text-dim text-[12px] leading-none">Tea / Coffee predicted</div>
 							<div className="text-text text-[24px] leading-none mt-2">152 guests</div>
@@ -56,7 +56,7 @@ export default function PrepRecommendations() {
 							<div className="text-text-dim text-[24px] leading-none mt-2">142</div>
 						</div>
 					</div>
-					<div className="rounded-[6px] bg-panel p-4 flex items-start justify-between">
+					<div className="flex items-start justify-between rounded-[0.5rem]  bg-panel p-4">
 						<div>
 							<div className="text-text-dim text-[12px] leading-none">Other beverages predicted</div>
 							<div className="text-text text-[24px] leading-none mt-2">74 guests</div>
@@ -66,7 +66,7 @@ export default function PrepRecommendations() {
 							<div className="text-text-dim text-[24px] leading-none mt-2">68</div>
 						</div>
 					</div>
-					<div className="rounded-[6px] bg-[color:var(--primitive-semantic-normal-10)] p-4 text-[14px] leading-[1.6] text-text">
+					<div className="rounded-[0.5rem]  bg-card p-4 text-[14px] leading-[1.6] text-text">
 						Before CORTAI, average daily food waste was <span className="text-danger">18 lbs/day</span>. With predictive prep, waste dropped to <span className="text-ok">11 lbs/day</span> — a <span className="text-ok">39%</span> reduction saving <span className="text-ok">$420/month</span>. Accuracy improves as more data is collected.
 					</div>
 				</div>

@@ -42,7 +42,7 @@ export default function DeviceInventoryTable({ rows, totalBadge }: DeviceInvento
 				left={(
 					<div className="flex items-center gap-2">
 						<Monitor className="h-5 w-5 shrink-0 text-brand" strokeWidth={1.75} />
-						<h3 className="card-title !mb-0 text-[15px] font-semibold">Device Inventory</h3>
+						<h3 className="card-title !mb-0">Device Inventory</h3>
 					</div>
 				)}
 				middle={(
@@ -54,7 +54,7 @@ export default function DeviceInventoryTable({ rows, totalBadge }: DeviceInvento
 									key={f.id}
 									type="button"
 									onClick={() => setFilter(f.id)}
-									className={`rounded-[5px] px-3 py-2 text-[12px] font-medium transition ${selected ? 'border border-brand text-text' : 'border border-transparent text-text-dim hover:text-text'}`}
+									className={`rounded-[0.3125rem] px-3 py-2 text-[0.75rem] font-medium transition hover:bg-brand/5 ${selected ? 'border border-brand text-text' : 'border border-transparent text-text-dim hover:text-text'}`}
 								>
 									{f.label}
 								</button>

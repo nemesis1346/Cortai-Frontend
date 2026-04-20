@@ -1,4 +1,5 @@
-import { MoreHorizontal, Sparkles } from 'lucide-react'
+import { MoreHorizontal } from 'lucide-react'
+import sparklesIconUrl from '../../../assets/sparkles.svg?url'
 import { useEffect, useState } from 'react'
 import Card, { CardBody, CardHeader } from '../../../components/Card'
 import { poolPageMock } from '../../../data/mock'
@@ -11,22 +12,26 @@ export default function AnalysisStrip() {
 	}, [])
 	const updated = new Intl.DateTimeFormat(undefined, { hour: 'numeric', minute: '2-digit', second: '2-digit' }).format(now)
 	return (
-		<Card className="rounded-2xl border border-brand/60 bg-brand/10">
+		<Card className="rounded-2xl border border-brand/10 bg-brand/10">
 			<CardHeader
 				left={(
-					<div className="text-[18px] text-text inline-flex items-center gap-2">
-						<Sparkles className="w-4 h-4 text-brand" />
+					<div className="inline-flex items-center gap-2 text-[1.125rem] text-text">
+						<img src={sparklesIconUrl} alt="" className="h-5 w-5 shrink-0" />
 						<span>CORTAI Analysis</span>
 					</div>
 				)}
-				middle={<span className="rounded-[3px] bg-panel px-2 py-1 text-[12px] text-text-dim">Updated: {updated}</span>}
+				middle={
+					<span className="rounded-[0.125rem] bg-[color:var(--primitive-white-shadow-5)] px-2 py-1 text-[0.75rem] text-text-dim">
+						Updated: {updated}
+					</span>
+				}
 				right={(
 					<button type="button" className="inline-flex items-center text-text-dim">
 						<MoreHorizontal className="w-4 h-4" />
 					</button>
 				)}
 			/>
-			<CardBody className="pt-3 grid grid-cols-1 xl:grid-cols-4 divide-y xl:divide-y-0 xl:divide-x divide-border">
+			<CardBody className="grid grid-cols-1 divide-y divide-border pt-3 xl:grid-cols-4 xl:divide-x xl:divide-y-0">
 				{poolPageMock.analysisStrips.map((strip, i) => (
 					<div
 						key={i}
@@ -34,11 +39,11 @@ export default function AnalysisStrip() {
 					>
 						{strip.title ? (
 							<>
-								<div className={`text-[14px] ${strip.titleClass ?? ''}`}>{strip.title}:</div>
-								<div className="text-[12px] leading-6 text-text-dim mt-1">{strip.body}</div>
+								<div className={`text-[0.875rem] ${strip.titleClass ?? ''}`}>{strip.title}:</div>
+								<div className="mt-1 text-[0.75rem] leading-6 text-text-dim">{strip.body}</div>
 							</>
 						) : (
-							<div className="text-[14px] leading-6 text-text">{strip.body}</div>
+							<div className="text-[0.875rem] leading-6 text-text">{strip.body}</div>
 						)}
 					</div>
 				))}

@@ -1,16 +1,16 @@
-import { Sparkles } from 'lucide-react'
+import sparklesIconUrl from '../../../../assets/sparkles.svg?url'
 
 export default function IntelligenceHeader() {
 	return (
 		<div className="grid grid-cols-[1fr_auto_1fr] items-center">
 			<div className="justify-self-start inline-flex items-center gap-2">
-				<Sparkles className="w-5 h-5 text-brand" />
+				<img src={sparklesIconUrl} alt="" className="h-5 w-5 shrink-0" />
 				<span className="text-[18px] text-text">CORTAI Predictive F&amp;B Intelligence</span>
 			</div>
 			<div className="hidden md:flex items-center gap-2 text-[12px] justify-self-center">
-				<span className="rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] px-2 py-1 text-text-dim">5.5 weeks of data</span>
-				<span className="rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] px-2 py-1 text-text-dim">Model accuracy 94.2%</span>
-				<span className="rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] px-2 py-1 text-text-dim">Learning improves weekly</span>
+				<span className="rounded-[3px]  bg-panel px-2 py-1 text-text-dim">5.5 weeks of data</span>
+				<span className="rounded-[3px]  bg-panel px-2 py-1 text-text-dim">Model accuracy 94.2%</span>
+				<span className="rounded-[3px]  bg-panel px-2 py-1 text-text-dim">Learning improves weekly</span>
 			</div>
 			<div className="hidden md:flex items-center gap-6 pl-6 justify-self-end">
 				<div className="flex flex-col items-start gap-1">

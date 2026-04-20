@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { ArrowUpDown, BarChart3, Monitor, Presentation } from 'lucide-react'
+import { ArrowUpDown, BarChart3 } from 'lucide-react'
 import { Progress } from 'antd'
 import { Column } from '@ant-design/plots'
 import Card, { CardBody } from '../../../components/Card'
@@ -7,6 +7,7 @@ import { meetingPageMock } from '../../../data/mock'
 import { chartAxisColorFallback, readResolvedChartColor } from '../../../theme/resolvedChartColors'
 import { useThemePreference } from '../../../theme/ThemePreferenceProvider'
 import { chartHex, primitive } from '../../../theme/tokens.generated'
+import meetingRoomHeaderIconUrl from '../../../assets/meeting-room-header.svg?url'
 
 type Room = (typeof meetingPageMock.meetingRooms)[number]
 type Tab = 'overview' | 'av' | 'history'
@@ -79,7 +80,8 @@ export default function MeetingRoomCard({ room }: { room: Room }) {
 			legend: false,
 			markBackground: {
 				style: {
-					fill: primitive.WhiteShadow10,
+					fill: (d: { series?: string }) =>
+						d.series === 'Guests' ? primitive.BrandShadow10 : primitive.AccentPurple10,
 					radius: 0,
 				},
 			},
@@ -111,27 +113,26 @@ export default function MeetingRoomCard({ room }: { room: Room }) {
 	const m = room.metrics
 	const ev = room.currentEvent
 	const durationLabel = room.durationLabel ?? 'Avg. Duration'
-	const HeaderIcon = room.icon === 'presentation' ? Presentation : Monitor
 
 	return (
-		<Card className="rounded-2xl border border-border bg-panel">
+		<Card className="rounded-2xl border border-border bg-card">
 			<div className="mb-3 flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
 				<div className="flex min-w-0 items-start gap-2 sm:gap-3">
-					<HeaderIcon className="h-5 w-5 shrink-0 text-brand" strokeWidth={1.75} />
+					<img src={meetingRoomHeaderIconUrl} alt="" className="h-5 w-5 shrink-0" />
 					<div className="min-w-0">
-						<div className="text-[17px] font-medium text-text sm:text-[18px]">{room.name}</div>
+						<div className="text-[1.0625rem] font-medium text-text sm:text-[1.125rem]">{room.name}</div>
 					</div>
 				</div>
-				<div className="text-[11px] text-text-dim sm:text-[12px]">
+				<div className="text-[0.6875rem] text-text-dim sm:text-[0.75rem]">
 					Capacity {room.capacity} · {room.guestsYtd} guests YTD
 				</div>
 				<div className="flex shrink-0 flex-col gap-2 sm:flex-row sm:items-center sm:gap-3 md:items-end">
 					<span
-						className={`w-fit rounded-[3px] px-2 py-1 text-[12px] font-medium ${
+						className={`w-fit rounded-[0.1875rem] px-2 py-1 text-[0.75rem] font-medium ${
 							room.status === 'setup'
 								? 'bg-[color:var(--primitive-semantic-warning-10)] text-warn'
 								: room.status === 'in_use'
-									? 'bg-[color:var(--primitive-semantic-success-10)] text-ok'
+									? 'bg-brand/20 text-brand'
 									: 'bg-[color:var(--primitive-semantic-normal-10)] text-text'
 						}`}
 					>
@@ -140,17 +141,14 @@ export default function MeetingRoomCard({ room }: { room: Room }) {
 				</div>
 			</div>
 			<CardBody className="pt-0">
-				<div className="flex flex-wrap gap-2 py-3">
+				<div className="cortai-tabs py-3">
 					{TABS.map((t) => (
 						<button
 							key={t.id}
 							type="button"
 							onClick={() => setTab(t.id)}
-							className={`rounded-[5px] px-3 py-2 !text-[12px] font-medium transition-[color,background-color,border-color,transform] duration-200 ease-out active:scale-[0.98] ${
-								tab === t.id
-									? 'border-[1px] border-brand/45 !text-brand'
-									: 'border-[1px] border-transparent text-text-dim hover:text-text'
-							}`}
+							data-active={tab === t.id ? 'true' : 'false'}
+							className="cortai-tab cursor-pointer active:scale-[0.98] transition-transform duration-200 ease-out"
 						>
 							{t.label}
 						</button>
@@ -162,7 +160,7 @@ export default function MeetingRoomCard({ room }: { room: Room }) {
 						<div
 							className={`shrink-0 p-4 lg:max-w-[22rem] lg:min-w-[14rem] ${
 								'setupProgress' in ev && ev.setupProgress != null
-									? 'rounded-[5px] border border-border bg-warn/10'
+									? 'rounded-[0.3125rem] bg-warn/10'
 									: 'rounded-[5px] bg-panel'
 							}`}
 						>
@@ -243,7 +241,7 @@ export default function MeetingRoomCard({ room }: { room: Room }) {
 						<div className="meeting-tab-panel">
 							<div className="mb-2 flex min-h-[1.5rem] flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-x-4 sm:gap-y-2">
 								<div className="flex items-center gap-2 text-[13px] font-medium text-text">
-									<BarChart3 className="h-4 w-4 shrink-0 text-brand" strokeWidth={1.75} />
+									<BarChart3 className="h-5 w-5 shrink-0 text-brand" strokeWidth={1.75} />
 									<span>Monthly Usage (YTD)</span>
 								</div>
 								<div className="flex items-center gap-4">

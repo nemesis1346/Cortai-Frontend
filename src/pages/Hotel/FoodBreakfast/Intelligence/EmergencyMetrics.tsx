@@ -3,7 +3,7 @@ import { Clock } from 'lucide-react'
 
 export default function EmergencyMetrics() {
 	return (
-		<Card className="bg-panel">
+		<Card className="rounded-2xl border border-border !bg-panel">
 			<CardHeader
 				left={
 					<div className="text-text inline-flex items-center gap-2">
@@ -15,7 +15,10 @@ export default function EmergencyMetrics() {
 			/>
 			<CardBody className="flex flex-col gap-2">
 				{['6:00','6:30','7:00','7:30','8:00','8:30','9:00','9:30'].map((t, idx) => (
-					<div key={t} className="grid grid-cols-[28px_1fr_24px] items-center gap-2">
+					<div
+						key={t}
+						className="odd:bg-[color:var(--primitive-semantic-normal-10)] even:bg-[color:var(--primitive-semantic-normal-15)] grid grid-cols-[28px_1fr_24px] items-center gap-2 rounded-[3px] px-2 py-1.5"
+					>
 						<div className="text-[12px] text-text-dim">{t}</div>
 						<div className="h-2 rounded-full bg-brand/20 overflow-hidden">
 							<div className={`h-full rounded-full ${idx === 3 ? 'bg-danger/80' : 'bg-brand'} `} style={{ width: `${[20,38,72,100,85,64,48,22][idx]}%` }} />

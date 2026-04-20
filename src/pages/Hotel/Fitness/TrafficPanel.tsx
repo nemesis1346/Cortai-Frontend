@@ -8,12 +8,11 @@ import { useThemePreference } from '../../../theme/ThemePreferenceProvider'
 import { chartHex, primitive } from '../../../theme/tokens.generated'
 
 const CHART_HEIGHT = 300
-
 export default function TrafficPanel() {
 	const { effective } = useThemePreference()
-	const peakTime = fitnessPageMock.peakTime
+	const peakGuests = fitnessPageMock.trafficTimeline.peakGuests
 	const meta = fitnessPageMock.trafficTimeline
-	const maxGuests = 18
+	const yTicks = [0, 5, 10, 15, 20]
 	const areaConfig = useMemo(() => {
 		const text = readResolvedChartColor('--color-text', chartAxisColorFallback.text)
 		const textDim = readResolvedChartColor('--color-text-dim', chartAxisColorFallback.textDim)
@@ -42,9 +41,9 @@ export default function TrafficPanel() {
 			scale: {
 				x: { type: 'point' as const, padding: 0.08 },
 				y: {
-					domain: [0, maxGuests],
+					domain: [0, 20],
 					nice: false,
-					ticks: [0, 5, 9, 14, 18],
+					tickMethod: () => yTicks,
 				},
 			},
 			axis: {
@@ -76,28 +75,28 @@ export default function TrafficPanel() {
 				},
 			},
 			point: {
-				size: (d: { time: string }) => (d.time === peakTime ? 7 : 3),
-				shape: (d: { time: string }) => (d.time === peakTime ? 'diamond' : 'circle'),
-				style: (d: { time: string }) => ({
-					stroke: d.time === peakTime ? chartHex.danger : chartHex.brand,
-					fill: d.time === peakTime ? chartHex.danger : chartHex.bg,
-					lineWidth: 1,
+				size: (d: { guests: number }) => (d.guests === peakGuests ? 10 : 3.5),
+				shape: (d: { guests: number }) => (d.guests === peakGuests ? 'diamond' : 'circle'),
+				style: (d: { guests: number }) => ({
+					stroke: d.guests === peakGuests ? chartHex.bg : chartHex.brand,
+					fill: d.guests === peakGuests ? chartHex.danger : chartHex.bg,
+					lineWidth: d.guests === peakGuests ? 2 : 1,
 				}),
 			},
 			theme: { type: effective === 'dark' ? 'classicDark' : 'classic' },
 		}
-	}, [peakTime, effective])
+	}, [effective, peakGuests, yTicks])
 	return (
-		<Card className="flex w-full min-w-0 flex-col rounded-2xl border border-border bg-panel">
+		<Card className="flex w-full min-w-0 flex-col rounded-2xl border border-border bg-card">
 			<CardHeader
 				left={(
-					<div className="flex min-w-0 items-center gap-2 text-[18px] text-text">
+					<div className="flex min-w-0 items-center gap-2 text-[1.125rem] text-text">
 						<Clock className="h-4 w-4 shrink-0 text-brand" />
 						<span className="truncate">Guest Traffic Timeline</span>
 					</div>
 				)}
 				middle={(
-					<div className="flex max-w-[min(100%,22rem)] flex-wrap items-center justify-center gap-3 text-[12px] text-text-dim sm:gap-4">
+					<div className="flex max-w-[min(100%,22rem)] flex-wrap items-center justify-center gap-3 text-[0.75rem] text-text-dim sm:gap-4">
 						<span className="inline-flex items-center gap-1.5">
 							<span className="inline-block h-2.5 w-2.5 rotate-45 bg-danger" />
 							Peak ({meta.peakGuests})
@@ -110,17 +109,17 @@ export default function TrafficPanel() {
 				)}
 				right={(
 					<div className="flex flex-wrap justify-end gap-2">
-						<span className="rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] px-2 py-1 text-[11px] text-text-dim">
+						<span className="rounded-[0.1875rem] bg-[color:var(--primitive-semantic-normal-10)] px-2 py-1 text-[0.6875rem] text-text-dim">
 							First guest {meta.firstGuest}
 						</span>
-						<span className="rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] px-2 py-1 text-[11px] text-text-dim">
+						<span className="rounded-[0.1875rem] bg-[color:var(--primitive-semantic-normal-10)] px-2 py-1 text-[0.6875rem] text-text-dim">
 							Peak {meta.peakGuests} @ {meta.peakAt}
 						</span>
 					</div>
 				)}
 			/>
 			<CardBody className="pt-0">
-				<div className="w-full">
+				<div className="w-full rounded-lg p-2">
 					<Area {...areaConfig} />
 				</div>
 			</CardBody>

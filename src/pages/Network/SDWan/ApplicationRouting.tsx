@@ -23,7 +23,7 @@ export default function ApplicationRouting({ items }: ApplicationRoutingProps) {
 		<section className="card p-4">
 			<div className="mb-4 flex items-center gap-2">
 				<AppWindow className="h-5 w-5 shrink-0 text-brand" strokeWidth={1.75} />
-				<h3 className="card-title !mb-0 text-[15px]">Application Routing</h3>
+				<h3 className="card-title !mb-0">Application Routing</h3>
 			</div>
 			<div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
 				{items.map((app) => (

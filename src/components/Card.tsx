@@ -9,8 +9,8 @@ type Props = {
 
 function Card({ title, right, children, className }: Props) {
 	return (
-		<div className={`card p-4 ${className ?? ''}`}>
-			{(title || right) && <CardHeader left={title ? <h3 className="card-title">{title}</h3> : undefined} right={right} />}
+		<div className={`card p-[1.25rem] ${className ?? ''}`}>
+			{(title || right) && <CardHeader left={title ? <h3 className="card-title min-w-0">{title}</h3> : undefined} right={right} />}
 			{children ?? null}
 		</div>
 	)
@@ -23,11 +23,12 @@ type HeaderProps = {
 }
 
 export function CardHeader({ left, middle, right }: HeaderProps) {
+	const cols = middle != null ? 'grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]' : 'grid-cols-[minmax(0,1fr)_auto]'
 	return (
-		<div className="mb-3 grid grid-cols-[1fr_auto_1fr] items-center">
-			<div>{left ?? <span />}</div>
-			<div className="justify-self-center">{middle}</div>
-			<div className="justify-self-end">{right}</div>
+		<div className={`mb-3 grid ${cols} justify-between items-center gap-x-[0.5rem] gap-y-1`}>
+			<div className="card-header-left min-w-0">{left ?? <span />}</div>
+			{middle != null ? <div className="shrink-0 justify-self-center">{middle}</div> : null}
+			<div className="flex min-w-0 justify-end justify-self-end">{right}</div>
 		</div>
 	)
 }

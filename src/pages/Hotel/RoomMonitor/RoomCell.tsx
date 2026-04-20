@@ -25,14 +25,13 @@ export default function RoomCell({
 		<button
 			type="button"
 			onClick={onSelect}
-			className={`w-full rounded-[10px] border px-3 py-2 text-left transition-colors cursor-grab active:cursor-grabbing hover:border border-border ${active ? 'border-brand/60 bg-brand/5' : 'border-[color:var(--primitive-white-shadow-5)] bg-panel'}`}
+			className={`w-full cursor-pointer rounded-[0.55rem] border border-transparent bg-card/80 px-3 py-2 text-left transition-colors hover:border-border ${active ? 'border-brand/60 bg-brand/5' : ''}`}
 		>
-			<div className={`flex items-center py-1 justify-center hover:rounded-[5px] gap-1 text-[16px] ${meta?.color ?? 'text-text'} ${hoverBg}`}>
+			<div className={`flex items-center justify-center gap-1 py-1 text-[1rem] hover:rounded-[0.25rem] ${meta?.color ?? 'text-text'} ${hoverBg}`}>
 				{meta?.icon}
 				<span>{room.no}</span>
 			</div>
-			<div className={`text-center text-[11px] ${room.temp >= 78 ? 'text-warn' : 'text-text-dim'}`}>{room.temp}°F</div>
+			<div className={`text-center text-small ${room.temp >= 78 ? 'text-warn' : 'text-text-dim'}`}>{room.temp}°F</div>
 		</button>
 	)
 }
-

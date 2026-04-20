@@ -2,6 +2,7 @@ import { Search, Settings, Bell, BedDouble, AlertTriangle, Star, Plus, Sparkles,
 import { useEffect, useRef, useState, type ReactNode } from "react"
 import { useLocation } from "react-router-dom"
 import { useThemePreference, type ThemePreference } from "../theme/ThemePreferenceProvider"
+import { formatAppDate, formatAppTime } from "../utils/datetimeFormat"
 
 export default function Topbar() {
 	const [now, setNow] = useState(new Date())
@@ -10,8 +11,8 @@ export default function Topbar() {
 		const id = setInterval(() => setNow(new Date()), 1000)
 		return () => clearInterval(id)
 	}, [])
-	const dateStr = new Intl.DateTimeFormat(undefined, { year: 'numeric', month: 'numeric', day: 'numeric' }).format(now)
-	const timeStr = new Intl.DateTimeFormat(undefined, { hour: 'numeric', minute: '2-digit', second: '2-digit' }).format(now)
+	const dateStr = formatAppDate(now)
+	const timeStr = formatAppTime(now)
 	const pageTitleMap: Record<string, string> = {
 		'/': 'Command Center',
 		'/hotel': 'Command Center',
@@ -41,7 +42,7 @@ export default function Topbar() {
 	return (
 		<header className="px-5 pt-5 h-14 flex items-center justify-between ">
 			<div className="flex items-center gap-3 relative">
-				<div className="text-xl font-semibold text-text tracking-[0.2px]">{pageTitle}</div>
+				<div className="text-[1.25rem] font-semibold text-text tracking-[0.0125rem]">{pageTitle}</div>
 				<div className="text-xs px-2.5 py-1 rounded-md bg-brand/[0.2] text-brand inline-flex items-center gap-1.5">
 					<Sparkles className="w-3.5 h-3.5" />
 					<span>AI Live / 30s upd</span>
@@ -65,15 +66,17 @@ export default function Topbar() {
 					</div>
 				</div>
 			</div>
-			<div className="flex items-center gap-3 ">
-				<button className="w-8 h-8 rounded-full border border-border flex items-center justify-center text-text hover:bg-card">
-					<Search className="w-4 h-4" />
-				</button>
-				<SettingsMenu />
-				<button className="relative w-8 h-8 rounded-full border border-border flex items-center justify-center text-text hover:bg-card">
-					<Bell className="w-4 h-4" />
-					<span className="absolute -top-1 -right-1 text-[10px] bg-danger text-[color:var(--primitive-white-shadow-100)] rounded-full px-1.5 py-[1px]">4</span>
-				</button>
+			<div className="flex items-center gap-4">
+				<div className="flex items-center gap-2">
+					<button className="w-8 h-8 rounded-[0.375rem] flex items-center justify-center text-text hover:bg-card">
+						<Search className="w-4 h-4" />
+					</button>
+					<SettingsMenu />
+					<button className="relative w-8 h-8 rounded-[0.375rem] flex items-center justify-center text-text hover:bg-card">
+						<Bell className="w-4 h-4" />
+						<span className="absolute -top-1 -right-1 text-[0.625rem] bg-danger text-[color:var(--primitive-white-shadow-100)] rounded-full px-1.5 py-[1px]">4</span>
+					</button>
+				</div>
 				<OperationsMenu />
 			</div>
 		</header>
@@ -112,7 +115,7 @@ function SettingsMenu() {
 			<button
 				type="button"
 				onClick={() => setOpen((v) => !v)}
-				className="w-8 h-8 rounded-full border border-border flex items-center justify-center text-text hover:bg-card"
+				className="w-8 h-8 rounded-[0.375rem] flex items-center justify-center text-text hover:bg-card"
 				aria-expanded={open}
 				aria-haspopup="menu"
 				aria-label="Settings"
@@ -120,8 +123,8 @@ function SettingsMenu() {
 				<Settings className="w-4 h-4" />
 			</button>
 			{open && (
-				<div className="absolute right-0 top-full mt-1 w-[200px] rounded-xl bg-card shadow-xl p-2 z-50 border border-border" role="menu">
-					<div className="px-2 py-1.5 text-[11px] font-semibold uppercase tracking-wide text-text-mute">Appearance</div>
+				<div className="absolute right-0 top-full mt-1 w-[12.5rem] rounded-xl bg-card shadow-xl p-2 z-50 border border-border" role="menu">
+					<div className="px-2 py-1.5 text-[0.6875rem] font-semibold uppercase tracking-wide text-text-mute">Appearance</div>
 					<ul className="!m-0 list-none p-0">
 						{rows.map((row) => (
 							<li key={row.id}>
@@ -132,7 +135,7 @@ function SettingsMenu() {
 										setPreference(row.id)
 										setOpen(false)
 									}}
-									className={`w-full flex items-center gap-2 text-left !text-[14px] p-2.5 rounded-lg ${preference === row.id ? 'bg-panel text-text' : 'text-text-dim hover:bg-panel'}`}
+									className={`w-full flex items-center gap-2 text-left !text-[0.875rem] p-2.5 rounded-lg ${preference === row.id ? 'bg-panel text-text' : 'text-text-dim hover:bg-panel'}`}
 								>
 									{row.icon}
 									<span>{row.label}</span>
@@ -174,16 +177,16 @@ function OperationsMenu() {
 
 	return (
 		<div className="relative z-50" ref={ref}>
-			<button onClick={() => setOpen(v => !v)} className="ml-2 px-3 h-9 rounded-md bg-brand/[0.4] text-brand text-sm font-medium inline-flex items-center gap-1">
+			<button onClick={() => setOpen(v => !v)} className="pl-3 pr-4 h-9 hover:bg-brand/70 rounded-md bg-brand/[0.4] text-brand text-sm font-medium inline-flex items-center gap-1">
 				<Plus className="w-4 h-4" />
 				<span>Operations</span>
 			</button>
 			{open && (
-				<div className="absolute right-0 w-[202px] rounded-xl bg-card shadow-xl p-2 z-50 border border-border">
+				<div className="absolute right-0 w-[12.625rem] rounded-xl bg-card shadow-xl p-2 z-50 border border-border">
 					<ul className="!m-0">
 						{items.map((label) => (
 							<li key={label}>
-								<button className="w-full text-left !text-[14px] hover:bg-[color:var(--primitive-semantic-normal-10)] p-3 text-text rounded-lg">{label}</button>
+								<button className="w-full text-left !text-[0.875rem] hover:bg-[color:var(--primitive-semantic-normal-10)] p-3 text-text/80 rounded-lg">{label}</button>
 							</li>
 						))}
 					</ul>

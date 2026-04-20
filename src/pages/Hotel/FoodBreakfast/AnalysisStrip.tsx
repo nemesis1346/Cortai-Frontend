@@ -1,13 +1,14 @@
-import { MoreHorizontal, Sparkles } from 'lucide-react'
+import { MoreHorizontal } from 'lucide-react'
 import Card, { CardBody, CardHeader } from '../../../components/Card'
+import sparklesIconUrl from '../../../assets/sparkles.svg?url'
 
 export default function AnalysisStrip() {
 	return (
-		<Card className="rounded-2xl border border-brand/60 bg-brand/10">
+		<Card className="rounded-2xl border border-brand/10 bg-brand/10">
 			<CardHeader
 				left={(
 					<div className="text-[18px] text-text inline-flex items-center gap-2">
-						<Sparkles className="w-4 h-4 text-brand" />
+						<img src={sparklesIconUrl} alt="" className="h-5 w-5 shrink-0" />
 						<span>CORTAI Analysis</span>
 					</div>
 				)}

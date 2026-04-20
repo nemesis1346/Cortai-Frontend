@@ -12,31 +12,30 @@ export default function FloorSection({
 	selectedRoomNo?: number
 	onSelectRoom?: (roomNo: number) => void
 }) {
-
 	return (
-		<Card className="bg-card p-2 md:p-4">
+		<Card className="rounded-[0.625rem] bg-card/30">
 			<CardHeader
 				left={
-					<div className="inline-flex items-center gap-2 text-text !text-[18px]">
-					<DoorOpen className="w-5 h-5 text-brand" />
-					<span>Floor {floor.level}</span>
+					<div className="inline-flex items-center gap-2 text-[1.125rem] font-semibold text-text">
+						<DoorOpen className="h-5 w-5 shrink-0 text-brand" />
+						<span>Floor {floor.level}</span>
 					</div>
 				}
 				middle={
-					<span className="rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] px-2 py-1 text-[12px] text-text-dim">20 rooms / {floor.occupied} occupied</span>
+					<span className="badge-chip bg-[color:var(--primitive-semantic-normal-10)] text-text-dim">
+						20 rooms / {floor.occupied} occupied
+					</span>
 				}
 				right={
-					<div className="flex gap-2">
-						<span className="rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] px-2 py-1 text-[12px]">
-							<span className="text-ok">{floor.clean} clean</span>
-							<span className="text-text-mute"> / </span>
-							<span className="text-warn">{floor.dirty} dirty</span>
-						</span>
-					</div>
+					<span className="badge-chip bg-[color:var(--primitive-semantic-normal-10)] text-small">
+						<span className="text-ok">{floor.clean} clean</span>
+						<span className="text-text-mute"> / </span>
+						<span className="text-warn">{floor.dirty} dirty</span>
+					</span>
 				}
 			/>
 			<CardBody>
-				<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-10 gap-2">
+				<div className="grid grid-cols-2 gap-[1.25rem] sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-10">
 					{floor.rooms.map((room) => (
 						<RoomCell
 							key={room.no}
@@ -50,4 +49,3 @@ export default function FloorSection({
 		</Card>
 	)
 }
-

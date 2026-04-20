@@ -4,22 +4,21 @@ import type { RoomState } from './types'
 
 export default function LegendBar() {
 	return (
-		<section className="flex flex-wrap items-center justify-between gap-3">
-			<div className="flex flex-wrap items-center gap-4">
+		<section className="flex flex-wrap items-center justify-between gap-[1.25rem]">
+			<div className="flex flex-wrap items-center gap-[1.25rem]">
 				{(Object.keys(roomStateMeta) as RoomState[]).map((k) => (
-					<div key={k} className={`inline-flex items-center gap-1 !text-[11px] ${roomStateMeta[k].color}`}>
+					<div key={k} className={`inline-flex items-center gap-1.5 text-small ${roomStateMeta[k].color}`}>
 						{roomStateMeta[k].icon}
 						<span className="text-text-dim">{roomStateMeta[k].label}</span>
 					</div>
 				))}
 			</div>
 			<div className="flex items-center gap-2">
-				<span className="inline-flex items-center gap-1 rounded-[3px] bg-brand/10 px-3 py-1 text-brand text-[11px]">
-					<Wifi className="w-4 h-4" /> 128 Kb/s
+				<span className="badge-chip inline-flex items-center gap-1.5 bg-brand/10 text-brand">
+					<Wifi className="h-4 w-4 shrink-0" /> 128 Kb/s
 				</span>
-				<span className="rounded-[3px] bg-red-500/20 px-2 py-1 text-[11px] text-red-400">4 critical</span>
+				<span className="badge-chip bg-[color:var(--primitive-semantic-danger-10)] text-danger">4 critical</span>
 			</div>
 		</section>
 	)
 }
-

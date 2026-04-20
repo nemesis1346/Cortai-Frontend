@@ -25,7 +25,7 @@ export default function TimeRangeToolbar({ defaultRange = '24h' }: TimeRangeTool
 						key={r.id}
 						type="button"
 						onClick={() => setActive(r.id)}
-						className={`rounded-md p-2 text-[14px] font-medium transition ${
+						className={`rounded-md p-2 text-[14px] font-medium ghost-btn transition hover:bg-card ${
 							active === r.id
 								? 'border border-brand text-text'
 								: 'border border-transparent text-text-dim hover:text-text'

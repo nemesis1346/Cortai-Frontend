@@ -24,7 +24,7 @@ export default function DetectedApplicationsTable({ rows, totalBadge }: Detected
 				left={(
 					<div className="flex items-center gap-2">
 						<FolderOpen className="h-5 w-5 shrink-0 text-brand" strokeWidth={1.75} />
-						<h3 className="card-title !mb-0 text-[15px] font-semibold">Detected Applications</h3>
+						<h3 className="card-title !mb-0">Detected Applications</h3>
 					</div>
 				)}
 				right={<span className="rounded-[3px] bg-panel px-2 py-1 text-[11px] font-medium text-text-dim">{totalBadge}</span>}

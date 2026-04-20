@@ -114,7 +114,7 @@ export default function ApplicationBandwidthCard({ rows, totalBadge, axisMax = 8
 	return (
 		<div className="card flex min-h-0 flex-1 flex-col p-4">
 			<CardHeader
-				left={<h3 className="card-title !mb-0 text-[15px] font-semibold">Application Bandwidth</h3>}
+				left={<h3 className="card-title !mb-0">Application Bandwidth</h3>}
 				right={<span className="rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] px-2 py-1 text-[11px] font-medium text-text">{totalBadge}</span>}
 			/>
 			<CardBody className="overflow-visible pt-1">

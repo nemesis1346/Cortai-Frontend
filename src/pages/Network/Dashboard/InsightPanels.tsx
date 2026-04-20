@@ -25,7 +25,7 @@ function PanelShell({
 				left={(
 					<div className="flex items-center gap-2">
 						<span className="text-brand">{icon}</span>
-						<h3 className="card-title !mb-0 text-[15px] font-semibold">{title}</h3>
+						<h3 className="card-title !mb-0">{title}</h3>
 					</div>
 				)}
 				right={<span className={`rounded-[3px]  px-2 py-1 text-[11px] font-medium ${badgeClassName}`}>{badge}</span>}

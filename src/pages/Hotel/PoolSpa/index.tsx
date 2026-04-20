@@ -9,19 +9,19 @@ import NoisePanel from './NoisePanel'
 
 export default function PoolSpa() {
 	return (
-		<div className="p-4 md:p-5 h-full flex flex-col gap-4 mb-5">
-			<div className="sticky top-0 z-20 bg-inherit flex flex-col gap-4 pb-1">
+		<div className="mb-5 flex h-full flex-col gap-[1.25rem] p-4 md:p-5">
+			<div className="sticky top-0 z-20 flex flex-col gap-[1.25rem] bg-inherit pb-1">
 				<AnalysisStrip />
 				<KpiRow />
 			</div>
-			<div className="flex flex-col gap-4 overflow-y-auto scrollbar-none mb-5">
-				<div className="grid min-w-0 grid-cols-1 gap-3 sm:gap-4 lg:grid-cols-[1.25fr_0.75fr] lg:gap-3 [&>*]:min-w-0">
+			<div className="mb-5 flex flex-col gap-[1.25rem] overflow-y-auto scrollbar-none">
+				<div className="grid min-w-0 grid-cols-1 gap-[1.25rem] lg:grid-cols-[1.25fr_0.75fr] [&>*]:min-w-0">
 					<TrafficPanel />
 					<PoolPanel />
 				</div>
-				<div className="grid min-w-0 grid-cols-1 gap-3 sm:gap-4 lg:grid-cols-2 lg:gap-3 [&>*]:min-w-0">
+				<div className="grid min-w-0 grid-cols-1 gap-[1.25rem] lg:grid-cols-2 [&>*]:min-w-0">
 					<SafetyPanel />
-					<div className="flex min-h-0 min-w-0 flex-col gap-4">
+					<div className="flex min-h-0 min-w-0 flex-col gap-[1.25rem]">
 						<WashroomPanel />
 						<TowelPanel />
 						<NoisePanel />

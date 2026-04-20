@@ -10,11 +10,11 @@ type KPIProps = {
 
 export default function KPI({ label, value, sub, percent }: KPIProps) {
 	return (
-			<div className="card p-4 relative flex flex-row items-center justify-between gap-2">
-				<div>
-					<div className="text-xs text-text-dim text-start">{label}</div>
-					<div className="text-2xl font-semibold text-text text-start">{value}</div>
-					{sub ? <div className="text-xs text-text-mute mt-1 text-start">{sub}</div> : null}
+			<div className="card relative flex flex-row items-center justify-between gap-2 p-[1.25rem]">
+				<div className="flex flex-col gap-1">
+					<div className="text-small text-start text-text-dim">{label}</div>
+					<div className="text-large-semibold text-start leading-none text-text">{value}</div>
+					{sub ? <div className="text-small text-start text-text-mute">{sub}</div> : null}
 				</div>
 				<Progress
 					type="circle"

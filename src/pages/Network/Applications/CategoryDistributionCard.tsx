@@ -81,7 +81,7 @@ export default function CategoryDistributionCard({ slices }: CategoryDistributio
 
 	return (
 		<div className="card flex min-h-0 flex-1 flex-col p-4">
-			<CardHeader left={<h3 className="card-title !mb-0 text-[15px] font-semibold">Category Distribution</h3>} />
+			<CardHeader left={<h3 className="card-title !mb-0">Category Distribution</h3>} />
 			<CardBody className="min-h-[280px] flex-1 overflow-visible pt-2">
 				<div className="flex w-full min-h-[260px] items-center justify-center">
 					<Pie {...config} />

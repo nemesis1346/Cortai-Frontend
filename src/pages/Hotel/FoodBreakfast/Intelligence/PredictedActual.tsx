@@ -1,5 +1,5 @@
-import Card, { CardBody, CardHeader } from '../../../../components/Card'
-import { LineChart } from 'lucide-react'
+import Card, { CardHeader } from '../../../../components/Card'
+import lineChartIconUrl from '../../../../assets/line-chart.svg?url'
 import { Column } from '@ant-design/plots'
 import { useMemo } from 'react'
 import { chartAxisColorFallback, readResolvedChartColor } from '../../../../theme/resolvedChartColors'
@@ -17,6 +17,8 @@ type DayPoint = {
 type Props = {
 	points?: DayPoint[]
 }
+
+const CHART_H = 200
 
 export default function PredictedActual({ points }: Props) {
 	const defaultPoints: DayPoint[] = [
@@ -41,11 +43,18 @@ export default function PredictedActual({ points }: Props) {
 	const mappedData = useMemo(
 		() =>
 			dataset.flatMap((p) => [
-				{ day: String(p.day), value: p.predicted, series: 'Predicted' },
-				{ day: String(p.day), value: p.actual, series: 'Actual' },
+				{ day: String(p.day), value: p.predicted, series: 'Predicted' as const },
+				{ day: String(p.day), value: p.actual, series: 'Actual' as const },
 			]),
 		[dataset],
 	)
+
+	const yDomainMax = useMemo(() => {
+		const maxV = mappedData.reduce((m, d) => Math.max(m, d.value), 0)
+		const padded = Math.ceil(maxV * 1.08)
+		const step = 20
+		return Math.max(step, Math.ceil(padded / step) * step)
+	}, [mappedData])
 
 	const config = useMemo(() => {
 		const xLabelFill = readResolvedChartColor('--color-text', chartAxisColorFallback.text)
@@ -54,49 +63,77 @@ export default function PredictedActual({ points }: Props) {
 			xField: 'day',
 			yField: 'value',
 			colorField: 'series',
-			group: true,
+			group: { padding: 0.05 },
+			height: CHART_H,
+			autoFit: true,
+			inset: 0,
 			legend: false,
+			markBackground: {
+				style: {
+					fill: (d: { series?: string }) =>
+						d.series === 'Actual' ? primitive.BrandShadow10 : primitive.AccentPurple10,
+					radiusTop: 2,
+				},
+			},
+			style: { maxWidth: 25, radiusTop: 2, inset: 0 },
+			scale: {
+				x: { paddingInner: 0.25, paddingOuter: 0.02 },
+				y: { domain: [0, yDomainMax], nice: false },
+				color: {
+					domain: ['Predicted', 'Actual'],
+					range: [primitive.AccentPurple, chartHex.brand],
+				},
+			},
 			axis: {
-				x: { labelAutoHide: true, labelSpacing: 9, labelFill: xLabelFill },
+				x: {
+					labelAutoHide: true,
+					labelSpacing: 4,
+					labelFontSize: 10,
+					labelFill: xLabelFill,
+				},
 				y: false,
 			},
-			style: { inset: 0 },
-			height: 150,
-			color: ({ series }: { series: string }) => (series === 'Predicted' ? primitive.AccentPurple10 : chartHex.brand),
 			tooltip: { items: [{ channel: 'y', valueFormatter: (v: number) => `${v} guests` }] },
 			theme: { type: effective === 'dark' ? 'classicDark' : 'classic' },
 		} as Record<string, unknown>
-	}, [mappedData, effective])
+	}, [mappedData, effective, yDomainMax])
+
 	return (
-		<Card className="bg-panel">
+		<Card className="rounded-2xl border border-border !bg-panel">
 			<CardHeader
 				left={
 					<div className="text-text inline-flex items-center gap-2">
-						<LineChart className="w-5 h-5 text-brand" />
+						<img src={lineChartIconUrl} alt="" className="h-5 w-5 shrink-0" />
 						<span className="text-[14px] text-text">Predicted vs Actual — Last 14 Days</span>
 					</div>
 				}
 				right={<span className="rounded-md px-2 py-1 text-[12px] text-brand">Avg error: ±3.4 guests</span>}
 			/>
-			<CardBody>
-				<div className="flex flex-row items-center justify-between px-6">
-					{dataset ? (
-						<>
-							{dataset.map((p) => (
-								<div key={p.day} className="flex flex-col items-center gap-3">
-									<div className="text-[10px] text-text-dim border-b border-border">{p.occupancyPct != null ? `Occ: ${p.occupancyPct}%` : ''}</div>
-									<div className="text-[10px] text-text-dim">{p.deltaGuests != null ? `Δ ${(p.deltaGuests > 0 ? '+' : '')}${p.deltaGuests}` : ''}</div>
-									<div className="text-[10px] inline-flex items-center gap-2">
-										<span className="text-brand">{p.actual}</span>
-										<span style={{ color: primitive.AccentPurple }}>{p.predicted}</span>
-									</div>
-								</div>
-							))}
-						</>
-					) : null}
+			<div className="flex min-w-0 w-full flex-col pt-4">
+				<div className="grid w-full min-w-0 grid-cols-[repeat(14,minmax(0,1fr))] gap-x-0.5 gap-y-1 px-3">
+					{dataset.map((p) => (
+						<div key={p.day} className="flex min-w-0 flex-col items-center gap-0.5 pb-1">
+							<div className="text-[9px] leading-tight text-text-dim border-b border-border">
+								{p.occupancyPct != null ? `Occ: ${p.occupancyPct}%` : ''}
+							</div>
+							<div className="text-[9px] leading-tight text-text-dim">
+								{p.deltaGuests != null ? `Δ ${(p.deltaGuests > 0 ? '+' : '')}${p.deltaGuests}` : ''}
+							</div>
+							<div className="text-[9px] inline-flex items-center gap-2">
+								<span style={{ color: primitive.AccentPurple }}>{p.predicted}</span>
+								<span className="text-brand">{p.actual}</span>
+							</div>
+						</div>
+					))}
 				</div>
-				<Column {...config} />
-			</CardBody>
+				<div className="min-h-0 min-w-0 w-full">
+					<Column
+						{...config}
+						className="block w-full min-w-0"
+						containerStyle={{ width: '100%', minWidth: 0, height: CHART_H }}
+					/>
+				</div>
+			</div>
 		</Card>
 	)
 }

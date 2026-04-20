@@ -3,6 +3,10 @@ export default {
 	content: ["./index.html", "./src/**/*.{ts,tsx}"],
 	theme: {
 		extend: {
+			fontFamily: {
+				sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+				mono: ['ui-monospace', 'Cascadia Code', 'Segoe UI Mono', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
+			},
 			colors: {
 				bg: 'var(--color-bg)',
 				card: 'var(--color-card)',

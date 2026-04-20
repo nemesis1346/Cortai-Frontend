@@ -59,7 +59,7 @@ export default function ThreatIntelligencePanel({ items, summary }: ThreatIntell
 				left={(
 					<div className="flex items-center gap-2">
 						<Search className="h-5 w-5 shrink-0 text-brand" strokeWidth={1.75} />
-						<h3 className="card-title !mb-0 text-[15px] font-semibold">Threat Intelligence</h3>
+						<h3 className="card-title !mb-0">Threat Intelligence</h3>
 					</div>
 				)}
 				middle={(

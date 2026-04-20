@@ -1,19 +1,24 @@
-import { TowelRack } from 'lucide-react'
+import towelRackIconUrl from '../../../assets/towel-rack.svg?url'
+import { Progress } from 'antd'
 import { poolPageMock } from '../../../data/mock'
 import { chartHex, primitive } from '../../../theme/tokens.generated'
 
 function DirtyDonut({ deck, chairs }: { deck: number; chairs: number }) {
 	const t = deck + chairs
-	const deckDeg = t > 0 ? (deck / t) * 360 : 0
+	const deckPct = t > 0 ? Math.round((deck / t) * 100) : 0
 	return (
 		<div className="relative h-[50px] w-[50px] shrink-0">
-			<div
-				className="absolute inset-0 rounded-full"
-				style={{
-					background: `conic-gradient(from -90deg, ${chartHex.brand} 0deg ${deckDeg}deg, ${chartHex.warn} ${deckDeg}deg 360deg)`,
-				}}
+			<Progress
+				type="circle"
+				percent={deckPct}
+				size={50}
+				strokeWidth={16}
+				strokeLinecap="round"
+				strokeColor={chartHex.brand}
+				railColor={chartHex.warn}
+				format={() => ''}
 			/>
-			<div className="absolute inset-[22%] rounded-full border border-border bg-card" />
+			<div className="pointer-events-none absolute inset-[0.55rem] rounded-full bg-card" />
 		</div>
 	)
 }
@@ -26,7 +31,7 @@ export default function TowelPanel() {
 		<div className="rounded-2xl border border-border bg-panel p-4">
 			<div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
 				<div className="flex items-center gap-2 text-[18px] font-medium text-text">
-					<TowelRack className="h-5 w-5 shrink-0 text-brand" strokeWidth={1.75} />
+					<img src={towelRackIconUrl} alt="" className="h-5 w-5 shrink-0" />
 					<span>Towel Tracking</span>
 				</div>
 				<span className="text-[12px] text-text-dim sm:text-right">Scanned {towels.scanned}</span>

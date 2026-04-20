@@ -13,7 +13,7 @@ export default function KpiRow() {
 	return (
 		<section className="grid grid-cols-2 xl:grid-cols-6 gap-3">
 			{kpis.map((kpi) => (
-				<div key={kpi.label} className="rounded-2xl border border-border card p-4">
+				<div key={kpi.label} className="rounded-2xl border border-border/30 bg-card p-4">
 					<div className="flex flex-row items-center justify-between text-[14px] text-text-dim">
 						<span className="text-[14px] text-text-dim">{kpi.label}</span>
 						{kpi.showLink ? <ExternalLink className="w-4 h-4 text-text-dim" /> : <span />}

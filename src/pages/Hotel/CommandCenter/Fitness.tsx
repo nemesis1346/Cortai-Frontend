@@ -4,42 +4,44 @@ import { fitnessMock } from '../../../data/mock'
 
 export default function Fitness() {
 	return (
-		<Card className="min-h-[110px]">
+		<Card className="flex h-full min-h-[8rem] flex-col">
 			<CardHeader
 				left={
-					<div className="flex gap-2">
-						<Dumbbell size={20} className="text-brand" />
+					<div className="flex items-start gap-2">
+						<Dumbbell className="h-5 w-5 shrink-0 text-brand" />
 						<h3 className="card-title">{fitnessMock.title}</h3>
 					</div>
 				}
-				middle={<span className="rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] text-text-dim px-2 py-1 !text-[12px]">{fitnessMock.capacity} capacity</span>}
+				middle={<span className="badge-chip bg-[color:var(--primitive-semantic-normal-10)] text-text-dim">{fitnessMock.capacity} capacity</span>}
 				right={
-					<div className="text-text-mute">
-						<ExternalLink className="w-5 h-5" />
+					<div className="card-header-actions">
+						<button type="button" className="card-header-icon-btn" aria-label="Open external">
+							<ExternalLink />
+						</button>
 					</div>
 				}
 			/>
-			<CardBody>
-				<div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-5 gap-4">
-					<div className="flex flex-col items-baseline gap-2">
-						<div className="!text-[18px] font-semibold text-text">{fitnessMock.now}</div>
-						<div className="!text-[12px] text-text-dim">Now</div>
+			<CardBody className="flex min-h-0 flex-1 flex-col">
+				<div className="grid flex-1 grid-cols-2 gap-4 sm:grid-cols-3 xl:grid-cols-5">
+					<div className="flex flex-col items-baseline gap-1">
+						<div className="text-large-semibold text-text">{fitnessMock.now}</div>
+						<div className="text-small text-text-dim">Now</div>
 					</div>
-					<div className="flex flex-col items-baseline gap-2">
-						<div className="!text-[18px] font-semibold text-text">{fitnessMock.total}</div>
-						<div className="!text-[12px] text-text-dim">Total</div>
+					<div className="flex flex-col items-baseline gap-1">
+						<div className="text-large-semibold text-text">{fitnessMock.total}</div>
+						<div className="text-small text-text-dim">Total</div>
 					</div>
-					<div className="flex flex-col items-baseline gap-2">
-						<div className="!text-[18px] font-semibold text-text">{fitnessMock.avgSession}</div>
-						<div className="!text-[12px] text-text-dim">Avg Session</div>
+					<div className="flex flex-col items-baseline gap-1">
+						<div className="text-large-semibold text-text">{fitnessMock.avgSession}</div>
+						<div className="text-small text-text-dim">Avg Session</div>
 					</div>
-					<div className="flex flex-col items-baseline gap-2">
-						<div className="!text-[18px] font-semibold text-ok">{fitnessMock.temperature}</div>
-						<div className="!text-[12px] text-text-dim">Temperature</div>
+					<div className="flex flex-col items-baseline gap-1">
+						<div className="text-large-semibold text-ok">{fitnessMock.temperature}</div>
+						<div className="text-small text-text-dim">Temperature</div>
 					</div>
-					<div className="flex flex-col items-baseline gap-2">
-						<div className="!text-[18px] font-semibold text-ok">{fitnessMock.humidity}</div>
-						<div className="!text-[12px] text-text-dim">Humidity</div>
+					<div className="flex flex-col items-baseline gap-1">
+						<div className="text-large-semibold text-ok">{fitnessMock.humidity}</div>
+						<div className="text-small text-text-dim">Humidity</div>
 					</div>
 				</div>
 			</CardBody>

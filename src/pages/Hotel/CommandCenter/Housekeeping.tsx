@@ -1,10 +1,11 @@
 import Card, { CardBody, CardHeader } from '../../../components/Card'
-import { BaggageClaim, MoreHorizontal, ExternalLink, X, Phone } from 'lucide-react'
+import { ArrowUpDown, MoreHorizontal, ExternalLink, X, Phone } from 'lucide-react'
 import { Progress } from 'antd'
 import { useEffect, useState } from 'react'
 import { housekeepingMock } from '../../../data/mock'
 import { primitive } from '../../../theme/tokens.generated'
 import requestIcon from '../../../assets/request-icon.svg'
+import housekeepingIconUrl from '../../../assets/housekeeping.svg?url'
 
 export default function Housekeeping() {
 	const [openModal, setOpenModal] = useState(false)
@@ -38,30 +39,32 @@ export default function Housekeeping() {
 
 	return (
 		<>
-			<Card className="min-h-[130px]">
+			<Card className="min-h-[8.125rem]">
 				<CardHeader
 					left={
-						<div className="flex gap-2 !text-[18px]">
-							<BaggageClaim size={20} className="text-brand" />
+						<div className="flex items-start gap-2">
+							<img src={housekeepingIconUrl} alt="" className="h-5 w-5 shrink-0" />
 							<h3 className="card-title">Housekeeping</h3>
 						</div>
 					}
 					middle={
-						<div className="flex items-center gap-3 text-xs">
-							<span className="rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] px-3 py-1 text-text-dim">
+						<div className="btn-group">
+							<span className="badge-chip bg-[color:var(--primitive-semantic-normal-10)] text-text-dim">
 								{housekeepingMock.rooms} rooms
 							</span>
-							<span className="rounded-[3px] bg-[color:var(--primitive-semantic-warning-10)] px-3 py-1 text-warn">
+							<span className="badge-chip bg-[color:var(--primitive-semantic-warning-10)] text-warn">
 								{housekeepingMock.staff} staff / {housekeepingMock.avgDiff} avg
 							</span>
 						</div>
 					}
 					right={
-						<div className="flex items-center gap-3 text-text">
-							<button type="button" onClick={() => setOpenModal(true)} className="inline-flex">
-								<MoreHorizontal className="w-5 h-5" />
+						<div className="card-header-actions">
+							<button type="button" className="card-header-icon-btn" onClick={() => setOpenModal(true)} aria-label="More options">
+								<MoreHorizontal />
 							</button>
-							<ExternalLink className="w-5 h-5" />
+							<button type="button" className="card-header-icon-btn" aria-label="Open external">
+								<ExternalLink />
+							</button>
 						</div>
 					}
 				/>
@@ -78,9 +81,9 @@ export default function Housekeeping() {
 							railColor={primitive.AccentGreen20}
 							format={() => null}
 						/>
-						<div className="text-start">
-							<div className="!text-[18px] font-semibold text-ok">{housekeepingMock.cleanPercent}%</div>
-							<div className="!text-[14px] text-text-dim">Done {housekeepingMock.done} / {housekeepingMock.rooms}</div>
+						<div className="flex flex-col gap-1 text-start">
+							<div className="text-large-semibold text-ok">{housekeepingMock.cleanPercent}%</div>
+							<div className="text-normal text-text-dim">Done {housekeepingMock.done} / {housekeepingMock.rooms}</div>
 						</div>
 					</div>
 
@@ -95,40 +98,40 @@ export default function Housekeeping() {
 							railColor={primitive.AccentYellow20}
 							format={() => null}
 						/>
-						<div className="text-start">
-							<div className="!text-[18px] font-semibold text-warn">{housekeepingMock.dirtyPercent}%</div>
-							<div className="!text-[14px] text-text-dim pt-1">Efficiency</div>
+						<div className="flex flex-col gap-1 text-start">
+							<div className="text-large-semibold text-warn">{housekeepingMock.dirtyPercent}%</div>
+							<div className="text-normal text-text-dim">Efficiency</div>
 						</div>
 					</div>
 
 					<div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-[auto_auto_repeat(4,auto)] items-center gap-5 justify-self-between">
-						<div className="flex flex-col">
+						<div className="flex flex-col gap-1">
 							<div className="flex items-baseline gap-4">
-								<div className="!text-[18px] text-text">{housekeepingMock.avgCleanTimeMins}m</div>
+								<div className="text-large-semibold text-text">{housekeepingMock.avgCleanTimeMins}m</div>
 								<div className="flex items-center text-ok">
-									<span className="!text-[14px]">{housekeepingMock.turnaroundMins}m</span>
-									<svg className="inline" width="14" height="14" viewBox="0 0 24 24">
+									<span className="text-normal">{housekeepingMock.turnaroundMins}m</span>
+									<svg className="inline" width="0.875rem" height="0.875rem" viewBox="0 0 24 24">
 										<path fill="currentColor" d="M12 21l-6-6h4V3h4v12h4z" />
 									</svg>
 								</div>
 							</div>
-							<div className="!text-[14px] text-text-dim pt-1">Avg Clean Time</div>
+							<div className="text-normal text-text-dim">Avg Clean Time</div>
 						</div>
-						<div className="text-start">
-							<div className="!text-[18px] text-text">{housekeepingMock.inProcess}</div>
-							<div className="!text-[14px] text-text-dim pt-1">In Process</div>
+						<div className="flex flex-col gap-1 text-start">
+							<div className="text-large-semibold text-text">{housekeepingMock.inProcess}</div>
+							<div className="text-normal text-text-dim">In Process</div>
 						</div>
-						<div className="text-start">
-							<div className="!text-[18px] text-text">{housekeepingMock.inTransit}</div>
-							<div className="!text-[14px] text-text-dim pt-1">In Transit</div>
+						<div className="flex flex-col gap-1 text-start">
+							<div className="text-large-semibold text-text">{housekeepingMock.inTransit}</div>
+							<div className="text-normal text-text-dim">In Transit</div>
 						</div>
-						<div className="text-start">
-							<div className="!text-[18px] text-text">{housekeepingMock.onBreak}</div>
-							<div className="!text-[14px] text-text-dim pt-1">On Break</div>
+						<div className="flex flex-col gap-1 text-start">
+							<div className="text-large-semibold text-text">{housekeepingMock.onBreak}</div>
+							<div className="text-normal text-text-dim">On Break</div>
 						</div>
-						<div className="text-start">
-							<div className="!text-[18px] text-text">{housekeepingMock.dnd}</div>
-							<div className="!text-[14px] text-text-dim pt-1">DND</div>
+						<div className="flex flex-col gap-1 text-start">
+							<div className="text-large-semibold text-text">{housekeepingMock.dnd}</div>
+							<div className="text-normal text-text-dim">DND</div>
 						</div>
 					</div>
 				</CardBody>
@@ -136,58 +139,77 @@ export default function Housekeeping() {
 
 			{openModal && (
 				<div
-					className={`fixed inset-0 z-[70] p-3 flex items-center justify-center transition-all duration-250 ${modalEntered ? 'bg-black/60' : 'bg-black/0'}`}
+					className={`fixed inset-0 z-[70] p-[0.75rem] flex items-center justify-center transition-all duration-250 ${modalEntered ? 'bg-black/60' : 'bg-black/0'}`}
 					onClick={() => setOpenModal(false)}
 				>
 					<div
-						className={`w-[min(600px,calc(100vw-24px))] rounded-2xl border-[6px] border-border bg-bg px-3 sm:px-6 overflow-hidden transition-all duration-300 ease-out ${modalEntered ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 -translate-y-4 scale-[0.98]'}`}
+						className={`w-[min(37.5rem,calc(100vw-1.5rem))] rounded-2xl border-[0.375rem] border-border bg-bg px-3 sm:px-6 overflow-hidden transition-all duration-300 ease-out ${modalEntered ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 -translate-y-4 scale-[0.98]'}`}
 						onClick={(e) => e.stopPropagation()}
 					>
 						<div className="flex items-center justify-between py-3">
-							<h3 className="!text-[18px] text-text">Staff on duty</h3>
+							<h3 className="text-popup-title text-text">Staff on duty</h3>
 							<button type="button" onClick={() => setOpenModal(false)} className="text-text">
-								<X className="w-[32px] h-[32px]" />
+								<X className="h-8 w-8" />
 							</button>
 						</div>
-						<div className="py-3 min-w-[520px] grid grid-cols-[1fr_80px_100px_80px] !text-[10px] text-text border-b border-border">
-							<div>REQUEST / GUEST</div>
-							<div>ROOM</div>
-							<div>ROOMS</div>
-							<div className="text-right">ACTION</div>
+						<div className="text-table-header grid min-w-[32.5rem] grid-cols-[1fr_5rem_6.25rem_5rem] border-b border-border py-3 text-text">
+							<div className="inline-flex min-w-0 items-center gap-1">
+								<span className="truncate">REQUEST / GUEST</span>
+								<ArrowUpDown className="h-3 w-3 shrink-0 opacity-70" aria-hidden />
+							</div>
+							<div className="inline-flex items-center gap-1">
+								ROOM
+								<ArrowUpDown className="h-3 w-3 shrink-0 opacity-70" aria-hidden />
+							</div>
+							<div className="inline-flex items-center gap-1">
+								ROOMS
+								<ArrowUpDown className="h-3 w-3 shrink-0 opacity-70" aria-hidden />
+							</div>
+							<div className="inline-flex items-center justify-end gap-1 text-right">
+								ACTION
+								<ArrowUpDown className="h-3 w-3 shrink-0 opacity-70" aria-hidden />
+							</div>
 						</div>
 						<div className="max-h-[60vh] overflow-auto divide-y divide-border">
 							{staffRows.map((s) => (
-								<div key={s.id} className="py-3 min-w-[520px] grid grid-cols-[1fr_80px_100px_80px] items-center">
+								<div key={s.id} className="py-3 min-w-[32.5rem] grid grid-cols-[1fr_5rem_6.25rem_5rem] items-center">
 									<div className="flex items-center gap-3">
-										<div className="relative w-[36px] h-[36px] rounded-full bg-brand/[0.1] flex items-center justify-center text-brand text-sm">
+										<div className="relative w-[2.25rem] h-[2.25rem] rounded-full bg-brand/[0.1] flex items-center justify-center text-brand text-sm">
 											{s.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
-											<span className="absolute right-0 top-0 w-[9px] h-[9px] rounded-full bg-ok" />
+											<span className="absolute right-0 top-0 w-[0.5625rem] h-[0.5625rem] rounded-full bg-ok" />
 										</div>
 										<div className="flex flex-col gap-2">
-											<div className="text-text !text-[14px]">{s.name}</div>
-											<div className="text-text-dim !text-[12px] inline-flex items-center gap-1">
+											<div className="text-normal text-text">{s.name}</div>
+											<div className="text-small inline-flex items-center gap-1 text-text-dim">
 												<img src={requestIcon} alt="" className="w-4 h-4" />
 												<span>{s.request} &nbsp; {s.guest}</span>
 											</div>
 										</div>
 									</div>
 									<div>
-										{s.room ? <span className="rounded-md bg-[color:var(--primitive-semantic-normal-10)] px-2 py-1 !text-[14px] text-text-dim">{s.room}</span> : null}
+										{s.room ? <span className="text-normal rounded-md bg-[color:var(--primitive-semantic-normal-10)] px-2 py-1 text-text-dim">{s.room}</span> : null}
 									</div>
 									<div>
-										<span className={`rounded-md px-2 text-[14px] py-1 ${stateClass(s.state)}`}>{s.rooms}</span>
+										<span className={`text-normal rounded-md px-2 py-1 ${stateClass(s.state)}`}>{s.rooms}</span>
 									</div>
 									<div className="text-right">
-										<button type="button" className="w-[32px] h-[32px] rounded-md border border-border inline-flex items-center justify-center text-text">
-											<Phone className="w-[16px] h-[16px]" />
+										<button
+											type="button"
+											className="w-[2.5rem] h-[2.5rem] rounded-[0.375rem] border border-[color:var(--primitive-white-shadow-10)] bg-[color:var(--primitive-white-shadow-2)] inline-flex items-center justify-center text-text p-[0.625rem] hover:border-[color:var(--primitive-white-shadow-20)] hover:bg-[color:var(--primitive-white-shadow-5)] focus-visible:border-[color:var(--primitive-white-shadow-20)] focus-visible:bg-[color:var(--primitive-white-shadow-5)] disabled:border-[color:var(--primitive-white-shadow-10)] disabled:bg-transparent"
+										>
+											<Phone className="w-[1.5rem] h-[1.5rem]" />
 										</button>
 									</div>
 								</div>
 							))}
 						</div>
-						<div className="flex items-center justify-between py-3 border-t border-border">
-							<button type="button" onClick={() => setOpenModal(false)} className="px-4 py-3 rounded-lg border border-border text-text">Close</button>
-							<button type="button" className="px-4 py-3 rounded-lg bg-brand/[0.8] !text-[14px] text-text">Housekeeping Overview</button>
+						<div className="flex items-center justify-between border-t border-border py-3">
+							<button type="button" onClick={() => setOpenModal(false)} className="cortai-text-btn cortai-text-btn--secondary">
+								Close
+							</button>
+							<button type="button" className="cortai-text-btn cortai-text-btn--primary">
+								Housekeeping Overview
+							</button>
 						</div>
 					</div>
 				</div>

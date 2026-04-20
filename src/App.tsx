@@ -25,11 +25,11 @@ export default function App() {
 				},
 			}}
 		>
-			<div className={`grid h-full min-h-0 ${sidebarCollapsed ? 'grid-cols-[72px_1fr]' : 'grid-cols-[332px_1fr]'} transition-[grid-template-columns] duration-300`}>
+			<div className={`grid h-full min-h-0 ${sidebarCollapsed ? 'grid-cols-[72px_1fr]' : 'grid-cols-[332px_1fr]'} transition-[grid-template-columns] duration-500 ease-out`}>
 				<Sidebar collapsed={sidebarCollapsed} onToggleCollapsed={() => setSidebarCollapsed(v => !v)} />
 				<div className="flex min-h-0 flex-col overflow-hidden">
 					<Topbar />
-					<div className="flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden">
+					<div className="flex h-full min-h-0 min-w-0 flex-1 flex-col overflow-hidden">
 						<Routes>
 							<Route path="/" element={<CommandCenter />} />
 							<Route path="/hotel">

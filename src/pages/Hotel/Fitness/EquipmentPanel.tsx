@@ -9,6 +9,18 @@ function formatPercent(n: number) {
 	return (Number.isInteger(n) ? String(n) : n.toFixed(1)) + '%'
 }
 
+function usageStrokeColor(percent: number) {
+	if (percent >= 80) return primitive.SemanticDanger
+	if (percent >= 60) return primitive.SemanticWarning
+	return primitive.Brand
+}
+
+function usageRailColor(percent: number) {
+	if (percent >= 80) return primitive.SemanticDanger10
+	if (percent >= 60) return primitive.SemanticWarning10
+	return primitive.BrandShadow20
+}
+
 export default function EquipmentPanel() {
 	const rows = fitnessPageMock.equipmentRows
 	const summary = useMemo(() => {
@@ -24,17 +36,17 @@ export default function EquipmentPanel() {
 	}, [rows])
 
 	return (
-		<Card className="rounded-2xl border border-border bg-panel">
+		<Card className="rounded-2xl border border-border bg-card">
 			<CardHeader
 				left={(
-					<div className="flex items-center gap-2 text-[18px] font-medium text-text">
+					<div className="flex items-center gap-2 text-[1.125rem] font-medium text-text">
 						<Dumbbell className="h-5 w-5 text-brand" strokeWidth={1.75} />
 						<span>Equipment Usage</span>
 					</div>
 				)}
 				middle={<span />}
 				right={(
-					<span className="text-[12px] text-text-dim">
+					<span className="text-[0.75rem] text-text-dim">
 						{summary.inUse}/{summary.units} in use · {summary.uses} uses today
 					</span>
 				)}
@@ -45,7 +57,7 @@ export default function EquipmentPanel() {
 						{rows.map((r) => (
 							<div
 								key={r.id}
-								className="grid grid-cols-[minmax(0,1.15fr)_minmax(0,5.75rem)_minmax(0,3.25rem)_minmax(0,4.75rem)_minmax(0,3.25rem)_minmax(0,0.5fr)] items-center gap-2 border-b border-border py-2.5 text-[13px] last:border-b-0"
+								className="grid grid-cols-[minmax(0,1.15fr)_minmax(0,5.75rem)_minmax(0,3.25rem)_minmax(0,4.75rem)_minmax(0,3.25rem)_minmax(0,0.5fr)] items-center gap-2 border-b border-border py-2.5 text-[0.8125rem] last:border-b-0"
 							>
 								<span className="font-medium text-text">{r.name}</span>
 								<div className="flex items-center gap-2">
@@ -55,8 +67,8 @@ export default function EquipmentPanel() {
 										size={28}
 										strokeWidth={12}
 										strokeLinecap="round"
-										strokeColor={primitive.AccentBlue}
-										railColor={primitive.AccentBlue20}
+										strokeColor={usageStrokeColor(r.percent)}
+										railColor={usageRailColor(r.percent)}
 										format={() => null}
 									/>
 									<span className="tabular-nums text-text">{formatPercent(r.percent)}</span>
@@ -64,19 +76,19 @@ export default function EquipmentPanel() {
 								<span className="text-center text-[13px] font-bold tabular-nums text-text">
 									{r.ratioInUse}/{r.ratioTotal}
 								</span>
-								<span className="text-[12px] text-text-dim">{r.usesToday} uses</span>
-								<span className="text-[12px] text-text-dim">{r.avgDuration}</span>
+								<span className="text-[0.75rem] text-text-dim">{r.usesToday} uses</span>
+								<span className="text-[0.75rem] text-text-dim">{r.avgDuration}</span>
 								<div className="flex justify-end">
 									{r.status === 'good' ? (
 										<span
-											className="rounded-[3px] px-2 py-1 text-[12px] font-medium"
+											className="rounded-[0.1875rem] px-2 py-1 text-[0.75rem] font-medium"
 											style={{ background: primitive.SemanticSuccess10, color: primitive.SemanticSuccess }}
 										>
 											Good
 										</span>
 									) : (
 										<span
-											className="rounded-[3px] px-2 py-1 text-[12px] font-medium"
+											className="rounded-[0.1875rem] px-2 py-1 text-[0.75rem] font-medium"
 											style={{ background: primitive.SemanticWarning10, color: primitive.SemanticWarning }}
 										>
 											Attention

@@ -1,4 +1,5 @@
-import { Clock, Coffee, ExternalLink } from 'lucide-react'
+import { Clock, ExternalLink } from 'lucide-react'
+import coffeeIconUrl from '../../../assets/coffee.svg?url'
 import { useMemo } from 'react'
 import turnoverIcon from '../../../assets/table-turnover.svg'
 import { Area } from '@ant-design/plots'
@@ -25,6 +26,7 @@ const trafficData = [
 ]
 
 const isPeakPoint = (time: string) => time === '7:45'
+const isNowPoint = (time: string) => time === '7:00'
 
 export default function TrafficAndBeverages() {
 	const { effective } = useThemePreference()
@@ -33,6 +35,10 @@ export default function TrafficAndBeverages() {
 		const textMute = readResolvedChartColor('--color-text-mute', chartAxisColorFallback.textMute)
 		const textDim = readResolvedChartColor('--color-text-dim', chartAxisColorFallback.textDim)
 		const border = readResolvedChartColor('--color-border', chartAxisColorFallback.border)
+		const gridLineStyle = {
+			stroke: border,
+			lineDash: [4, 4],
+		}
 		return {
 			data: trafficData,
 			xField: 'time',
@@ -49,12 +55,11 @@ export default function TrafficAndBeverages() {
 			},
 			scale: {
 				x: {
-					type: 'point',
-					tickCount: 4,
+					type: 'point' as const,
+					padding: 0.08,
 				},
 				y: {
 					domain: [0, 68],
-					tickCount: 4,
 					nice: true,
 				},
 			},
@@ -63,7 +68,11 @@ export default function TrafficAndBeverages() {
 					labelFill: textMute,
 					lineStroke: textMute,
 					tickStroke: textMute,
-					grid: null,
+					grid: {
+						line: {
+							style: gridLineStyle,
+						},
+					},
 				},
 				y: {
 					labelFill: textDim,
@@ -71,10 +80,7 @@ export default function TrafficAndBeverages() {
 					tickStroke: border,
 					grid: {
 						line: {
-							style: {
-								stroke: border,
-								lineDash: [4, 4],
-							},
+							style: gridLineStyle,
 						},
 					},
 				},
@@ -86,14 +92,19 @@ export default function TrafficAndBeverages() {
 				},
 			},
 			point: {
-				size: (d: { time: string }) => (isPeakPoint(d.time) ? 6 : 3),
+				size: (d: { time: string }) => (isPeakPoint(d.time) ? 6 : isNowPoint(d.time) ? 5 : 3),
 				shape: (d: { time: string }) => (isPeakPoint(d.time) ? 'diamond' : 'circle'),
-				style: (d: { time: string }) => ({
-					stroke: isPeakPoint(d.time) ? chartHex.danger : chartHex.brand,
-					fill: isPeakPoint(d.time) ? chartHex.danger : chartHex.bg,
-					lineWidth: 1,
-				}),
+				style: (d: { time: string }) => {
+					if (isPeakPoint(d.time)) {
+						return { stroke: chartHex.danger, fill: chartHex.danger, lineWidth: 1 }
+					}
+					if (isNowPoint(d.time)) {
+						return { stroke: chartHex.brand, fill: chartHex.brand, lineWidth: 1 }
+					}
+					return { stroke: chartHex.brand, fill: chartHex.bg, lineWidth: 1 }
+				},
 			},
+			theme: { type: effective === 'dark' ? 'classicDark' : 'classic' },
 		}
 	}, [effective])
 
@@ -130,7 +141,7 @@ export default function TrafficAndBeverages() {
 			<div className="rounded-2xl border border-border card p-4">
 				<div className="grid grid-cols-[1fr_1fr] items-center">
 					<div className="text-[18px] text-text inline-flex items-center gap-2">
-						<Coffee className="w-4 h-4 text-brand" />
+						<img src={coffeeIconUrl} alt="" className="h-5 w-5 shrink-0" />
 						<span>Beverages</span>
 					</div>
 					<span className="justify-self-end rounded-[3px] px-2 py-1 text-[12px] text-text-dim">

@@ -42,7 +42,7 @@ const floors: Floor[] = [
 			{ no: 317, temp: 73, state: 'maintenance' }, { no: 318, temp: 81, state: 'cleaning' }, { no: 319, temp: 70 }, { no: 320, temp: 73, state: 'maintenance' },
 		],
 	},
-    {
+	{
 		level: 4,
 		occupied: 10,
 		clean: 3,
@@ -55,7 +55,7 @@ const floors: Floor[] = [
 			{ no: 417, temp: 73, state: 'maintenance' }, { no: 418, temp: 81, state: 'cleaning' }, { no: 419, temp: 70 }, { no: 420, temp: 73, state: 'maintenance' },
 		],
 	},
-    {
+	{
 		level: 5,
 		occupied: 10,
 		clean: 3,
@@ -81,29 +81,28 @@ export default function RoomMonitor() {
 	}, [selectedRoomNo])
 
 	return (
-		<div
-			className={`h-full grid grid-cols-1 gap-4 p-4 md:p-5  transition-all duration-300 ${
-				selectedRoom ? '2xl:grid-cols-[minmax(0,1fr)_440px]' : '2xl:grid-cols-[minmax(0,1fr)_0px]'
-			}`}
-		>
-			<main className={`flex flex-col gap-3 overflow-y-auto scrollbar-none pr-1 transition-all duration-300 ${selectedRoom ? '2xl:scale-[0.995] 2xl:origin-left' : '2xl:scale-100'}`}>
+		<div className="flex h-full min-h-0 flex-col overflow-hidden">
+			<main className="scrollbar-thin flex min-h-0 flex-1 flex-col gap-[1.25rem] overflow-y-auto overscroll-y-contain px-[1.25rem] pb-[calc(1.25rem+env(safe-area-inset-bottom,0px)+0.125rem)] pt-[1.25rem]">
 				<SummaryStrip items={summary} />
 				<LegendBar />
-				{floors.map((floor) => (
-					<FloorSection
-						key={floor.level}
-						floor={floor}
-						selectedRoomNo={selectedRoomNo ?? undefined}
-						onSelectRoom={setSelectedRoomNo}
+				{selectedRoom ? (
+					<RoomDetailAside
+						key={selectedRoom.room.no}
+						selectedRoom={selectedRoom}
+						onClose={() => setSelectedRoomNo(null)}
 					/>
-				))}
+				) : null}
+				<div className="flex flex-col gap-[1.25rem]">
+					{floors.map((floor) => (
+						<FloorSection
+							key={floor.level}
+							floor={floor}
+							selectedRoomNo={selectedRoomNo ?? undefined}
+							onSelectRoom={setSelectedRoomNo}
+						/>
+					))}
+				</div>
 			</main>
-			<RoomDetailAside
-				selectedRoom={selectedRoom}
-				visible={Boolean(selectedRoom)}
-				onClose={() => setSelectedRoomNo(null)}
-			/>
 		</div>
 	)
 }
-

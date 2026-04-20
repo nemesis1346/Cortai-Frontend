@@ -14,7 +14,7 @@ export default function TrafficSteeringPolicies({ rows }: TrafficSteeringPolicie
 				left={(
 					<div className="flex items-center gap-2">
 						<Shield className="h-5 w-5 shrink-0 text-brand" strokeWidth={1.75} />
-						<h3 className="card-title !mb-0 text-[15px]">Traffic Steering Policies</h3>
+						<h3 className="card-title !mb-0">Traffic Steering Policies</h3>
 					</div>
 				)}
 			/>

@@ -35,36 +35,36 @@ type EnvironmentPanelProps = { className?: string }
 export default function EnvironmentPanel({ className }: EnvironmentPanelProps) {
 	const e = fitnessPageMock.environment
 	return (
-		<div className={`rounded-2xl border border-border bg-panel p-4 ${className ?? ''}`}>
-			<div className="flex items-center gap-2 text-[18px] font-medium text-text">
+		<div className={`rounded-2xl border border-border bg-card p-4 ${className ?? ''}`}>
+			<div className="flex items-center gap-2 text-[1.125rem] font-medium text-text">
 				<Thermometer className="h-5 w-5 text-brand" strokeWidth={1.75} />
 				<span>Environment</span>
 			</div>
 			<div className="mt-5 flex flex-wrap items-end justify-between gap-x-2 gap-y-6 sm:gap-x-3">
 				<div className="flex min-w-[4.5rem] flex-col items-start gap-1.5 text-center sm:min-w-[5rem]">
-					<div className="text-[20px] font-bold leading-none text-text">{e.temp}</div>
-					<div className="text-[11px] text-text-dim">Temp.</div>
+					<div className="text-[1.25rem] font-bold leading-none text-text">{e.temp}</div>
+					<div className="text-[0.6875rem] text-text-dim">Temp.</div>
 				</div>
 				<div className="flex min-w-[4.5rem] flex-col items-start gap-1.5 text-center sm:min-w-[5rem]">
-					<div className="text-[20px] font-bold leading-none text-info">{e.humidity}</div>
-					<div className="text-[11px] text-text-dim">Humidity</div>
+					<div className="text-[1.25rem] font-bold leading-none text-info">{e.humidity}</div>
+					<div className="text-[0.6875rem] text-text-dim">Humidity</div>
 				</div>
 				<div className="flex min-w-[4.5rem] flex-col items-start gap-1.5 text-center sm:min-w-[5rem]">
-					<div className="text-[20px] font-bold leading-none text-text">{e.airChangesPerHour}</div>
-					<div className="text-[11px] leading-tight text-text-dim">Air Changes/hr</div>
+					<div className="text-[1.25rem] font-bold leading-none text-text">{e.airChangesPerHour}</div>
+					<div className="text-[0.6875rem] leading-tight text-text-dim">Air Changes/hr</div>
 				</div>
 				<div className="flex min-w-0 items-end gap-2">
 					<EnvGauge pointerBottomPct={co2PointerPct(e.co2Ppm)} />
 					<div className="flex flex-col gap-1.5 pb-0.5">
-						<div className="text-[20px] font-bold leading-none text-warn">{e.co2Ppm}ppm</div>
-						<div className="text-[11px] text-text-dim">CO2 Level</div>
+						<div className="text-[1.25rem] font-bold leading-none text-warn">{e.co2Ppm}ppm</div>
+						<div className="text-[0.6875rem] text-text-dim">CO2 Level</div>
 					</div>
 				</div>
 				<div className="flex min-w-0 items-end gap-2">
 					<EnvGauge pointerBottomPct={noisePointerPct(e.noiseDb)} />
 					<div className="flex flex-col gap-1.5 pb-0.5">
-						<div className="text-[20px] font-bold leading-none text-ok">{e.noiseDb}dB</div>
-						<div className="text-[11px] text-text-dim">Noise</div>
+						<div className="text-[1.25rem] font-bold leading-none text-ok">{e.noiseDb}dB</div>
+						<div className="text-[0.6875rem] text-text-dim">Noise</div>
 					</div>
 				</div>
 			</div>

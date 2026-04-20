@@ -1,5 +1,6 @@
 import Card, { CardBody, CardHeader } from '../../../components/Card'
-import { Building2, Users, MoreHorizontal } from 'lucide-react'
+import { Users, MoreHorizontal } from 'lucide-react'
+import elevatorIconUrl from '../../../assets/elevator.svg?url'
 import { elevatorsMock } from '../../../data/mock'
 import { themeDark } from '../../../theme/tokens.generated'
 import { useEffect, useState } from 'react'
@@ -49,22 +50,24 @@ export default function Elevators() {
 	}, [])
 
 	return (
-		<Card className="min-h-[240px]">
+		<Card className="min-h-[15rem]">
 			<CardHeader
 				left={
-					<div className="flex gap-2">
-						<Building2 size={20} className="text-brand" />
+					<div className="flex items-start gap-2">
+						<img src={elevatorIconUrl} alt="" className="h-5 w-5 shrink-0" />
 						<h3 className="card-title">Elevators</h3>
 					</div>
 				}
 				middle={
-					<span className="rounded-[6px] bg-[color:var(--primitive-semantic-normal-10)] px-3 py-1 !text-[12px] text-text-dim">
+					<span className="badge-chip bg-[color:var(--primitive-semantic-normal-10)] px-3 text-text-dim">
 						{elevatorsMock.ridesToday} rides today
 					</span>
 				}
 				right={
-					<div className="text-text">
-						<MoreHorizontal className="w-5 h-5" />
+					<div className="card-header-actions">
+						<button type="button" className="card-header-icon-btn" aria-label="More options">
+							<MoreHorizontal />
+						</button>
 					</div>
 				}
 			/>
@@ -74,21 +77,21 @@ export default function Elevators() {
 						const bottomPct = ((e.floor - 1) / (TOTAL_FLOORS - 1)) * 100
 						return (
 						<div key={e.id} className="flex flex-col items-center gap-3">
-							<div className="text-text-dim !text-[14px] font-semibold">{e.id.replace('E', 'ELV-')}</div>
-							<div className={`px-2 py-1 rounded-[3px] !text-[12px] ${e.status === 'Running' ? 'bg-[color:var(--primitive-semantic-success-10)] text-ok' : 'bg-[color:var(--primitive-semantic-danger-10)] text-danger'}`}>
+							<div className="text-normal-semibold text-text-dim">{e.id.replace('E', 'ELV-')}</div>
+							<div className={`badge-chip ${e.status === 'Running' ? 'bg-[color:var(--primitive-semantic-success-10)] text-ok' : 'bg-[color:var(--primitive-semantic-danger-10)] text-danger'}`}>
 								{e.status}
 							</div>
-							<div className="relative h-35 w-[16px] rounded bg-bg">
-								<div className="absolute left-1/2 -translate-x-1/2 transition-all duration-300 ease-out" style={{ bottom: `calc(${bottomPct}% - 8px)` }}>
+							<div className="relative h-[7.5rem] w-[1rem] rounded bg-bg">
+								<div className="absolute left-1/2 -translate-x-1/2 transition-all duration-300 ease-out" style={{ bottom: `calc(${bottomPct}% - 0.5rem)` }}>
 									<div
-										className="px-2 py-1 rounded-[4px] min-w-[40px]"
+										className="px-2 py-1 rounded-[0.25rem] min-w-[2.5rem]"
 										style={{
 											background: e.status === 'Running' ? themeDark['WidgetDefaultElevator-success'] : themeDark['WidgetDefaultElevator-danger'],
 											color: e.status === 'Running' ? themeDark['WidgetDefaultElevator-txt-success'] : themeDark['WidgetDefaultElevator-txt-danger'],
 										}}
 									>
 										<div className="flex items-center gap-1 justify-center">
-											<span className="!text-[12px]">{e.floor}</span>
+											<span className="text-small">{e.floor}</span>
 											<div className="flex flex-col leading-none">
 												<svg
 													className={`w-3 h-3 fill-current cursor-not-allowed ${e.Direction === 'Up' ? 'opacity-100' : 'opacity-50'}`}
@@ -109,22 +112,22 @@ export default function Elevators() {
 									</div>
 								</div>
 							</div>
-							<div className="text-text-dim !text-[11px]">{`Riders: ${e.ridersPercent}%`}</div>
+							<div className="text-xxs text-text-dim">{`Riders: ${e.ridersPercent}%`}</div>
 						</div>
 						)
 					})}
 				</div>
                 <div className="flex flex-col w-full">
 					<div className="flex flex-col gap-2">
-						<div className="flex flex-col items-baseline gap-2">
-							<div className="!text-[18px] font-semibold text-text">{elevatorsMock.waitingNow}</div>
-							<div className="!text-[14px] text-text-dim">Waiting now / {elevatorsMock.waitingAvg} avg</div>
+						<div className="flex flex-col items-baseline gap-1">
+							<div className="text-large-semibold text-text">{elevatorsMock.waitingNow}</div>
+							<div className="text-normal text-text-dim">Waiting now / {elevatorsMock.waitingAvg} avg</div>
 						</div>
 						<div className="flex flex-wrap items-center gap-2">
 							{elevatorsMock.alerts.map((a) => (
 								<span
 									key={a.id}
-									className={`inline-flex items-center gap-2 rounded-md px-2 py-1 !text-[11px] ${
+									className={`text-xxs inline-flex items-center gap-2 rounded-md px-2 py-1 ${
 										a.color === 'red' ? 'bg-[color:var(--primitive-semantic-danger-10)] text-danger' : 'bg-[color:var(--primitive-accent-yellow-10)] text-warn'
 									}`}
 								>
@@ -134,13 +137,13 @@ export default function Elevators() {
 						</div>
 					</div>
 					<div className="my-3 h-px bg-border" />
-					<div>
-						<div className="!text-[18px] font-semibold text-text">{elevatorsMock.longestWait}</div>
-						<div className="!text-[14px] text-text-mute mt-1">Longest waits today / {elevatorsMock.longestAvg} avg</div>
+					<div className="flex flex-col gap-1">
+						<div className="text-large-semibold text-text">{elevatorsMock.longestWait}</div>
+						<div className="text-normal text-text-mute">Longest waits today / {elevatorsMock.longestAvg} avg</div>
 						<div className="mt-3 flex flex-wrap items-center gap-3">
 							{elevatorsMock.timeline.map(t => (
-								<span key={t.id} className="rounded-[3px] bg-[color:var(--primitive-semantic-normal-10)] px-2 py-1 !text-[12px] text-text">
-									<span className="text-danger font-medium">{t.left}</span>
+								<span key={t.id} className="bg-[color:var(--primitive-semantic-normal-10)] rounded-md px-2 py-1 text-xxs text-text">
+									<span className="text-danger">{t.left}</span>
 									{' · '}{t.mid}{' · '}{t.right}
 								</span>
 							))}

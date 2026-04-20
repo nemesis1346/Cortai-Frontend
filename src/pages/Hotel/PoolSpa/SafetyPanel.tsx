@@ -1,4 +1,5 @@
-import { AlertCircle, AlertTriangle, OctagonAlert, PersonStanding } from 'lucide-react'
+import personStandingIconUrl from '../../../assets/person-standing.svg?url'
+import { AlertCircle, AlertTriangle, OctagonAlert } from 'lucide-react'
 import { poolPageMock } from '../../../data/mock'
 import { primitive } from '../../../theme/tokens.generated'
 
@@ -20,21 +21,21 @@ function SummaryIcon({ id }: { id: ViolationKind }) {
 export default function SafetyPanel() {
 	const sum = poolPageMock.safetySummary
 	return (
-		<div className="rounded-2xl border border-border bg-panel p-4">
+		<div className="rounded-2xl border border-border bg-card p-4">
 			<div className="grid grid-cols-1 gap-3 sm:grid-cols-[1fr_auto_1fr] sm:items-center sm:gap-2">
 				<div className="flex items-center gap-2 min-w-0">
-					<PersonStanding className="h-5 w-5 shrink-0 text-brand" strokeWidth={1.75} />
-					<span className="text-[18px] font-medium text-text">Safety Violations</span>
+					<img src={personStandingIconUrl} alt="" className="h-5 w-5 shrink-0" />
+					<span className="text-[1.125rem] font-medium text-text">Safety Violations</span>
 				</div>
 				<div className="flex justify-center sm:justify-center">
 					<span
-						className="rounded-[3px] px-2 py-1 text-[13px] font-semibold"
+						className="rounded-[0.1875rem] px-2 py-1 text-[0.8125rem] font-semibold"
 						style={{ background: primitive.SemanticDanger10, color: primitive.SemanticDanger }}
 					>
 						{sum.activeCount} active
 					</span>
 				</div>
-				<div className="text-[13px] text-text-dim sm:justify-self-end">{sum.todayCount} today</div>
+				<div className="text-[0.8125rem] text-text-dim sm:justify-self-end">{sum.todayCount} today</div>
 			</div>
 
 			<div className="mt-5 flex flex-row flex-wrap justify-between gap-6 border-b border-border pb-5 ">
@@ -43,27 +44,27 @@ export default function SafetyPanel() {
 						<div className="flex flex-row items-center gap-2">
 							<SummaryIcon id={c.id} />
 							<div
-								className={`text-[18px] font-bold leading-none ${
+							className={`text-[1.125rem] font-bold leading-none ${
 									c.id === 'slip' ? 'text-danger' : 'text-warn'
 								}`}
 							>
 								{c.count}
 							</div>
 						</div>
-						<div className="text-[14px] leading-snug text-text-dim">
+						<div className="text-[0.875rem] leading-snug text-text-dim">
 							{c.label} · Avg {c.avgPerDay}/day
 						</div>
 					</div>
 				))}
 			</div>
 
-			<div className="mt-5 text-[15px] font-medium text-text">Today&apos;s Detections</div>
+			<div className="mt-5 text-[0.9375rem] font-medium text-text">Today&apos;s Detections</div>
 			<div className="mt-3 overflow-x-auto rounded-xl">
-				<div className="min-w-[520px] sm:min-w-0">
+				<div className="min-w-[32.5rem] sm:min-w-0">
 					{poolPageMock.safetyRows.map((row, i) => (
 						<div
 							key={row.id}
-							className={`grid grid-cols-[0.4fr_1.5fr_0.5fr_0.3fr] gap-2 py-3 text-[13px] items-center ${i > 0 ? 'border-t border-border' : ''}`}
+							className={`grid grid-cols-[0.4fr_1.5fr_0.5fr_0.3fr] gap-2 py-3 text-[0.8125rem] items-center ${i > 0 ? 'border-t border-border' : ''}`}
 						>
 							<div className="flex min-w-0 items-center gap-2">
 								<ViolationIcon
@@ -83,14 +84,14 @@ export default function SafetyPanel() {
 							<div className="flex justify-end">
 								{row.status === 'Resolved' ? (
 									<span
-										className="rounded-[3px] px-2 py-1 text-[12px] font-medium"
+										className="rounded-[0.1875rem] px-2 py-1 text-[0.75rem] font-medium"
 										style={{ background: primitive.SemanticSuccess10, color: primitive.SemanticSuccess }}
 									>
 										Resolved
 									</span>
 								) : (
 									<span
-										className="inline-flex items-center gap-1 rounded-[3px] px-2 py-1 text-[12px] font-medium text-danger"
+										className="inline-flex items-center gap-1 rounded-[0.1875rem] px-2 py-1 text-[0.75rem] font-medium text-danger"
 										style={{ background: primitive.SemanticDanger10 }}
 									>
 										<AlertCircle className="h-3.5 w-3.5 shrink-0" />
