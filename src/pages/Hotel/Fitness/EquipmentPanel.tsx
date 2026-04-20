@@ -12,7 +12,7 @@ function formatPercent(n: number) {
 function usageStrokeColor(percent: number) {
 	if (percent >= 80) return primitive.SemanticDanger
 	if (percent >= 60) return primitive.SemanticWarning
-	return primitive.Brand
+	return primitive.Brand500
 }
 
 function usageRailColor(percent: number) {
